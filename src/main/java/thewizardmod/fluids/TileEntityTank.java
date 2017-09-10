@@ -6,16 +6,20 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.TileFluidHandler;
 
 public class TileEntityTank extends TileFluidHandler{
 	
-	public static final int CAPACITY = 10 * Fluid.BUCKET_VOLUME;
+	public static final int CAPACITY = 11 * Fluid.BUCKET_VOLUME;
 
 	public TileEntityTank() {
 		tank = new FluidTankWithTile(this, CAPACITY);
+		tank.setFluid(new FluidStack(StartupCommon.fluidMagic, 1));
 	}
 
+	
+	
 	@Override
 	public NBTTagCompound getUpdateTag() {
 		return writeToNBT(new NBTTagCompound());

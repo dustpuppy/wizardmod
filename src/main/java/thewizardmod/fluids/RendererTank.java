@@ -30,7 +30,7 @@ public class RendererTank extends TileEntitySpecialRenderer<TileEntityTank>{
         {
         int capacity = fluidHandler.getTankProperties()[0].getCapacity();
         FluidStack fluid = fluidHandler.getTankProperties()[0].getContents();
-        if (fluid != null)
+        if (fluid != null && fluid.amount > 1)
         {
             GlStateManager.pushMatrix();
 			GlStateManager.disableLighting();

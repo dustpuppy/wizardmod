@@ -76,7 +76,7 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 			if(heldItem != null)
 			{
 				// If the bucket is not empty or filled with liquid magic, we don't want it
-				if (heldItem.getItem().equals(Items.BUCKET) || FluidUtil.getFluidContained(heldItem).isFluidEqual(new FluidStack(StartupCommon.fluidMagic, 1000)))
+//				if (heldItem.getItem().equals(Items.BUCKET) || FluidUtil.getFluidContained(heldItem).isFluidEqual(new FluidStack(StartupCommon.fluidMagic, 1000)))
 				{
 					// Try fill/empty the held fluid container from the tank
 					boolean success = FluidUtil.interactWithFluidHandler(heldItem, fluidHandler, playerIn);
