@@ -75,14 +75,10 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 		if (fluidHandler != null) {
 			if(heldItem != null)
 			{
-				// If the bucket is not empty or filled with liquid magic, we don't want it
-//				if (heldItem.getItem().equals(Items.BUCKET) || FluidUtil.getFluidContained(heldItem).isFluidEqual(new FluidStack(StartupCommon.fluidMagic, 1000)))
-				{
-					// Try fill/empty the held fluid container from the tank
-					boolean success = FluidUtil.interactWithFluidHandler(heldItem, fluidHandler, playerIn);
-					//If the held item is a fluid container, stop processing here so it doesn't try to place its contents
-					return FluidUtil.getFluidHandler(heldItem) != null;
-				}
+				// Try fill/empty the held fluid container from the tank
+				boolean success = FluidUtil.interactWithFluidHandler(heldItem, fluidHandler, playerIn);
+				//If the held item is a fluid container, stop processing here so it doesn't try to place its contents
+				return FluidUtil.getFluidHandler(heldItem) != null;
 			}
 		}
 		return false;
@@ -104,7 +100,7 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 		if (stack.hasTagCompound() && stack.getTagCompound().hasKey("BlockEntityTag")) {
 			NBTTagCompound tag = stack.getTagCompound().getCompoundTag("BlockEntityTag");
-			worldIn.getTileEntity(pos).readFromNBT(tag);
+//			worldIn.getTileEntity(pos).readFromNBT(tag);
 			worldIn.getTileEntity(pos).markDirty();
 		}
 	}
@@ -120,6 +116,7 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	  	tileEntity.writeToNBT(tileEntityTag);
 	  	compound.setTag("BlockEntityTag", tileEntityTag);
 	  	ret.setTagCompound(compound);
+	  	System.out.println(compound);
 	  	return Lists.newArrayList(ret);
 	}
 
