@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":    { "model": "thewizardmod:cherry_log" },
+        "axis=z":     { "model": "thewizardmod:cherry_log", "x": 90 },
+        "axis=x":     { "model": "thewizardmod:cherry_log", "x": 90, "y": 90 },
+        "axis=none":   { "model": "thewizardmod:cherry_bark" }
+    }
+}

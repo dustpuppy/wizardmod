@@ -1,0 +1,53 @@
+package thewizardmod.runeSlab;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.util.ResourceLocation;
+
+import org.lwjgl.opengl.GL11;
+
+public class RendererRuneSlab extends TileEntitySpecialRenderer<TileEntityRuneSlab>{
+
+	@Override
+	public void renderTileEntityAt(TileEntityRuneSlab te, double x, double y, double z, float partialTicks, int destroyStage) {
+		super.renderTileEntityAt(te, x, y, z, partialTicks, destroyStage);
+
+		TileEntityRuneSlab tileEntity = (TileEntityRuneSlab)te;
+		if(tileEntity.getRuneType() != 0)
+		{
+			System.out.println(tileEntity.getRuneType());
+		
+			GlStateManager.pushMatrix();
+			{
+			       GL11.glPushMatrix();
+			        GL11.glTranslated(-x, -y, -z); //go from cartesian x,y,z coordinates to in-world x,y,z coordinates
+			        GL11.glEnable(GL11.GL_DEPTH_TEST);
+
+			        double minX = 0 + 0.02;
+			        double maxX = 1 - 0.02;
+			        double maxY = 10 + 0.02;
+			        double minZ = 0 + 0.02;
+			        double maxZ = 1 - 0.02;
+
+			        //render an "X" using 2 lines at (0, 10, 0) in game
+			        GL11.glBegin(GL11.GL_LINES); //begin drawing lines defined by 2 vertices
+
+			        GL11.glColor4f(1f, 1f, 1f, 0.5f); //alpha must be > 0.1
+			        GL11.glVertex3d(maxX, maxY, maxZ);
+			        GL11.glVertex3d(minX, maxY, minZ);
+			        GL11.glVertex3d(maxX, maxY, minZ);
+			        GL11.glVertex3d(minX, maxY, maxZ);
+
+			        GL11.glEnd();
+
+			        //cleanup
+			        GL11.glEnable(GL11.GL_TEXTURE_2D);
+			        GL11.glPopMatrix();
+			}
+			GlStateManager.popMatrix();
+		}
+	}
+	
+}

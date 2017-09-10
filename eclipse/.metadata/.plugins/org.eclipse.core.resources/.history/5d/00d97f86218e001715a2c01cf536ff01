@@ -1,0 +1,7 @@
+package thewizardmod.jars;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileEntityJar extends TileEntity{
+
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "thewizardmod:blocks/sapling_cherry"
+    }
+}

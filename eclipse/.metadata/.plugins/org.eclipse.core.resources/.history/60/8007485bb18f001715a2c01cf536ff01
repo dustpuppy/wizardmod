@@ -1,0 +1,41 @@
+package thewizardmod.fluids;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+
+public class StartupClientOnly
+{
+  public static void preInitClientOnly()
+  {
+
+	  final Item itemFluidPoison = Item.getItemFromBlock(StartupCommon.blockFluidPoison);
+	  assert itemFluidPoison != null;
+	  
+	  ModelBakery.registerItemVariants(itemFluidPoison);
+	  ModelResourceLocation modelResourceLocation = new ModelResourceLocation("thewizardmod:fluids", "poison");
+	  
+	  ModelLoader.setCustomMeshDefinition(itemFluidPoison, MeshDefinitionFix.create(stack.modelResourceLocation));
+	  
+	  ModelLoader.setCustomStateMapper(StartupCommon.blockFluidPoison, new StateMapperBase() {
+			
+			@Override
+			protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
+				return new ModelResourceLocation("thewizardmod:fluids", "poison");
+			}
+	  });
+  }
+
+
+  public static void initClientOnly()
+  {
+  }
+
+  public static void postInitClientOnly()
+  {
+  }
+
+}

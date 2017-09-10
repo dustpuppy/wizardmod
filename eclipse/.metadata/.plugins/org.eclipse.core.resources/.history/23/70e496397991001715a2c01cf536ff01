@@ -1,0 +1,136 @@
+# Configuration Gui
+gui.configuration.mainTitle=The Wizard Mod Setup
+gui.configuration.ctgy.worldgen.name=World Generation
+gui.configuration.ctgy.worldgen.tooltip=Everything that has do do with World generation
+gui.configuration.chance_of_cherry_trees=Chance of Cherry Tree spawning
+gui.configuration.num_of_cherry_trees=Amount of Cherry Trees per Chunk
+gui.configuration.generateInNether=Generate Ores in Nether
+gui.configuration.generateInEnd=Generate Ores in End
+gui.configuration.dimension_id=ID for Magic Dimension
+
+# Ores
+tile.twm_shadowdust_ore_unlocalised_name.name=Shadowdust Ore
+
+# Ingots
+item.twm_shadowdust_unlocalised_name.name=Shadowdust
+
+# Creative Tab
+itemGroup.twm_creative_tab_all=The Wizard Mod
+itemGroup.twm_runes_tag=Runes
+
+# Potions
+item.twm_potion_unlocalised_name.orange.name=Orange
+item.twm_potion_unlocalised_name.lemon.name=Lemon
+item.twm_potion_unlocalised_name.lime.name=Lime
+item.twm_potion_unlocalised_name.cherry.name=Cherry
+
+# Teleporter Gem
+item.twm_teleporter_gem_unlocalised_name.name=Teleport Gem
+
+# The chest
+tile.twm_chest.name=Magic Chest
+container.chest.name=Magic Chest
+
+# Wands
+item.twm_wooden_wand_unlocalised_name.name=Wooden Wand
+item.twm_golden_wand_unlocalised_name.name=Golden Wand
+item.twm_iron_wand_unlocalised_name.name=Iron Wand
+item.twm_blaze_wand_unlocalised_name.name=Blaze Wand
+
+# Plants
+item.twm_weed_seeds_unlocalised_name.name=Magic Crop Seeds
+item.twm_wheat_unlocalised_name.name=Magic Wheat
+
+# Food
+item.twm_magic_bread_unlocalised_name.name=Magic Bread
+
+# Backpacks
+item.twm_small_backpack_unlocalised_name.name=Small Backpack
+item.twm_normal_backpack_unlocalised_name.name=Normal Backpack
+item.twm_big_backpack_unlocalised_name.name=Big Backpack
+
+# The Book
+item.twm_book_unlocalised_name.name=Wizards Guide
+
+# Trees 
+tile.twm_log_cherry_unlocalised_name.name=Cherry Wood
+tile.twm_leaves_cherry_unlocalised_name.name=Cherry Leaves
+tile.twm_cherry_sapling_unlocalised_name.name=Cherry Sapling
+item.twm_cherry_unlocalised_name.name=Cherry
+
+# Camouflage Block
+tile.twm_block_camouflage_unlocalised_name.name=Magic Wall
+
+# Machines
+tile.twm_magicInjector_unlocalised_name.name=Magic Injector
+container.twm_magicInjector.name=Magic Injector
+
+# Heart of an undead
+item.twm_heart_of_undead_unlocalised_name.name=Heart of an Undead
+
+# Magic torch
+tile.twm_torch_unlocalised_name.name=Magic Torch
+
+# Magic Gem
+item.twm_magic_gem_unlocalised_name.name=Magic Gem
+
+# Magic Iron
+item.twm_magic_iron_unlocalised_name.name=Magic Iron
+
+# Tools of Magic iron
+item.twm_magic_iron_sword_unlocalised_name.name=Magic Iron Sword
+item.twm_magic_iron_pickaxe_unlocalised_name.name=Magic Iron Pickaxe
+item.twm_magic_iron_axe_unlocalised_name.name=Magic Iron Axe
+item.twm_magic_iron_shovel_unlocalised_name.name=Magic Iron Shovel
+item.twm_magic_iron_hoe_unlocalised_name.name=Magic Iron Hoe
+
+# Clothes
+item.twm_magic_iron_helmet_unlocalised_name.name=Magic Iron Helmet
+item.twm_magic_iron_chestplate_unlocalised_name.name=Magic Iron Chestplate
+item.twm_magic_iron_leggings_unlocalised_name.name=Magic Iron Leggings
+item.twm_magic_iron_boots_unlocalised_name.name=Magic Iron Boots
+
+item.twm_magic_robe_helmet_unlocalised_name.name=Magic Robe Helmet
+item.twm_magic_robe_chestplate_unlocalised_name.name=Magic Robe Chestplate
+item.twm_magic_robe_leggings_unlocalised_name.name=Magic Robe Leggings
+item.twm_magic_robe_boots_unlocalised_name.name=Magic Robe Boots
+
+# Magic String
+item.twm_magic_string_unlocalised_name.name=Magic String
+
+# The Jar
+tile.twm_magic_jar_unlocalised_name.name=Magic Jar
+
+# Portal Frame
+tile.twm_portal_frame_unlocalised_name.name=Portal Frame
+
+# Fluids
+tile.twm_fluid_poison_unlocalised_name.name=Poison Fluid
+fluid.twm_fluid_poison=Posion Fluid
+
+# Runes
+item.tw_rune_fehu.name=Fehu
+item.tw_rune_uruz.name=Uruz
+item.tw_rune_thurisaz.name=Thurisaz
+item.tw_rune_ansuz.name=Ansuz
+item.tw_rune_raido.name=Raido
+item.tw_rune_kaunan.name=Kaunan
+item.tw_rune_gibo.name=Gibo
+item.tw_rune_wunjo.name=Wunjo
+item.tw_rune_haglaz.name=Haglaz
+item.tw_rune_naudiz.name=Naudiz
+item.tw_rune_eisa.name=Eisa
+item.tw_rune_jeran.name=Jeran
+item.tw_rune_ihwaz.name=Ihwaz
+item.tw_rune_pertho.name=Pertho
+item.tw_rune_algiz.name=Algiz
+item.tw_rune_sowulo.name=Sowulo
+item.tw_rune_teiwaz.name=Teiwaz
+item.tw_rune_berko.name=Berko
+item.tw_rune_ehwaz.name=Ehwaz
+item.tw_rune_mann.name=Mann
+item.tw_rune_laguz.name=Laguz
+item.tw_rune_ingwaz.name=Ingwaz
+item.tw_rune_othalan.name=Othalan
+item.tw_rune_dagaz.name=Dagaz
+

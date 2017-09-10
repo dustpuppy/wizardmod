@@ -1,0 +1,52 @@
+package thewizardmod.runes;
+
+import net.minecraft.util.IStringSerializable;
+
+public class EnumRunes {
+
+	public static enum RuneTypes implements IStringSerializable{
+		FEHU("fehu",0,"Cattle"),
+		URUZ("uruz",1, "Brute strenght"),
+		THURISAZ("thurisaz",2,"Seeing of future"),
+		ANSUZ("ansuz",3,"Reference to Odin"),
+		RAIDO("raido",4,"Journey"),
+		KAUNAN("kaunan",5,"Torch"),
+		GIBO("gibo",6,"Gift of harmonic relationship"),
+		WUNJO("wunjo",7,"Bliss and glory"),
+		HAGLAZ("haglaz",8,"Destructive forces"),
+		NAUDIZ("naudiz",9,"Negatives of human needs"),
+		EISA("eisa",10,"Ice"),
+		JERAN("jeran",11,"Cycle of the year"),
+		IHWAZ("ihwaz",12,"Yew tree"),
+		PERTHO("pertho",13,"Initiation, Something hidden"),
+		ALGIZ("algiz",14,"Spirit guides"),
+		SOWULO("sowulo",15,"Sun"),
+		TEIWAZ("teiwaz",16,"Sky god TYR"),
+		BERKO("berko",17,"Birch goddness"),
+		EHAWAZ("ehwaz",18,"Sacred horse"),
+		MANN("mann",19,"Nature of humanity"),
+		LAGUZ("laguz",20,"Water, Emotions"),
+		INGWAZ("ingwaz",21,"Fertitlity"),
+		OTHALAN("othalan",22,"Inheritance"),
+		DAGAZ("dagaz",23,"Daylight or dawn"),
+		BLANK("blank",24,"Rune of Odin");
+
+		private int ID;
+		private String name;
+		
+		private RuneTypes(String name, int ID, String description){
+			this.ID = ID;
+			this.name=name;
+			
+		}
+		
+		@Override
+		public String getName() {
+			return this.name;
+		}
+		
+		public int getID(){
+			return this.ID;
+		}
+	}
+}

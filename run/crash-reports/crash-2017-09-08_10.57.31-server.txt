@@ -1,0 +1,96 @@
+---- Minecraft Crash Report ----
+// Oops.
+
+Time: 08.09.17 10:57
+Description: Ticking player
+
+java.lang.NullPointerException: Ticking player
+	at net.minecraft.world.World.isOutsideBuildHeight(World.java:263)
+	at net.minecraft.world.World.getBlockState(World.java:914)
+	at thewizardmod.wandHandling.wandFocusMining.<init>(wandFocusMining.java:28)
+	at thewizardmod.wandHandling.WandHandling.useFinish(WandHandling.java:210)
+	at thewizardmod.Wands.ItemBlazeWand.onItemUseFinish(ItemBlazeWand.java:95)
+	at net.minecraft.item.ItemStack.onItemUseFinish(ItemStack.java:189)
+	at net.minecraft.entity.EntityLivingBase.onItemUseFinish(EntityLivingBase.java:2879)
+	at net.minecraft.entity.player.EntityPlayerMP.onItemUseFinish(EntityPlayerMP.java:1105)
+	at net.minecraft.entity.EntityLivingBase.updateActiveHand(EntityLivingBase.java:2773)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2145)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:260)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:345)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:174)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:216)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:309)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:807)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:688)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.World.isOutsideBuildHeight(World.java:263)
+	at net.minecraft.world.World.getBlockState(World.java:914)
+	at thewizardmod.wandHandling.wandFocusMining.<init>(wandFocusMining.java:28)
+	at thewizardmod.wandHandling.WandHandling.useFinish(WandHandling.java:210)
+	at thewizardmod.Wands.ItemBlazeWand.onItemUseFinish(ItemBlazeWand.java:95)
+	at net.minecraft.item.ItemStack.onItemUseFinish(ItemStack.java:189)
+	at net.minecraft.entity.EntityLivingBase.onItemUseFinish(EntityLivingBase.java:2879)
+	at net.minecraft.entity.player.EntityPlayerMP.onItemUseFinish(EntityPlayerMP.java:1105)
+	at net.minecraft.entity.EntityLivingBase.updateActiveHand(EntityLivingBase.java:2773)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2145)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:260)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 144
+	Entity Name: Player251
+	Entity's Exact location: -871,71, 4,00, 378,92
+	Entity's Block location: World: (-872,4,378), Chunk: (at 8,0,10 in -55,23; contains blocks -880,0,368 to -865,255,383), Region: (-2,0; contains chunks -64,0 to -33,31, blocks -1024,0,0 to -513,255,511)
+	Entity's Momentum: 0,00, -0,08, 0,00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:345)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:174)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:216)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:309)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@6ede3678
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:807)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:688)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.10.2
+	Operating System: Linux (amd64) version 3.16.0-4-amd64
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 567358024 bytes (541 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.32 Powered by Forge 12.18.3.2422 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	Forge{12.18.3.2422} [Minecraft Forge] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	thewizardmod{1.0a} [The Wizard Mod] (bin) 
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player251'/144, l='New World', x=-871,71, y=4,00, z=378,92]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

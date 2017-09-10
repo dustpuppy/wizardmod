@@ -1,0 +1,55 @@
+package thewizardmod.dimensions;
+
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import thewizardmod.TheWizardMod;
+
+public class StartupCommon
+{
+	  public static PortalBlock customBlock;
+	  public static ItemBlock itemCustomBlock;
+
+	  public static MagicFire magicFire;
+	  public static ItemBlock itemtestFire;
+
+	  public static MagicFlint magicFlint;
+
+  public static void preInitCommon()
+  {
+	  customBlock = (PortalBlock)(new PortalBlock().setUnlocalizedName("twm_portal_unlocalised_name"));
+	  customBlock.setRegistryName("portal");
+	  GameRegistry.register(customBlock);
+
+//	  itemCustomBlock = new ItemBlock(customBlock);
+//	  itemCustomBlock.setRegistryName(customBlock.getRegistryName());
+//	  GameRegistry.register(itemCustomBlock);
+
+    
+	  magicFire = (MagicFire)(new MagicFire().setUnlocalizedName("twm_fire_unlocalised_name"));
+	  magicFire.setRegistryName("fire");
+	  GameRegistry.register(magicFire);
+
+//	  itemtestFire = new ItemBlock(testFire);
+//	  itemtestFire.setRegistryName(testFire.getRegistryName());
+//	  GameRegistry.register(itemtestFire);
+
+	  magicFlint = (MagicFlint)(new MagicFlint().setUnlocalizedName("twm_flint_and_steel_unlocalised_name"));
+	  magicFlint.setRegistryName("flint_and_steel_registry_name");
+	  GameRegistry.register(magicFlint);
+
+
+	  GameRegistry.registerTileEntity(TileEntityDim.class, "entityDim");
+	  ModDimensions.init();
+	    
+  }
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+
+}

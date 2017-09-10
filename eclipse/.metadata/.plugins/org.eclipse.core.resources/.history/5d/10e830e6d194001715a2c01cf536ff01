@@ -1,0 +1,13 @@
+package thewizardmod.mirror;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class ItemMirror extends Item
+{
+  public ItemMirror()
+  {
+    this.setCreativeTab(CreativeTabs.MISC);   // the item will appear on the Miscellaneous tab in creative
+  }
+
+}

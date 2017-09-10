@@ -1,0 +1,36 @@
+package thewizardmod.entity;
+
+import thewizardmod.TheWizardMod;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+ 
+public class RenderNPC extends RenderLiving<EntityNPC> implements IRenderFactory<EntityLiving>
+{
+    public static final RenderNPC INSTANCE = new RenderNPC(renderManager);
+
+    private ModelNPC npcModel;
+    protected ResourceLocation npcTexture = new ResourceLocation(TheWizardMod.MODID + ":textures/entity/ghost.png");
+   
+    public RenderNPC()
+    {
+        npcModel = (ModelNPC) super.mainModel;
+    }
+ 
+    @Override
+    protected ResourceLocation getEntityTexture(EntityNPC entity)
+    {
+        return npcTexture;
+    }
+
+	@Override
+	public Render<? super EntityLiving> createRenderFor(RenderManager manager) {
+		// TODO Auto-generated method stub
+		return new RenderNPC(manager);
+	}
+   
+
+}

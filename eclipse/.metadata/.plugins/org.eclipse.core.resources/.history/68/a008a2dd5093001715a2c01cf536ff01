@@ -1,0 +1,23 @@
+package thewizardmod.World;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.math.BlockPos;
+
+public class SetSpawner {
+
+	public void SetSpawner(int x, int y, int z)
+	{
+		// we set the spawner under the earth, that it is not to easy to find
+		BlockPos blockpos = new BlockPos(x, y - 1, z);
+        world.setBlockState(blockpos, Blocks.MOB_SPAWNER.getDefaultState(), 2);
+        TileEntity tileentity = world.getTileEntity(blockpos);
+
+        if (tileentity instanceof TileEntityMobSpawner)
+        {
+            ((TileEntityMobSpawner)tileentity).getSpawnerBaseLogic().setEntityName("thewizardmod.WeirdZombie");
+        }
+
+	}
+}

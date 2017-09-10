@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "thewizardmod:normal_torch" },
+        "facing=east": { "model": "thewizardmod:normal_torch_wall" },
+        "facing=south": { "model": "thewizardmod:normal_torch_wall", "y": 90 },
+        "facing=west": { "model": "thewizardmod:normal_torch_wall", "y": 180 },
+        "facing=north": { "model": "thewizardmod:normal_torch_wall", "y": 270 }
+    }
+}

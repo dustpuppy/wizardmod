@@ -1,0 +1,7 @@
+{
+    "parent": "thewizardmod:block/fire_side_alt",
+    "textures": {
+        "particle": "thewizardmod:blocks/fire_layer_1",
+        "fire": "thewizardmod:blocks/fire_layer_1"
+    }
+}

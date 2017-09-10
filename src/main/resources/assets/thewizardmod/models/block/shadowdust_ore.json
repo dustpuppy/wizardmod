@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    
+    "textures": {
+        "down": "thewizardmod:blocks/shadowdust_ore_face0",
+        "up": "thewizardmod:blocks/shadowdust_ore_face1",
+        "north": "thewizardmod:blocks/shadowdust_ore_face2",
+        "east": "thewizardmod:blocks/shadowdust_ore_face5",
+        "south": "thewizardmod:blocks/shadowdust_ore_face3",
+        "west": "thewizardmod:blocks/shadowdust_ore_face4",
+        "particle": "thewizardmod:blocks/shadowdust_ore_face0"
+    }
+}

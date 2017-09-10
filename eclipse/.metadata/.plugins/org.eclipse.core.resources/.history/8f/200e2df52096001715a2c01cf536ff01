@@ -1,0 +1,106 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTank;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.IFluidTank;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidTankProperties;
+
+public class TileEntityTank extends TileEntity implements IFluidTank, IFluidHandler{
+
+	public FluidTank tank = new FluidTank(10000);
+
+	@Override
+	@Nullable
+	public FluidStack getFluid() {
+		return this.tank.getFluid();
+	}
+
+	@Override
+	public int getFluidAmount() {
+		return this.tank.getFluidAmount();
+	}
+
+	@Override
+	public int getCapacity() {
+		return 10000;
+	}
+	
+	@Override
+	public FluidTankInfo getInfo() {
+		return this.tank.getInfo();
+	}
+
+	@Override
+	public int fill(FluidStack resource, boolean doFill) {
+		return this.tank.fill(resource, doFill);
+	}
+
+	@Override
+	@Nullable
+	public FluidStack drain(int maxDrain, boolean doDrain) {
+		 return this.tank.drain(maxDrain, doDrain);
+	}
+	
+	@Override
+	public IFluidTankProperties[] getTankProperties() {
+		return this.tank.getTankProperties();
+	}
+
+	@Override
+	@Nullable
+	public	FluidStack drain(FluidStack resource, boolean doDrain) {
+		return this.tank.drain(resource.amount, doDrain);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		super.writeToNBT(compound);
+//		compound.setInteger("counter", counter);
+		return compound;
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound compound) {
+		super.readFromNBT(compound);
+//		this.counter = compound.getInteger("counter");
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		NBTTagCompound tag = pkt.getNbtCompound();
+//		this.counter = tag.getInteger("counter");
+	}
+	
+	@Override
+	@Nullable
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		NBTTagCompound tag = new NBTTagCompound();
+//		tag.setInteger("counter", counter);
+		return new SPacketUpdateTileEntity(pos, getBlockMetadata(), tag);
+	}
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		NBTTagCompound tag = super.getUpdateTag();
+//		tag.setInteger("counter", counter);
+		return tag;
+	}
+
+
+
+}

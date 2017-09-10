@@ -1,0 +1,13 @@
+{  
+"forge_marker": 1,
+
+    "variants": {
+         "facing=north": { "model": "thewizardmod:magic_mirror" },
+         "facing=east": { "model": "thewizardmod:magic_mirror", "y": 90 },
+         "facing=south": { "model": "thewizardmod:magic_mirror", "y": 180 },
+         "facing=west": { "model": "thewizardmod:magic_mirror", "y": 270 },
+         "facing=up": { "model": "thewizardmod:magic_mirror"},
+         "facing=down": { "model": "thewizardmod:magic_mirror"}
+         
+    }
+}

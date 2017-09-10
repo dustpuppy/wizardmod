@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "thewizardmod:portal_ew" },
+        "axis=x": { "model": "thewizardmod:portal_ns" }
+    }
+}

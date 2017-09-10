@@ -1,0 +1,82 @@
+package thewizardmod.mirror;
+
+import net.minecraft.block.BlockVine;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import thewizardmod.Util.RayTrace;
+
+public class ItemMirror extends Item
+{
+  public ItemMirror()
+  {
+    this.setCreativeTab(CreativeTabs.MISC);   // the item will appear on the Miscellaneous tab in creative
+  }
+
+  @Override
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		Vec3d vector = playerIn.getLookVec();
+		Vec3d origin = (new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(), playerIn.posZ));
+		
+		RayTraceResult p = RayTrace.rayTraceBlocksAndEntities(worldIn, 5, playerIn);
+
+		if(p != null)
+		{
+		
+		  BlockPos newPos = p.getBlockPos();
+		  
+		  EnumFacing blockFace = p.sideHit;
+		  
+//		  EnumFacing blockFace = Minecraft.getMinecraft().objectMouseOver.sideHit;
+		  
+			if(blockFace != EnumFacing.UP || blockFace != EnumFacing.DOWN){
+				placeMirrorAt(worldIn, newPos.offset(blockFace));
+			}
+		}
+	  return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY,	hitZ);
+	}
+  
+	private int placeMirrorAt(World world,BlockPos p) {
+		boolean n=false,e=false,s=false,w=false,canDo=false;
+		if(world.getBlockState(p.north()).getMaterial().blocksMovement()){
+			n = true;
+			canDo = true;
+		}
+		if(world.getBlockState(p.east()).getMaterial().blocksMovement()){
+			e = true;
+			canDo = true;
+		}
+		if(world.getBlockState(p.south()).getMaterial().blocksMovement()){
+			s = true;
+			canDo = true;
+		}
+		if(world.getBlockState(p.west()).getMaterial().blocksMovement()){
+			w = true;
+			canDo = true;
+		}
+		if(canDo){
+			world.setBlockState(p, StartupCommon.mirror.getDefaultState()
+					.withProperty(BlockVine.UP, false)
+					.withProperty(BlockVine.NORTH, n)
+					.withProperty(BlockVine.EAST, e)
+					.withProperty(BlockVine.SOUTH, s)
+					.withProperty(BlockVine.WEST, w));
+			return 1;
+		}else{
+			return 0;
+		}
+		
+		
+		
+	}
+
+}

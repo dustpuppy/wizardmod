@@ -1,0 +1,21 @@
+package thewizardmod.Entities;
+
+import thewizardmod.TheWizardMod;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+
+public class StartupClientOnly
+{
+  public static void preInitClientOnly()
+  {
+	  EntityRegistry.registerModEntity(EntityLightWisp.class, "LightWisp", 0, TheWizardMod.MODID, 64, 1, false);
+}
+
+  public static void initClientOnly()
+  {
+  }
+
+  public static void postInitClientOnly()
+  {
+  }
+}

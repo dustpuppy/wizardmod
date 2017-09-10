@@ -1,0 +1,80 @@
+package thewizardmod.World;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public class StructureDungeon {
+
+	public static void generate(World world, int x, int y, int z)
+	{
+		generateBigRoom(world, x, y, z);
+		
+		BlockPos blockpos = new BlockPos(x, y + 1, z);
+		world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 3);
+		blockpos = new BlockPos(x + 1, y + 1, z);
+		world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 3);
+		blockpos = new BlockPos(x, y + 2, z);
+		world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 3);
+		blockpos = new BlockPos(x + 1, y + 2, z);
+		world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 3);
+	}
+	
+	public static void generateBigRoom(World world, int x, int y, int z)
+	{
+		int height = 4;
+		int width = 16;
+		int lenght = 16;
+		
+		IBlockState floor = Blocks.COBBLESTONE.getDefaultState();
+		IBlockState wall = Blocks.COBBLESTONE.getDefaultState();
+		
+		clearSpace(world, x, y, z, height + 1, width, lenght);
+		
+		for(int i = 0; i < width; i++)
+		{
+			for(int j = 0; j < lenght; j++)
+			{
+				BlockPos blockpos = new BlockPos(x + i, y, z + j);
+				world.setBlockState(blockpos, floor, 2);
+			}
+		}
+		
+		for(int i = 1; i < height + 1; i++)
+		{
+			for(int j = 0; j < width; j++)
+			{
+				BlockPos blockpos = new BlockPos(x + j, y + i, z);
+				world.setBlockState(blockpos, wall, 2);
+				blockpos = new BlockPos(x + j, y + i, z + lenght - 1);
+				world.setBlockState(blockpos, wall, 2);
+			}
+			for(int j = 0; j < lenght; j++)
+			{
+				BlockPos blockpos = new BlockPos(x, y + i, z + j);
+				world.setBlockState(blockpos, wall, 2);
+				blockpos = new BlockPos(x + width - 1, y + i, z + j);
+				world.setBlockState(blockpos, wall, 2);
+			}
+		}
+		
+	}
+	
+	public static void clearSpace(World world, int x, int y, int z, int height, int width, int lenght)
+	{
+		for(int i = y; i < height; i++)
+		{
+			for(int j = x; j < width; j++)
+			{
+				for(int k = z; k < lenght; k++)
+				{
+					BlockPos blockpos = new BlockPos(x + j, y + i, z + k);
+					world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 2);
+				}
+			}
+		}
+	}
+}

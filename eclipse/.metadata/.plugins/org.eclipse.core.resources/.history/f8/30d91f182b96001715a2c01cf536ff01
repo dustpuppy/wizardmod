@@ -1,0 +1,56 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.IFluidTank;
+
+public class TileEntityTank extends TileEntity implements IFluidTank {
+	public TileEntityTank() {
+	}
+
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
+		return super.writeToNBT(nbt);
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound nbt) {
+		super.readFromNBT(nbt);
+	}
+
+	@Override
+	@Nullable
+	public FluidStack getFluid() {
+		return this.getFluid();
+	}
+
+	@Override
+	public int getFluidAmount() {
+		return this.getFluidAmount();
+	}
+
+	@Override
+	public int getCapacity() {
+		return this.getCapacity();
+	}
+
+	@Override
+	public FluidTankInfo getInfo() {
+		return this.getInfo();
+	}
+
+	@Override
+	public int fill(FluidStack resource, boolean doFill) {
+		return this.fill(resource, doFill);
+	}
+
+	@Override
+	@Nullable
+	public FluidStack drain(int maxDrain, boolean doDrain) {
+		return this.drain(maxDrain, doDrain);
+	}
+}

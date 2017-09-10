@@ -1,0 +1,40 @@
+package thewizardmod.fluids;
+
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+
+	public static FluidPoison fluidPoison = new FluidPoison();
+	
+	public static BlockFluidPoison blockFluidPoison;
+	
+	public static ItemBlock itemFluidPoison;
+
+	public static void preInitCommon()
+	{
+		boolean reg = FluidRegistry.registerFluid(fluidPoison);
+		
+		blockFluidPoison = new BlockFluidPoison(fluidPoison);
+		
+		blockFluidPoison.setRegistryName("blockFluid");
+		blockFluidPoison.setUnlocalizedName("twm_fluid_poison_unlocalised_name");
+	    GameRegistry.register(blockFluidPoison);
+
+
+		itemFluidPoison = new ItemBlock(blockFluidPoison);
+		itemFluidPoison.setRegistryName(blockFluidPoison.getRegistryName());
+	    GameRegistry.register(itemFluidPoison);
+	}
+
+	public static void initCommon()
+	{
+	}
+
+	public static void postInitCommon()
+	{
+	}
+}

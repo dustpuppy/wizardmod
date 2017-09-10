@@ -1,0 +1,5 @@
+package thewizardmod.Entities;
+
+public class EntityLightWisp {
+
+}

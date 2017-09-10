@@ -1,0 +1,26 @@
+package thewizardmod.runes;
+
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+	  public static Fehu fehu;
+	  
+  public static void preInitCommon()
+  {
+
+	    fehu = (Fehu)(new Fehu().setUnlocalizedName("tw_rune_fehu"));
+	    fehu.setRegistryName("rune_fehu_registry_name");
+	    GameRegistry.register(fehu);
+
+  }
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+}

@@ -1,0 +1,35 @@
+package thewizardmod.jars;
+
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+  public static Jar jar;
+  public static ItemBlock itemJar;
+
+
+
+  public static void preInitCommon()
+  {
+    jar = (Jar)(new Jar().setUnlocalizedName("twm_jar_unlocalised_name"));
+    jar.setRegistryName("glass_jar");
+    GameRegistry.register(jar);
+
+    itemJar = new ItemBlock(jar);
+    itemJar.setRegistryName(jar.getRegistryName());
+    GameRegistry.register(itemJar);
+
+    
+  
+}
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+
+}

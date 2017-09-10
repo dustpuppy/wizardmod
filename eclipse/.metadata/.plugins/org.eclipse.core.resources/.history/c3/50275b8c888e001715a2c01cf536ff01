@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_all",
+    
+    "textures": {
+        "all": "thewizardmod:blocks/machine_frame_advanced",
+        "particle": "thewizardmod:blocks/machine_frame_advanced"
+    }
+}

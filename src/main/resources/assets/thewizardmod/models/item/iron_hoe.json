@@ -1,0 +1,6 @@
+{
+    "parent": "thewizardmod:item/handheld",
+    "textures": {
+        "layer0": "thewizardmod:items/iron_hoe"
+    }
+}

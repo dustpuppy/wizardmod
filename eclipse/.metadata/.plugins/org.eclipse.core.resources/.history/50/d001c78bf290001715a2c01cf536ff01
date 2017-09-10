@@ -1,0 +1,88 @@
+package thewizardmod.runeSlab;
+
+
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.util.ResourceLocation;
+
+import org.lwjgl.opengl.GL11;
+
+
+
+public class RendererRuneSlab extends TileEntitySpecialRenderer<TileEntityRuneSlab>{
+
+	private static final ResourceLocation texture = new ResourceLocation("thewizardmod:textures/runes/1.png");
+
+	@Override
+	public void renderTileEntityAt(TileEntityRuneSlab te, double x, double y, double z, float partialTicks, int destroyStage) {
+		super.renderTileEntityAt(te, x, y, z, partialTicks, destroyStage);
+
+		TileEntityRuneSlab tileEntity = (TileEntityRuneSlab)te;
+//		if(tileEntity.getRuneType() != 0)
+		{
+//			System.out.println("Rune type " + tileEntity.getRuneType());
+
+		     GlStateManager.translate(x, y, z);
+
+		     GL11.glPushMatrix();
+		     GL11.glPushAttrib(GL11.GL_ENABLE_BIT);
+		     
+		     GlStateManager.translate(0, 1, 0);
+		     
+		      Tessellator tessellator = Tessellator.getInstance();
+		      VertexBuffer vertexBuffer = tessellator.getBuffer();
+		      this.bindTexture(texture);        
+
+		      // set the key rendering flags appropriately...
+		      GL11.glDisable(GL11.GL_LIGHTING);    
+		      GL11.glDisable(GL11.GL_BLEND);       
+		      GL11.glDepthMask(true);              
+
+		      vertexBuffer.begin(GL11.GL_TRIANGLES, DefaultVertexFormats.POSITION_TEX);
+		      addVertices(vertexBuffer);
+		      tessellator.draw();
+
+		      GL11.glPopAttrib();
+		      GL11.glPopMatrix();
+
+		}
+	}
+	
+	  private void addVertices(VertexBuffer worldrenderer) {
+		    final double[][] vertexTable = {
+		            {0.000,1.000,0.000,0.000,0.118},          //1
+		            {-0.354,0.500,-0.354,0.000,0.354},
+		            {-0.354,0.500,0.354,0.236,0.236},
+		            {-0.354,0.500,0.354,0.236,0.236},         //2
+		            {-0.354,0.500,-0.354,0.000,0.354},
+		            {0.000,0.000,0.000,0.236,0.471},
+		            {-0.354,0.500,0.354,0.236,0.236},         //3
+		            {0.000,0.000,0.000,0.236,0.471},
+		            {0.354,0.500,0.354,0.471,0.354},
+		            {-0.354,0.500,0.354,0.236,0.236},         //4
+		            {0.354,0.500,0.354,0.471,0.354},
+		            {0.000,1.000,0.000,0.471,0.118},
+		            {0.000,1.000,0.000,0.471,0.118},          //5
+		            {0.354,0.500,0.354,0.471,0.354},
+		            {0.354,0.500,-0.354,0.707,0.236},
+		            {0.354,0.500,-0.354,0.707,0.236},         //6
+		            {0.354,0.500,0.354,0.471,0.354},
+		            {0.000,0.000,0.000,0.707,0.471},
+		            {0.354,0.500,-0.354,0.707,0.236},         //7
+		            {0.000,0.000,0.000,0.707,0.471},
+		            {-0.354,0.500,-0.354,0.943,0.354},
+		            {0.000,1.000,0.000,0.943,0.118},          //8
+		            {0.354,0.500,-0.354,0.707,0.236},
+		            {-0.354,0.500,-0.354,0.943,0.354}
+		    };
+		    for (double [] vertex : vertexTable) {
+		        worldrenderer.pos(vertex[0], vertex[1], vertex[2])
+		                     .tex(vertex[3], vertex[4])
+		                     .endVertex();
+		      }
+		    }
+
+}

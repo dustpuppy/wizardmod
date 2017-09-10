@@ -1,0 +1,44 @@
+package thewizardmod.machines;
+
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+	  public static BlockMachineFrame blockMachineFrame;
+	  public static ItemBlockMachineFrame itemBlockMachineFrame;
+
+	  public static BlockExtractor blockExtractor;
+	  public static ItemBlockMachineFrame itemBlockExtractor;
+	  
+  public static void preInitCommon()
+  {
+    blockMachineFrame = (BlockMachineFrame)(new BlockMachineFrame().setUnlocalizedName("twm_machine_frame_"));
+    blockMachineFrame.setRegistryName("machine_frame");
+    GameRegistry.register(blockMachineFrame);
+
+    itemBlockMachineFrame = new ItemBlockMachineFrame(blockMachineFrame);
+    itemBlockMachineFrame.setRegistryName(blockMachineFrame.getRegistryName());
+    GameRegistry.register(itemBlockMachineFrame);
+
+    
+    GameRegistry.registerTileEntity(TileEntityExtractor.class, "tileEntity_Extractor");
+  
+    blockExtractor = (BlockExtractor)(new BlockExtractor().setUnlocalizedName("twm_extractor_unlocalised_name"));
+    blockExtractor.setRegistryName("extractor");
+    GameRegistry.register(blockExtractor);
+
+    itemBlockExtractor = new ItemBlockMachineFrame(blockExtractor);
+    itemBlockExtractor.setRegistryName(blockExtractor.getRegistryName());
+    GameRegistry.register(itemBlockExtractor);
+    
+    
+  }
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+}

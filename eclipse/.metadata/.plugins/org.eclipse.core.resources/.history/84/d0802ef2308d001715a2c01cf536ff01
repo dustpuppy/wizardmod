@@ -1,0 +1,184 @@
+package thewizardmod.magicInjector;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockPistonBase;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import thewizardmod.TheWizardMod;
+import thewizardmod.machines.EnumHandler.EnumType;
+
+
+public class BlockMagicInjector extends BlockContainer
+{
+	public static final PropertyDirection PROPERTYFACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+
+	public BlockMagicInjector()
+	{
+		super(Material.ROCK);
+		this.setCreativeTab(CreativeTabs.DECORATIONS);
+	    this.setDefaultState(this.blockState.getBaseState().withProperty(PROPERTYFACING, EnumFacing.NORTH));
+	}
+
+	// Called when the block is placed or loaded client side to get the tile entity for the block
+	// Should return a new instance of the tile entity for the block
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) {
+		return new TileEntityMagicInjector();
+	}
+/*
+	@Override
+	 public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase entity, ItemStack stack) {
+	     EnumFacing entityFacing = entity.getHorizontalFacing();
+
+	     if(!world.isRemote) {
+	         if(entityFacing == EnumFacing.NORTH) {
+	             entityFacing = EnumFacing.NORTH;
+	         } else if(entityFacing == EnumFacing.EAST) {
+	             entityFacing = EnumFacing.EAST;
+	         } else if(entityFacing == EnumFacing.SOUTH) {
+	             entityFacing = EnumFacing.SOUTH;
+	         } else if(entityFacing == EnumFacing.WEST) {
+	             entityFacing = EnumFacing.WEST;
+	         }
+
+	         world.setBlockState(pos, state.withProperty(PROPERTYFACING, entityFacing), 2);
+	     }
+	 }
+*/	 
+	
+	@Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing blockFaceClickedOn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+	{
+		  // find the quadrant the player is facing
+		  //EnumFacing enumfacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
+
+		  // Place allways same up and down direction
+		  //return this.getDefaultState().withProperty(PROPERTYFACING, enumfacing);
+		  // Place like a dispenser
+//	    return this.getDefaultState().withProperty(PROPERTYFACING, BlockPistonBase.getFacingFromEntity(pos, placer));
+		IBlockState state = super.onBlockPlaced(worldIn, pos, blockFaceClickedOn, hitX, hitY, hitZ, meta, placer);
+		return state.withProperty(PROPERTYFACING, placer.getHorizontalFacing());
+		  
+	}		  		
+	// Called when the block is right clicked
+	// In this block it is used to open the blocks gui when right clicked by a player
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+		// Uses the gui handler registered to your mod to open the gui for the given gui id
+		// open on the server side only  (not sure why you shouldn't open client side too... vanilla doesn't, so we better not either)
+		if (worldIn.isRemote) return true;
+
+		playerIn.openGui(TheWizardMod.instance, TheWizardMod.GUI_ID_MAGICINJECTOR, worldIn, pos.getX(), pos.getY(), pos.getZ());
+		return true;
+	}
+
+	// This is where you can do something when the block is broken. In this case drop the inventory's contents
+	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+		TileEntity tileEntity = worldIn.getTileEntity(pos);
+		if (tileEntity instanceof IInventory) {
+			InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)tileEntity);
+		}
+
+
+		// Super MUST be called last because it removes the tile entity
+		super.breakBlock(worldIn, pos, state);
+	}
+
+	//------------------------------------------------------------
+	//  The code below isn't necessary for illustrating the Inventory Cauldron concepts, it's just used for rendering.
+	//  For more background information see MBE03
+
+	// we will give our Block a property which tracks the number of burning sides, 0 - 4.
+	// This will affect the appearance of the block model, but does not need to be stored in metadata (it's stored in
+	//  the tileEntity) so we only need to implement getActualState.  getStateFromMeta, getMetaFromState aren't required
+	//   but we give defaults anyway because the base class getMetaFromState gives an error if we don't
+
+	// update the block state depending on the number of slots which contain burning fuel
+	
+	@Override
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+	{
+		TileEntity tileEntity = worldIn.getTileEntity(pos);
+		if (tileEntity instanceof TileEntityMagicInjector) {
+			TileEntityMagicInjector tileInventoryMagicInjector = (TileEntityMagicInjector)tileEntity;
+//			int burningSlots = tileInventoryInventory.numberOfBurningFuelSlots();
+//			burningSlots = MathHelper.clamp_int(burningSlots, 0, 4);
+//			EnumFacing facing = EnumFacing.NORTH;
+//			return this.getDefaultState().withProperty(PROPERTYFACING, facing);
+		}
+		return state;
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta)
+	{
+		return getDefaultState().withProperty(PROPERTYFACING, EnumFacing.getHorizontal(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state)
+	{
+//		EnumFacing facing = (EnumFacing) state.getValue(PROPERTYFACING);
+//		return EnumFacing.values().length + facing.ordinal();
+		return state.getValue(PROPERTYFACING).getHorizontalIndex();
+	}
+
+	// necessary to define which properties your blocks use
+	@Override
+	protected BlockStateContainer createBlockState()
+	{
+		return new BlockStateContainer(this, new IProperty[] {PROPERTYFACING});
+	}
+
+
+	// the block will render in the SOLID layer.  See http://greyminecraftcoder.blogspot.co.at/2014/12/block-rendering-18.html for more information.
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer()
+	{
+		return BlockRenderLayer.SOLID;
+	}
+
+	// used by the renderer to control lighting and visibility of other blocks.
+	// set to false because this block doesn't fill the entire 1x1x1 space
+	@Override
+	public boolean isOpaqueCube(IBlockState iBlockState) {
+		return false;
+	}
+
+	// used by the renderer to control lighting and visibility of other blocks, also by
+	// (eg) wall or fence to control whether the fence joins itself to this block
+	// set to false because this block doesn't fill the entire 1x1x1 space
+	@Override
+	public boolean isFullCube(IBlockState iBlockState) {
+		return false;
+	}
+
+	// render using a BakedModel
+  // required because the default (super method) is INVISIBLE for BlockContainers.
+	@Override
+	public EnumBlockRenderType getRenderType(IBlockState iBlockState) {
+		return EnumBlockRenderType.MODEL;
+	}
+}

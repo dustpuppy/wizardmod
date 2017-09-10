@@ -1,0 +1,39 @@
+package thewizardmod.altar;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import thewizardmod.runeSlab.StartupCommon;
+
+public class Altar {
+
+	public static int checkForRunes(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		int runeCount = 0;
+		double x = pos.getX();
+		double y = pos.getY();
+		double z = pos.getZ();
+		
+		// Runes can be 2 blocks around the altar
+		double startX = x - 2;
+		double endX   = x + 2;
+		double startZ = z - 2;
+		double endZ   = z + 2;
+		
+		System.out.println(startX + " " + startZ + "->" + endX + " " + endZ);
+		
+		for(double i = startX; i < endX; i++)
+		{
+			for(double j = startZ; j < endZ;j++)
+			{
+				if(world.getBlockState(new BlockPos(i, y, j)).getBlock() == StartupCommon.runeSlab)
+				{
+					runeCount += 1;
+				}
+			}
+		}
+				
+		return runeCount;
+	}
+}

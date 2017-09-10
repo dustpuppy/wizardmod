@@ -1,0 +1,49 @@
+package thewizardmod.Tree;
+
+import java.lang.ref.Reference;
+
+import thewizardmod.TheWizardMod;
+
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+
+public class StartupClientOnly
+{
+  public static void preInitClientOnly()
+  {
+	    final int DEFAULT_ITEM_SUBTYPE = 0;
+	    ModelResourceLocation cherryLogResourceLocation = new ModelResourceLocation("thewizardmod:cherry_log", "inventory");
+	    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemCherryLog, DEFAULT_ITEM_SUBTYPE, cherryLogResourceLocation);
+
+	    ModelResourceLocation cherryLeavesResourceLocation = new ModelResourceLocation("thewizardmod:cherry_leaves", "inventory");
+	    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemCherryLeaves, DEFAULT_ITEM_SUBTYPE, cherryLeavesResourceLocation);
+
+	    ModelResourceLocation saplingCherryResourceLocation = new ModelResourceLocation("thewizardmod:cherry_sapling", "inventory");
+	    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemCherrySapling, DEFAULT_ITEM_SUBTYPE, saplingCherryResourceLocation);
+
+  
+		for(int i = 0; i < CustomBlockPlanks.EnumType.values().length; i++)
+		{
+			registerRender(StartupCommon.blockPlanks, i, "planks_" + CustomBlockPlanks.EnumType.values()[i].getName());
+			registerRender(log, i, "log_" + CustomBlockPlanks.EnumType.values()[i].getName());
+			registerRender(leaves, i, "leaves_" + CustomBlockPlanks.EnumType.values()[i].getName());
+		}
+}
+
+  public static void initClientOnly()
+  {
+  }
+
+  public static void postInitClientOnly()
+  {
+  }
+  
+	public static void registerRender(Block block, int meta, String filename)
+	{
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(TheWizardMod.MODID, filename), "inventory"));
+	}
+
+}

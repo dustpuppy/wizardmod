@@ -1,0 +1,5 @@
+package assets.thewizardmod.blockstates;
+
+public class fluid_poison {
+
+}

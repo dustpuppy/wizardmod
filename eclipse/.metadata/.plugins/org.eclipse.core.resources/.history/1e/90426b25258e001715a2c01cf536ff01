@@ -1,0 +1,7 @@
+package thewizardmod.jars;
+
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+
+public class RendererJar extends TileEntitySpecialRenderer<TileEntityJar>{
+
+}

@@ -1,0 +1,889 @@
+Symbol range map extraction starting
+Processing 236 files
+startProcessing "thewizardmod/Backpacks/BigBackpack.java" md5: e4c43f94c0f1fd6055cc0ac9a092fda4
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/BigBackpack.java"
+
+startProcessing "thewizardmod/Backpacks/ContainerBackpack.java" md5: 3c04e44a7ba99c9c2ae6679ed42fc207
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/ContainerBackpack.java"
+
+startProcessing "thewizardmod/Backpacks/InventoryBackpack.java" md5: 87774b64fb71bffe24978c5199c2c187
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/InventoryBackpack.java"
+
+startProcessing "thewizardmod/Backpacks/NormalBackpack.java" md5: 0f7a28d653859d2ace61d6e02dbf267d
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/NormalBackpack.java"
+
+startProcessing "thewizardmod/Backpacks/SmallBackpack.java" md5: e9f511864ba3af4c6db8201897972d73
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/SmallBackpack.java"
+
+startProcessing "thewizardmod/Backpacks/StartupClientOnly.java" md5: a6d9f32667c65908f6dbb7646f71da3f
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Backpacks/StartupCommon.java" md5: c9dd410f850921c0a72b6d88c2ccdd28
+Cache Hit!
+endProcessing "thewizardmod/Backpacks/StartupCommon.java"
+
+startProcessing "thewizardmod/Biomes/BiomeBase.java" md5: edfcc4423c53783ac920c2e4c4a44c66
+Cache Hit!
+endProcessing "thewizardmod/Biomes/BiomeBase.java"
+
+startProcessing "thewizardmod/Biomes/MagicForest.java" md5: 81f801ff1717c15a5ad82f5170467561
+Cache Hit!
+endProcessing "thewizardmod/Biomes/MagicForest.java"
+
+startProcessing "thewizardmod/Biomes/StartupClientOnly.java" md5: 27c8c1b5e0044e508ef32c173c414779
+Cache Hit!
+endProcessing "thewizardmod/Biomes/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Biomes/StartupCommon.java" md5: 40ff8e27ecdda248e40470897e7d7d90
+Cache Hit!
+endProcessing "thewizardmod/Biomes/StartupCommon.java"
+
+startProcessing "thewizardmod/ClientOnlyProxy.java" md5: 1659b2e98105fd5b07285f5cf23c838a
+endProcessing "thewizardmod/ClientOnlyProxy.java"
+
+startProcessing "thewizardmod/CommonProxy.java" md5: 52c4f4ef49bc0dffaa796492754a9fbd
+endProcessing "thewizardmod/CommonProxy.java"
+
+startProcessing "thewizardmod/DedicatedServerProxy.java" md5: cf6f2a848d0716411c754b3b913b24d6
+Cache Hit!
+endProcessing "thewizardmod/DedicatedServerProxy.java"
+
+startProcessing "thewizardmod/Food/MagicBread.java" md5: a91997affebbf76a9b2f88c3a7a1197d
+endProcessing "thewizardmod/Food/MagicBread.java"
+
+startProcessing "thewizardmod/Food/MagicCookie.java" md5: 09919ec8ad448600fead798ade09d420
+endProcessing "thewizardmod/Food/MagicCookie.java"
+
+startProcessing "thewizardmod/Food/StartupClientOnly.java" md5: c3faac1714b386ad928a219f7bd6dfaf
+endProcessing "thewizardmod/Food/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Food/StartupCommon.java" md5: b9d817dd50523004f0ec719b1e7731cc
+endProcessing "thewizardmod/Food/StartupCommon.java"
+
+startProcessing "thewizardmod/Gui/GuiBackpack.java" md5: 4974cb6ac59554f247320c97257f81fa
+Cache Hit!
+endProcessing "thewizardmod/Gui/GuiBackpack.java"
+
+startProcessing "thewizardmod/Gui/GuiHandler.java" md5: 3f20421bf25dd28bcf22a576fdb9f3eb
+Cache Hit!
+endProcessing "thewizardmod/Gui/GuiHandler.java"
+
+startProcessing "thewizardmod/Gui/GuiInventoryChest.java" md5: db0db7a0e5f1dfe6a8d9d98299a4a673
+Cache Hit!
+endProcessing "thewizardmod/Gui/GuiInventoryChest.java"
+
+startProcessing "thewizardmod/Gui/StartupClientOnly.java" md5: 2d2f729da869ae520d45748c16e63c8d
+Cache Hit!
+endProcessing "thewizardmod/Gui/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Gui/StartupCommon.java" md5: a03b810b485c70b7a370be5412ad5b63
+Cache Hit!
+endProcessing "thewizardmod/Gui/StartupCommon.java"
+
+startProcessing "thewizardmod/Gui/TextureButton.java" md5: 9254cffac6a57bd35ae9044e99aaa817
+Cache Hit!
+endProcessing "thewizardmod/Gui/TextureButton.java"
+
+startProcessing "thewizardmod/Jar_undead_heart/BlockJar_undead_heart.java" md5: 2351082c9ec7725fd683812cf065f5a6
+Cache Hit!
+endProcessing "thewizardmod/Jar_undead_heart/BlockJar_undead_heart.java"
+
+startProcessing "thewizardmod/Jar_undead_heart/RendererJar_undead_heart.java" md5: 7b5ab221caa33ba035238f79f32667a8
+Cache Hit!
+endProcessing "thewizardmod/Jar_undead_heart/RendererJar_undead_heart.java"
+
+startProcessing "thewizardmod/Jar_undead_heart/StartupClientOnly.java" md5: 278a6cc3d7ba438c78f36d0ecb96e5bc
+Cache Hit!
+endProcessing "thewizardmod/Jar_undead_heart/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Jar_undead_heart/StartupCommon.java" md5: 6d82571a0150dbede0b58993548069b2
+Cache Hit!
+endProcessing "thewizardmod/Jar_undead_heart/StartupCommon.java"
+
+startProcessing "thewizardmod/Jar_undead_heart/TileEntityJar_undead_heart.java" md5: 6110df4dcd0228abc57eae43d50f3d8d
+Cache Hit!
+endProcessing "thewizardmod/Jar_undead_heart/TileEntityJar_undead_heart.java"
+
+startProcessing "thewizardmod/KeyBindings/StartupClientOnly.java" md5: 715f81b3085b0d0c2a04ffe8df425fea
+Cache Hit!
+endProcessing "thewizardmod/KeyBindings/StartupClientOnly.java"
+
+startProcessing "thewizardmod/KeyBindings/StartupCommon.java" md5: 1e4aa54c2260c0f71e687ea5e4a3ca99
+Cache Hit!
+endProcessing "thewizardmod/KeyBindings/StartupCommon.java"
+
+startProcessing "thewizardmod/Materials.java" md5: 59856bae96757cf0e0f9878fd71edce1
+Cache Hit!
+endProcessing "thewizardmod/Materials.java"
+
+startProcessing "thewizardmod/TheWizardMod.java" md5: b363f51207025084fcaecf74dc0a5051
+Cache Hit!
+endProcessing "thewizardmod/TheWizardMod.java"
+
+startProcessing "thewizardmod/Tree/BlockLeaves.java" md5: 0ae300f2f7425f7433b228599b741e04
+Cache Hit!
+endProcessing "thewizardmod/Tree/BlockLeaves.java"
+
+startProcessing "thewizardmod/Tree/BlockLog.java" md5: d55286384af95bfd6e60a7a86f1c1e54
+Cache Hit!
+endProcessing "thewizardmod/Tree/BlockLog.java"
+
+startProcessing "thewizardmod/Tree/CherryLeaves.java" md5: 7df74f551647c2d5bd86e5a4e7a25580
+Cache Hit!
+endProcessing "thewizardmod/Tree/CherryLeaves.java"
+
+startProcessing "thewizardmod/Tree/CherrySapling.java" md5: 8ebb51309bf44b9bb30fcc0ce99ec422
+Cache Hit!
+endProcessing "thewizardmod/Tree/CherrySapling.java"
+
+startProcessing "thewizardmod/Tree/CherryTree.java" md5: fea136b16998c8aae755b941d7a6ce2b
+Cache Hit!
+endProcessing "thewizardmod/Tree/CherryTree.java"
+
+startProcessing "thewizardmod/Tree/EnumWood.java" md5: 2c27a479f27d5aff66b161709dacb1c5
+Cache Hit!
+endProcessing "thewizardmod/Tree/EnumWood.java"
+
+startProcessing "thewizardmod/Tree/StartupClientOnly.java" md5: 34d7a6f3b3eb6b2fade50cab1e896dc4
+Cache Hit!
+endProcessing "thewizardmod/Tree/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Tree/StartupCommon.java" md5: 5dc588007212671652b0cfd041a1f4bb
+Cache Hit!
+endProcessing "thewizardmod/Tree/StartupCommon.java"
+
+startProcessing "thewizardmod/Util/EnumHandler.java" md5: b5b8e5115836f3dedda121ca7ce2c87a
+Cache Hit!
+endProcessing "thewizardmod/Util/EnumHandler.java"
+
+startProcessing "thewizardmod/Util/ParticleSpread.java" md5: 2fb18b6930507898c0a71fb3577d4398
+Cache Hit!
+endProcessing "thewizardmod/Util/ParticleSpread.java"
+
+startProcessing "thewizardmod/Util/RayTrace.java" md5: 6b712e098d2b534e2c913f77cd01164b
+endProcessing "thewizardmod/Util/RayTrace.java"
+
+startProcessing "thewizardmod/Util/TeleportUtils.java" md5: 178225a098f7c9f4bb9e2282447bb478
+    Compile Error! Pb(883) '<>' operator is not allowed for source level below 1.7
+endProcessing "thewizardmod/Util/TeleportUtils.java"
+
+startProcessing "thewizardmod/Wands/ItemBlazeWand.java" md5: c98b576973f128e29a329d6395eeafd0
+Cache Hit!
+endProcessing "thewizardmod/Wands/ItemBlazeWand.java"
+
+startProcessing "thewizardmod/Wands/ItemGoldenWand.java" md5: e152f3e6cbce55840cdeba27f1449782
+Cache Hit!
+endProcessing "thewizardmod/Wands/ItemGoldenWand.java"
+
+startProcessing "thewizardmod/Wands/ItemIronWand.java" md5: 04034e46071d2f2b8639d95d4b3b2b2f
+Cache Hit!
+endProcessing "thewizardmod/Wands/ItemIronWand.java"
+
+startProcessing "thewizardmod/Wands/ItemWoodenWand.java" md5: 3b65cbea7e057763bba215466aa30110
+Cache Hit!
+endProcessing "thewizardmod/Wands/ItemWoodenWand.java"
+
+startProcessing "thewizardmod/Wands/StartupClientOnly.java" md5: cb2248612ccd65c9126314e694c0ca52
+Cache Hit!
+endProcessing "thewizardmod/Wands/StartupClientOnly.java"
+
+startProcessing "thewizardmod/Wands/StartupCommon.java" md5: a4a3a442862aab7f666c061a0cbded47
+Cache Hit!
+endProcessing "thewizardmod/Wands/StartupCommon.java"
+
+startProcessing "thewizardmod/World/BlockObject.java" md5: 2296d38badebc94cd80a84fc5462faf6
+Cache Hit!
+endProcessing "thewizardmod/World/BlockObject.java"
+
+startProcessing "thewizardmod/World/SetSpawner.java" md5: 899e187664f26da24e1a62053e4072cd
+endProcessing "thewizardmod/World/SetSpawner.java"
+
+startProcessing "thewizardmod/World/StartupClientOnly.java" md5: 099a78f50125d2de26f0f334498961eb
+Cache Hit!
+endProcessing "thewizardmod/World/StartupClientOnly.java"
+
+startProcessing "thewizardmod/World/StartupCommon.java" md5: fa36d22b3bd3f65f4115f94d9cda7835
+Cache Hit!
+endProcessing "thewizardmod/World/StartupCommon.java"
+
+startProcessing "thewizardmod/World/StructureCabin.java" md5: ff83a9bb24f854410e6df9c7c0bac4fb
+endProcessing "thewizardmod/World/StructureCabin.java"
+
+startProcessing "thewizardmod/World/StructureCircle.java" md5: bf93b2ae49b284bd29c8574731c241e4
+endProcessing "thewizardmod/World/StructureCircle.java"
+
+startProcessing "thewizardmod/World/StructureDungeon.java" md5: e1238fe9ac2b0dbdb11268d29a4fe7d2
+endProcessing "thewizardmod/World/StructureDungeon.java"
+
+startProcessing "thewizardmod/World/WorldGen.java" md5: e38aaabc6514921c94eaffbb1b4a1ab5
+endProcessing "thewizardmod/World/WorldGen.java"
+
+startProcessing "thewizardmod/altar/Altar.java" md5: 1e5e1a3530eb0da2d107c153bdecbad7
+endProcessing "thewizardmod/altar/Altar.java"
+
+startProcessing "thewizardmod/altar/BlockAltar.java" md5: 95874d1f40b6f07dc2b24886f144926a
+endProcessing "thewizardmod/altar/BlockAltar.java"
+
+startProcessing "thewizardmod/altar/RendererAltar.java" md5: 5817d55eefc7cd83a2654818d608ec8d
+Cache Hit!
+endProcessing "thewizardmod/altar/RendererAltar.java"
+
+startProcessing "thewizardmod/altar/StartupClientOnly.java" md5: 5f5e6ba1f6fa24c9f8310ba49d62eb7a
+Cache Hit!
+endProcessing "thewizardmod/altar/StartupClientOnly.java"
+
+startProcessing "thewizardmod/altar/StartupCommon.java" md5: fe06532a999d9af5d79443d1b43aa737
+Cache Hit!
+endProcessing "thewizardmod/altar/StartupCommon.java"
+
+startProcessing "thewizardmod/altar/TileEntityAltar.java" md5: 6485b8462be2fdee815dc961395385bd
+Cache Hit!
+endProcessing "thewizardmod/altar/TileEntityAltar.java"
+
+startProcessing "thewizardmod/books/BookAltar.java" md5: 566e200e45f41c26ad48619933b4f513
+Cache Hit!
+endProcessing "thewizardmod/books/BookAltar.java"
+
+startProcessing "thewizardmod/books/BookInjector.java" md5: 7c700b1b33a7fa0707b4b1c79f01dedc
+endProcessing "thewizardmod/books/BookInjector.java"
+
+startProcessing "thewizardmod/books/BookRuneMagic.java" md5: 8d7268c0a4d5d07e2c9283d4d773dcd4
+Cache Hit!
+endProcessing "thewizardmod/books/BookRuneMagic.java"
+
+startProcessing "thewizardmod/books/BookWand.java" md5: d974900d5f6a4ecf9ea6323df0cc9af3
+Cache Hit!
+endProcessing "thewizardmod/books/BookWand.java"
+
+startProcessing "thewizardmod/books/BookWizardsGuide.java" md5: eba117719a1615a312c172668cb8a17f
+Cache Hit!
+endProcessing "thewizardmod/books/BookWizardsGuide.java"
+
+startProcessing "thewizardmod/books/GuiAltar.java" md5: d1d530fcb8b0a285cf42047cf22e7cb4
+endProcessing "thewizardmod/books/GuiAltar.java"
+
+startProcessing "thewizardmod/books/GuiInjector.java" md5: 6116cea577ca5f9e401f42bb7933395f
+endProcessing "thewizardmod/books/GuiInjector.java"
+
+startProcessing "thewizardmod/books/GuiRuneMagic.java" md5: ac948484df3d1a56eb65316698cf6bbe
+endProcessing "thewizardmod/books/GuiRuneMagic.java"
+
+startProcessing "thewizardmod/books/GuiWand.java" md5: 390006d75738572e350bd75888d36d0f
+endProcessing "thewizardmod/books/GuiWand.java"
+
+startProcessing "thewizardmod/books/GuiWizardsGuide.java" md5: 66b427128ad290a38e12a6267f110a77
+endProcessing "thewizardmod/books/GuiWizardsGuide.java"
+
+startProcessing "thewizardmod/books/StartupClientOnly.java" md5: 7a4d28a55ee37a2d8e9d195004aa0435
+endProcessing "thewizardmod/books/StartupClientOnly.java"
+
+startProcessing "thewizardmod/books/StartupCommon.java" md5: e0b702bd52ea1469ed886becd1ff849c
+endProcessing "thewizardmod/books/StartupCommon.java"
+
+startProcessing "thewizardmod/camouflageBlock/BlockCamouflage.java" md5: 59073d7dbdb234ce6cc3dc877cf2720f
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/BlockCamouflage.java"
+
+startProcessing "thewizardmod/camouflageBlock/CamouflageBakedModel.java" md5: 83a243779ce566e7339d2efb90052330
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/CamouflageBakedModel.java"
+
+startProcessing "thewizardmod/camouflageBlock/ModelBakeEventHandler.java" md5: 427625e9dc01bdebaa19a9a2b9a8e27a
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/ModelBakeEventHandler.java"
+
+startProcessing "thewizardmod/camouflageBlock/StartupClientOnly.java" md5: bb497a86d0fe6ff9e272c0cf54d35460
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/StartupClientOnly.java"
+
+startProcessing "thewizardmod/camouflageBlock/StartupCommon.java" md5: 11bd9a494bd3ff7f8ac2524bb92549eb
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/StartupCommon.java"
+
+startProcessing "thewizardmod/camouflageBlock/UnlistedPropertyCopiedBlock.java" md5: 3d96636c225724ddcbba353a36f0c9ca
+Cache Hit!
+endProcessing "thewizardmod/camouflageBlock/UnlistedPropertyCopiedBlock.java"
+
+startProcessing "thewizardmod/chest/BlockInventoryChest.java" md5: 947eced4096a9728bce513cc80bc4ab2
+Cache Hit!
+endProcessing "thewizardmod/chest/BlockInventoryChest.java"
+
+startProcessing "thewizardmod/chest/ContainerChest.java" md5: 4983fcce56c748eceb4b2c4535690861
+Cache Hit!
+endProcessing "thewizardmod/chest/ContainerChest.java"
+
+startProcessing "thewizardmod/chest/StartupClientOnly.java" md5: f9e92902419cd7552ed92148993c1392
+Cache Hit!
+endProcessing "thewizardmod/chest/StartupClientOnly.java"
+
+startProcessing "thewizardmod/chest/StartupCommon.java" md5: bf1b9d564348c7c126d69ff88d11d764
+Cache Hit!
+endProcessing "thewizardmod/chest/StartupCommon.java"
+
+startProcessing "thewizardmod/chest/TileEntityInventoryChest.java" md5: 4519867a93ad1e4ccb50af98b43e8375
+Cache Hit!
+endProcessing "thewizardmod/chest/TileEntityInventoryChest.java"
+
+startProcessing "thewizardmod/configuration/ModConfiguration.java" md5: 6d1975fb0cee229357ba82f5b7831b69
+Cache Hit!
+endProcessing "thewizardmod/configuration/ModConfiguration.java"
+
+startProcessing "thewizardmod/configuration/ModGuiFactory.java" md5: 0caab5d564f7436b121cb94fef8fc40d
+Cache Hit!
+endProcessing "thewizardmod/configuration/ModGuiFactory.java"
+
+startProcessing "thewizardmod/configuration/StartupClientOnly.java" md5: 8c3f8034a39029f0017b1db26db1a7dd
+Cache Hit!
+endProcessing "thewizardmod/configuration/StartupClientOnly.java"
+
+startProcessing "thewizardmod/configuration/StartupCommon.java" md5: 42f34a43e3683ddfb8844282313f2c62
+Cache Hit!
+endProcessing "thewizardmod/configuration/StartupCommon.java"
+
+startProcessing "thewizardmod/creative_tab/AllMbeItemsTab.java" md5: 922ae45739e6dbac3113c47e1899dded
+endProcessing "thewizardmod/creative_tab/AllMbeItemsTab.java"
+
+startProcessing "thewizardmod/creative_tab/BooksTab.java" md5: 46060673c4458982572c432a2aab4a66
+Cache Hit!
+endProcessing "thewizardmod/creative_tab/BooksTab.java"
+
+startProcessing "thewizardmod/creative_tab/RunesTab.java" md5: a102c95fddfb373c2f7e2a6173804cd7
+Cache Hit!
+endProcessing "thewizardmod/creative_tab/RunesTab.java"
+
+startProcessing "thewizardmod/creative_tab/StartupClientOnly.java" md5: 4f2e7749a4af5609ff8fe808f29558f1
+Cache Hit!
+endProcessing "thewizardmod/creative_tab/StartupClientOnly.java"
+
+startProcessing "thewizardmod/creative_tab/StartupCommon.java" md5: 473857e7ac7e494fb47c3d7c2bc737fd
+Cache Hit!
+endProcessing "thewizardmod/creative_tab/StartupCommon.java"
+
+startProcessing "thewizardmod/dimensions/ChunkGenerator.java" md5: c4b8f98e77d02e73bc864c650dd1c17d
+endProcessing "thewizardmod/dimensions/ChunkGenerator.java"
+
+startProcessing "thewizardmod/dimensions/ChunkProviderOverworld.java" md5: f0f29ec08f77d0a838d8376cd807fb1b
+Cache Hit!
+endProcessing "thewizardmod/dimensions/ChunkProviderOverworld.java"
+
+startProcessing "thewizardmod/dimensions/MagicFire.java" md5: 02f8fd77a055a586156431aa5d12e9d4
+Cache Hit!
+endProcessing "thewizardmod/dimensions/MagicFire.java"
+
+startProcessing "thewizardmod/dimensions/MagicFlint.java" md5: 5052f478d36c0a033a35029dddb90c95
+Cache Hit!
+endProcessing "thewizardmod/dimensions/MagicFlint.java"
+
+startProcessing "thewizardmod/dimensions/MagicTeleporter.java" md5: 7e72c77c694762754725831886eca9ff
+Cache Hit!
+endProcessing "thewizardmod/dimensions/MagicTeleporter.java"
+
+startProcessing "thewizardmod/dimensions/ModDimensions.java" md5: d635ebce9d14d325fafdc2f9a7e111cf
+Cache Hit!
+endProcessing "thewizardmod/dimensions/ModDimensions.java"
+
+startProcessing "thewizardmod/dimensions/NormalTerrainGenerator.java" md5: b991bcd2ec19f303f67a088d7414e465
+Cache Hit!
+endProcessing "thewizardmod/dimensions/NormalTerrainGenerator.java"
+
+startProcessing "thewizardmod/dimensions/OverworldProvider.java" md5: 528c5d8b8bdb6fec22d151dc9696fdca
+Cache Hit!
+endProcessing "thewizardmod/dimensions/OverworldProvider.java"
+
+startProcessing "thewizardmod/dimensions/PortalBlock.java" md5: 7f75db9a3c16f94ef2fd0ea96ad75db8
+Cache Hit!
+endProcessing "thewizardmod/dimensions/PortalBlock.java"
+
+startProcessing "thewizardmod/dimensions/PortalFrame.java" md5: 1151ca62b333c8434e30e4b9fcfb3991
+Cache Hit!
+endProcessing "thewizardmod/dimensions/PortalFrame.java"
+
+startProcessing "thewizardmod/dimensions/StartupClientOnly.java" md5: 6d3d92bdf32479e0c5336e9f511b6535
+endProcessing "thewizardmod/dimensions/StartupClientOnly.java"
+
+startProcessing "thewizardmod/dimensions/StartupCommon.java" md5: 6170f98e95a07e34c05a5c5db35a5efb
+endProcessing "thewizardmod/dimensions/StartupCommon.java"
+
+startProcessing "thewizardmod/dimensions/TileEntityDim.java" md5: 881947179c3db81bb913a8dc468c5e70
+Cache Hit!
+endProcessing "thewizardmod/dimensions/TileEntityDim.java"
+
+startProcessing "thewizardmod/entity/EntityAIWeirdZombieAttack.java" md5: c2cfd4eb2cd4459cd525ac64ffe1026d
+endProcessing "thewizardmod/entity/EntityAIWeirdZombieAttack.java"
+
+startProcessing "thewizardmod/entity/EntityWeirdZombie.java" md5: e2016c296c67fe4ff2f70203a8b3fb15
+endProcessing "thewizardmod/entity/EntityWeirdZombie.java"
+
+startProcessing "thewizardmod/entity/RenderWeirdZombie.java" md5: 6f876598c6697d4f0b6c0b3261bcec30
+endProcessing "thewizardmod/entity/RenderWeirdZombie.java"
+
+startProcessing "thewizardmod/entity/StartupClientOnly.java" md5: 9985b4c62e145901f0615371b7dfb38a
+endProcessing "thewizardmod/entity/StartupClientOnly.java"
+
+startProcessing "thewizardmod/entity/StartupCommon.java" md5: ae03294cd8fab23f07520f6cadd7f5b7
+endProcessing "thewizardmod/entity/StartupCommon.java"
+
+startProcessing "thewizardmod/events/ClientEvents.java" md5: ea1d2f81751df843ac17dfe8dda14bf0
+Cache Hit!
+endProcessing "thewizardmod/events/ClientEvents.java"
+
+startProcessing "thewizardmod/events/MobDropEvents.java" md5: 8d3d8ce3ac76123058a0945188a12471
+endProcessing "thewizardmod/events/MobDropEvents.java"
+
+startProcessing "thewizardmod/events/StartupClientOnly.java" md5: 29729a95fa75f8d1add9a1069dd47e3f
+Cache Hit!
+endProcessing "thewizardmod/events/StartupClientOnly.java"
+
+startProcessing "thewizardmod/events/StartupCommon.java" md5: 92c17e16ca4d5388ee7c0dfcf2382505
+Cache Hit!
+endProcessing "thewizardmod/events/StartupCommon.java"
+
+startProcessing "thewizardmod/fireChalice/BlockChalice.java" md5: 5aaeb21adb1a1057bb7325d816797feb
+endProcessing "thewizardmod/fireChalice/BlockChalice.java"
+
+startProcessing "thewizardmod/fireChalice/RendererChalice.java" md5: 8aa0ab185e649ef484b2ebf2179ef70d
+endProcessing "thewizardmod/fireChalice/RendererChalice.java"
+
+startProcessing "thewizardmod/fireChalice/StartupClientOnly.java" md5: 48f0a773b441c4f6c5b03bd37645600b
+endProcessing "thewizardmod/fireChalice/StartupClientOnly.java"
+
+startProcessing "thewizardmod/fireChalice/StartupCommon.java" md5: 9a7904ff1ac347abf85a7b5e5416cb73
+endProcessing "thewizardmod/fireChalice/StartupCommon.java"
+
+startProcessing "thewizardmod/fireChalice/TileEntityChalice.java" md5: baecb065f0180a6e017493250859f632
+endProcessing "thewizardmod/fireChalice/TileEntityChalice.java"
+
+startProcessing "thewizardmod/fluids/BlockFluidPoison.java" md5: 06b018aa5d5286fb51662b33ca97021f
+Cache Hit!
+endProcessing "thewizardmod/fluids/BlockFluidPoison.java"
+
+startProcessing "thewizardmod/fluids/FluidPoison.java" md5: 6676389edf542e5b91544c8bb0e86a8e
+Cache Hit!
+endProcessing "thewizardmod/fluids/FluidPoison.java"
+
+startProcessing "thewizardmod/fluids/StartupClientOnly.java" md5: 4735e9f5125944b13a81b67680e99e78
+Cache Hit!
+endProcessing "thewizardmod/fluids/StartupClientOnly.java"
+
+startProcessing "thewizardmod/fluids/StartupCommon.java" md5: a51ba5580cf2d71933cc68b7d29b81da
+Cache Hit!
+endProcessing "thewizardmod/fluids/StartupCommon.java"
+
+startProcessing "thewizardmod/gemJar/BlockGemJar.java" md5: f4a378917fa74daa9031b6af4e141a2c
+Cache Hit!
+endProcessing "thewizardmod/gemJar/BlockGemJar.java"
+
+startProcessing "thewizardmod/gemJar/RendererGemJar.java" md5: 5083c301cfbb593ab636c390df03ac8c
+Cache Hit!
+endProcessing "thewizardmod/gemJar/RendererGemJar.java"
+
+startProcessing "thewizardmod/gemJar/StartupClientOnly.java" md5: dc0419e2b6e85e83155cb94c8880ca2d
+Cache Hit!
+endProcessing "thewizardmod/gemJar/StartupClientOnly.java"
+
+startProcessing "thewizardmod/gemJar/StartupCommon.java" md5: 847bcca1a60814657c691540316dbcb4
+Cache Hit!
+endProcessing "thewizardmod/gemJar/StartupCommon.java"
+
+startProcessing "thewizardmod/gemJar/TileEntityGemJar.java" md5: 77d77fcc710f5acd36cace61096d3481
+Cache Hit!
+endProcessing "thewizardmod/gemJar/TileEntityGemJar.java"
+
+startProcessing "thewizardmod/items/Cherry.java" md5: da76cb1921c2f5f017aad6d3566faa34
+endProcessing "thewizardmod/items/Cherry.java"
+
+startProcessing "thewizardmod/items/Heart_of_undead.java" md5: 1415a983de896c862e5852628fdb316b
+Cache Hit!
+endProcessing "thewizardmod/items/Heart_of_undead.java"
+
+startProcessing "thewizardmod/items/MagicGem.java" md5: 2f09dab6cf1e22d218d35a31b13f15b1
+Cache Hit!
+endProcessing "thewizardmod/items/MagicGem.java"
+
+startProcessing "thewizardmod/items/MagicIronArmor.java" md5: c46a0567a770cf21ae603edb34a3c6fc
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronArmor.java"
+
+startProcessing "thewizardmod/items/MagicIronAxe.java" md5: ba09401e3c3968e5064548410e5cc25e
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronAxe.java"
+
+startProcessing "thewizardmod/items/MagicIronHoe.java" md5: e633f05fff3f26578c3d3e3670da240d
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronHoe.java"
+
+startProcessing "thewizardmod/items/MagicIronIngot.java" md5: 8f5d6ba1ec29de706a058639dce8dd01
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronIngot.java"
+
+startProcessing "thewizardmod/items/MagicIronPickaxe.java" md5: 788aa00661c13ac3daecb716edc64f5f
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronPickaxe.java"
+
+startProcessing "thewizardmod/items/MagicIronShovel.java" md5: ce530326047a76668c154f81032cd303
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronShovel.java"
+
+startProcessing "thewizardmod/items/MagicIronSword.java" md5: 9dfdf5833feb6a729133c242b55d320a
+Cache Hit!
+endProcessing "thewizardmod/items/MagicIronSword.java"
+
+startProcessing "thewizardmod/items/MagicRobe.java" md5: be7787fb7117350ce6e5677801740e7d
+Cache Hit!
+endProcessing "thewizardmod/items/MagicRobe.java"
+
+startProcessing "thewizardmod/items/MagicString.java" md5: 7beffc2662b1dfdc352c9cec1ffb446d
+Cache Hit!
+endProcessing "thewizardmod/items/MagicString.java"
+
+startProcessing "thewizardmod/items/ShadowDust.java" md5: e463034ccaa9fb49f0056d9e27d72d39
+Cache Hit!
+endProcessing "thewizardmod/items/ShadowDust.java"
+
+startProcessing "thewizardmod/items/StartupClientOnly.java" md5: 6b62b3438a35f4bf6c6ed906e2b171e3
+Cache Hit!
+endProcessing "thewizardmod/items/StartupClientOnly.java"
+
+startProcessing "thewizardmod/items/StartupCommon.java" md5: 7b01931d160b87665ff185c067123d74
+Cache Hit!
+endProcessing "thewizardmod/items/StartupCommon.java"
+
+startProcessing "thewizardmod/lightBlock/LightBlock.java" md5: 1cdf6576f944c143579b363e09d95bd1
+Cache Hit!
+endProcessing "thewizardmod/lightBlock/LightBlock.java"
+
+startProcessing "thewizardmod/lightBlock/StartupClientOnly.java" md5: 879a520ff6ad7d0ffd04c9c33c53595f
+Cache Hit!
+endProcessing "thewizardmod/lightBlock/StartupClientOnly.java"
+
+startProcessing "thewizardmod/lightBlock/StartupCommon.java" md5: e114c527504a4b45ee8f72bb8a90c3d9
+Cache Hit!
+endProcessing "thewizardmod/lightBlock/StartupCommon.java"
+
+startProcessing "thewizardmod/magicInjector/BlockMagicInjector.java" md5: b302cbcf0ecb3f5c198eb53f160b5f0d
+endProcessing "thewizardmod/magicInjector/BlockMagicInjector.java"
+
+startProcessing "thewizardmod/magicInjector/ContainerMagicInjector.java" md5: cbca8485fc46eb9bff1c0a1af5891392
+Cache Hit!
+endProcessing "thewizardmod/magicInjector/ContainerMagicInjector.java"
+
+startProcessing "thewizardmod/magicInjector/GuiMagicInjector.java" md5: f6a349ead0eef624aea8f57ea3ff868c
+endProcessing "thewizardmod/magicInjector/GuiMagicInjector.java"
+
+startProcessing "thewizardmod/magicInjector/MagicInjectorRenderer.java" md5: 7479021b53cc242e6ea5315386e9cf0b
+Cache Hit!
+endProcessing "thewizardmod/magicInjector/MagicInjectorRenderer.java"
+
+startProcessing "thewizardmod/magicInjector/RendererMagicInjector.java" md5: 2a1744f2a9057480bea59bdf1e61696a
+endProcessing "thewizardmod/magicInjector/RendererMagicInjector.java"
+
+startProcessing "thewizardmod/magicInjector/StartupClientOnly.java" md5: e55858c118c97f38d7c9c186c870ca46
+endProcessing "thewizardmod/magicInjector/StartupClientOnly.java"
+
+startProcessing "thewizardmod/magicInjector/StartupCommon.java" md5: 69c66e0c431a432981bc97c9695fabc2
+endProcessing "thewizardmod/magicInjector/StartupCommon.java"
+
+startProcessing "thewizardmod/magicInjector/TileEntityMagicInjector.java" md5: e3f6fe54a9cc0e3257d80fc142ede0f1
+endProcessing "thewizardmod/magicInjector/TileEntityMagicInjector.java"
+
+startProcessing "thewizardmod/mirror/ItemMirror.java" md5: 0eacadf429ef74838493a5fc38d20cb2
+endProcessing "thewizardmod/mirror/ItemMirror.java"
+
+startProcessing "thewizardmod/mirror/Mirror.java" md5: d6fb6aad66bca64382075398819bc9e0
+endProcessing "thewizardmod/mirror/Mirror.java"
+
+startProcessing "thewizardmod/mirror/MirrorGlass.java" md5: 94e5525555ac3fdc347ea9a5c2837239
+endProcessing "thewizardmod/mirror/MirrorGlass.java"
+
+startProcessing "thewizardmod/mirror/StartupClientOnly.java" md5: 0c69a95f6607e4266d6c485b0b0172ee
+endProcessing "thewizardmod/mirror/StartupClientOnly.java"
+
+startProcessing "thewizardmod/mirror/StartupCommon.java" md5: 94867ee29c52481d1c7ca458f24eb928
+endProcessing "thewizardmod/mirror/StartupCommon.java"
+
+startProcessing "thewizardmod/mirror/TileEntityBlockMirror.java" md5: 9fa7339eeb005f94b271e8bac48f455d
+endProcessing "thewizardmod/mirror/TileEntityBlockMirror.java"
+
+startProcessing "thewizardmod/ores/ShadowDust_Ore.java" md5: 38f071a39c587d8b28f91ed3844c5d28
+Cache Hit!
+endProcessing "thewizardmod/ores/ShadowDust_Ore.java"
+
+startProcessing "thewizardmod/ores/StartupClientOnly.java" md5: 3930f006f20597b8e9cb7ff43fdaf8dd
+Cache Hit!
+endProcessing "thewizardmod/ores/StartupClientOnly.java"
+
+startProcessing "thewizardmod/ores/StartupCommon.java" md5: 0dc110aa6c6235b892c882abc7db9b0c
+Cache Hit!
+endProcessing "thewizardmod/ores/StartupCommon.java"
+
+startProcessing "thewizardmod/pedestral/BlockPedestral.java" md5: ee6516e5bff80697e497b2fbadc7d998
+Cache Hit!
+endProcessing "thewizardmod/pedestral/BlockPedestral.java"
+
+startProcessing "thewizardmod/pedestral/RendererPedestral.java" md5: 7b5e15d47aaea5bcb0cfc78f8ef53e59
+Cache Hit!
+endProcessing "thewizardmod/pedestral/RendererPedestral.java"
+
+startProcessing "thewizardmod/pedestral/StartupClientOnly.java" md5: 6f7e95507b9df09200720a835d5b88ab
+Cache Hit!
+endProcessing "thewizardmod/pedestral/StartupClientOnly.java"
+
+startProcessing "thewizardmod/pedestral/StartupCommon.java" md5: 11f417560d12cad25cc9994fc64678aa
+Cache Hit!
+endProcessing "thewizardmod/pedestral/StartupCommon.java"
+
+startProcessing "thewizardmod/pedestral/TileEntityPedestral.java" md5: ff12cf9786bcfaad4d2c05fd0b3b2b4d
+Cache Hit!
+endProcessing "thewizardmod/pedestral/TileEntityPedestral.java"
+
+startProcessing "thewizardmod/plants/StartupClientOnly.java" md5: cdf60e2ab73cf25186aee820726819f5
+Cache Hit!
+endProcessing "thewizardmod/plants/StartupClientOnly.java"
+
+startProcessing "thewizardmod/plants/StartupCommon.java" md5: 2ad3f8a8d137bc2af42a973160eaae63
+Cache Hit!
+endProcessing "thewizardmod/plants/StartupCommon.java"
+
+startProcessing "thewizardmod/plants/Wheat.java" md5: 25d8417fa53dabecdc97bd74b9a9c34e
+Cache Hit!
+endProcessing "thewizardmod/plants/Wheat.java"
+
+startProcessing "thewizardmod/plants/WheatCrop.java" md5: 35fbf41773f7507d9287a65e133c9c8b
+Cache Hit!
+endProcessing "thewizardmod/plants/WheatCrop.java"
+
+startProcessing "thewizardmod/plants/WheatSeeds.java" md5: 9708a73eaf0b9f230d4df8dc01c69dd3
+Cache Hit!
+endProcessing "thewizardmod/plants/WheatSeeds.java"
+
+startProcessing "thewizardmod/potions/LiquidColour.java" md5: 1ec78f0d2620df75df3f6f2ac5bbfb48
+Cache Hit!
+endProcessing "thewizardmod/potions/LiquidColour.java"
+
+startProcessing "thewizardmod/potions/PotionBottles.java" md5: 9a75b846a3d3220ef9cf1111431a9d08
+Cache Hit!
+endProcessing "thewizardmod/potions/PotionBottles.java"
+
+startProcessing "thewizardmod/potions/StartupClientOnly.java" md5: 9133b2032175a65299e2421f998dec2a
+Cache Hit!
+endProcessing "thewizardmod/potions/StartupClientOnly.java"
+
+startProcessing "thewizardmod/potions/StartupCommon.java" md5: d0cb89c5e33f442f25a8f1f6726a6df3
+Cache Hit!
+endProcessing "thewizardmod/potions/StartupCommon.java"
+
+startProcessing "thewizardmod/recipes/StartupClientOnly.java" md5: 5f9b3eeaa0fc08b5f231e42898ee08ef
+Cache Hit!
+endProcessing "thewizardmod/recipes/StartupClientOnly.java"
+
+startProcessing "thewizardmod/recipes/StartupCommon.java" md5: a1c071ad0e9a4f7b78c78c426f38c8c2
+endProcessing "thewizardmod/recipes/StartupCommon.java"
+
+startProcessing "thewizardmod/runeSlab/BlockRuneSlab.java" md5: b86d417ef6045ef72f4313309204e5d0
+Cache Hit!
+endProcessing "thewizardmod/runeSlab/BlockRuneSlab.java"
+
+startProcessing "thewizardmod/runeSlab/RendererRuneSlab.java" md5: 09eeffd1d52bda418b9e79da2b4a92e8
+Cache Hit!
+endProcessing "thewizardmod/runeSlab/RendererRuneSlab.java"
+
+startProcessing "thewizardmod/runeSlab/StartupClientOnly.java" md5: 569296f7548d4c3b2cfb66446c3b6b12
+Cache Hit!
+endProcessing "thewizardmod/runeSlab/StartupClientOnly.java"
+
+startProcessing "thewizardmod/runeSlab/StartupCommon.java" md5: 1227fa06b21acf0cae11f0d840c23052
+Cache Hit!
+endProcessing "thewizardmod/runeSlab/StartupCommon.java"
+
+startProcessing "thewizardmod/runeSlab/TileEntityRuneSlab.java" md5: 36b328ed021c1578061d42939da1339d
+Cache Hit!
+endProcessing "thewizardmod/runeSlab/TileEntityRuneSlab.java"
+
+startProcessing "thewizardmod/runes/Algiz.java" md5: 62604a687a74c9723463393680b75e35
+Cache Hit!
+endProcessing "thewizardmod/runes/Algiz.java"
+
+startProcessing "thewizardmod/runes/Ansuz.java" md5: bd4aee878a1c59501f6d872674e33e09
+Cache Hit!
+endProcessing "thewizardmod/runes/Ansuz.java"
+
+startProcessing "thewizardmod/runes/Berko.java" md5: 2bd28e45baf68cc3ddbb62d3acf2c288
+Cache Hit!
+endProcessing "thewizardmod/runes/Berko.java"
+
+startProcessing "thewizardmod/runes/Blank.java" md5: 9ba13b5613952c5b54c62995585137a7
+Cache Hit!
+endProcessing "thewizardmod/runes/Blank.java"
+
+startProcessing "thewizardmod/runes/Dagaz.java" md5: dde22dba249e3b3284a675924ffb5439
+Cache Hit!
+endProcessing "thewizardmod/runes/Dagaz.java"
+
+startProcessing "thewizardmod/runes/Ehwaz.java" md5: d49eff3f1c69eb570699dcff5478779e
+Cache Hit!
+endProcessing "thewizardmod/runes/Ehwaz.java"
+
+startProcessing "thewizardmod/runes/Eisa.java" md5: 14b36c20827686fc4bf8a6b0928da8fe
+Cache Hit!
+endProcessing "thewizardmod/runes/Eisa.java"
+
+startProcessing "thewizardmod/runes/EnumRunes.java" md5: cb44e3cf7e2b22e3ecd397da49818d41
+Cache Hit!
+endProcessing "thewizardmod/runes/EnumRunes.java"
+
+startProcessing "thewizardmod/runes/Fehu.java" md5: 2b816c83f79c279ec642aa110dda3878
+Cache Hit!
+endProcessing "thewizardmod/runes/Fehu.java"
+
+startProcessing "thewizardmod/runes/Gibo.java" md5: a04bc445b98bcaab98f3d15aed7e9629
+Cache Hit!
+endProcessing "thewizardmod/runes/Gibo.java"
+
+startProcessing "thewizardmod/runes/Haglaz.java" md5: 54e50e388749a032276e73dce402dbe6
+Cache Hit!
+endProcessing "thewizardmod/runes/Haglaz.java"
+
+startProcessing "thewizardmod/runes/Ihwaz.java" md5: d4ad5a84c6ce3129e81c107e4fa85ba5
+Cache Hit!
+endProcessing "thewizardmod/runes/Ihwaz.java"
+
+startProcessing "thewizardmod/runes/Ingwaz.java" md5: 086e5036b5ce578450750a09b14f029a
+Cache Hit!
+endProcessing "thewizardmod/runes/Ingwaz.java"
+
+startProcessing "thewizardmod/runes/Jeran.java" md5: da063932d54398e8f856b6bdf3fe5f29
+Cache Hit!
+endProcessing "thewizardmod/runes/Jeran.java"
+
+startProcessing "thewizardmod/runes/Kaunan.java" md5: f5ba71c4fca9ac27d71c9d35699bed2e
+Cache Hit!
+endProcessing "thewizardmod/runes/Kaunan.java"
+
+startProcessing "thewizardmod/runes/Laguz.java" md5: 0d254b660d320a52292ca61f56ac925f
+Cache Hit!
+endProcessing "thewizardmod/runes/Laguz.java"
+
+startProcessing "thewizardmod/runes/Mann.java" md5: 850e4e798a51f1532f7bffdc7cc6a56c
+Cache Hit!
+endProcessing "thewizardmod/runes/Mann.java"
+
+startProcessing "thewizardmod/runes/Naudiz.java" md5: ca666bb6756931ed9f48ee868cfac608
+Cache Hit!
+endProcessing "thewizardmod/runes/Naudiz.java"
+
+startProcessing "thewizardmod/runes/Othalan.java" md5: 72c14af9cd7c5b7681d06efa667ca3b1
+Cache Hit!
+endProcessing "thewizardmod/runes/Othalan.java"
+
+startProcessing "thewizardmod/runes/Pertho.java" md5: 876a07d8a37b2a1cfc69a13a01e18551
+Cache Hit!
+endProcessing "thewizardmod/runes/Pertho.java"
+
+startProcessing "thewizardmod/runes/Raido.java" md5: 585adddc2b4207f97f247975df95194b
+Cache Hit!
+endProcessing "thewizardmod/runes/Raido.java"
+
+startProcessing "thewizardmod/runes/Sowulo.java" md5: 0acad3161afd03b8f9c280788760c9d1
+Cache Hit!
+endProcessing "thewizardmod/runes/Sowulo.java"
+
+startProcessing "thewizardmod/runes/StartupClientOnly.java" md5: a7c023012d5f57b7eccb2362b0adeeb7
+Cache Hit!
+endProcessing "thewizardmod/runes/StartupClientOnly.java"
+
+startProcessing "thewizardmod/runes/StartupCommon.java" md5: d945421bb696b8e68a3bec7d0a2f60aa
+Cache Hit!
+endProcessing "thewizardmod/runes/StartupCommon.java"
+
+startProcessing "thewizardmod/runes/Teiwaz.java" md5: 3e9d2679f5c8b0b33cc36c8002e125a0
+Cache Hit!
+endProcessing "thewizardmod/runes/Teiwaz.java"
+
+startProcessing "thewizardmod/runes/Thurisaz.java" md5: 2f279863fb778dc77deb5bc8bb7f2719
+Cache Hit!
+endProcessing "thewizardmod/runes/Thurisaz.java"
+
+startProcessing "thewizardmod/runes/Uruz.java" md5: 3ccacfe87fefd3719593741bf8ddd805
+Cache Hit!
+endProcessing "thewizardmod/runes/Uruz.java"
+
+startProcessing "thewizardmod/runes/Wunjo.java" md5: d9546d101346e249ca06ed7b438b1326
+Cache Hit!
+endProcessing "thewizardmod/runes/Wunjo.java"
+
+startProcessing "thewizardmod/teleporter/ItemNBTAnimate.java" md5: 3442cb66d89e7dfa81e80ce976ad76ea
+Cache Hit!
+endProcessing "thewizardmod/teleporter/ItemNBTAnimate.java"
+
+startProcessing "thewizardmod/teleporter/ItemNBTanimationTimer.java" md5: a2b5cd4d8565f2439e673e963114047c
+Cache Hit!
+endProcessing "thewizardmod/teleporter/ItemNBTanimationTimer.java"
+
+startProcessing "thewizardmod/teleporter/StartupClientOnly.java" md5: 9ce3e9de394093ceaf285825eee97571
+Cache Hit!
+endProcessing "thewizardmod/teleporter/StartupClientOnly.java"
+
+startProcessing "thewizardmod/teleporter/StartupCommon.java" md5: 57cef20aa58aa5595ac6b345053d2452
+Cache Hit!
+endProcessing "thewizardmod/teleporter/StartupCommon.java"
+
+startProcessing "thewizardmod/torch/StartupClientOnly.java" md5: d54635c11375a5d7c2c37420c6532e77
+Cache Hit!
+endProcessing "thewizardmod/torch/StartupClientOnly.java"
+
+startProcessing "thewizardmod/torch/StartupCommon.java" md5: 2141a497425b891f55c9b5da4d3ad96c
+Cache Hit!
+endProcessing "thewizardmod/torch/StartupCommon.java"
+
+startProcessing "thewizardmod/torch/Torch.java" md5: cc7fca6870ee89f968f9f716eac64496
+endProcessing "thewizardmod/torch/Torch.java"
+
+startProcessing "thewizardmod/wandHandling/WandHandling.java" md5: 656c7a980800448111ab09479ed2a1cd
+endProcessing "thewizardmod/wandHandling/WandHandling.java"
+
+startProcessing "thewizardmod/wandHandling/WandTimer.java" md5: e4511af64fff8103a6b6678aff56020c
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/WandTimer.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusBlank.java" md5: 5bece22db4c8f41a8666a7d86a13cc26
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusBlank.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusFlamethrowerEffect.java" md5: 385600069b9493f7afc27b4160d96859
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusFlamethrowerEffect.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusGrowth.java" md5: c64d0c8ab7e9d00801289e2f3c333044
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusGrowth.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusIce.java" md5: d53246e8e9ba33112702490833ff3c11
+endProcessing "thewizardmod/wandHandling/wandFocusIce.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusLight.java" md5: 696b34366c5a85e216a3c3aa904ae269
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusLight.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusLightningBolt.java" md5: 9ded7928669b1ac5eb5ae9b2e2626f05
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusLightningBolt.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusMining.java" md5: a0033bb604feb2db18dd798619deb424
+endProcessing "thewizardmod/wandHandling/wandFocusMining.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusTeleport.java" md5: 56dadc4b77c21d831e3ca13fb715407d
+Cache Hit!
+endProcessing "thewizardmod/wandHandling/wandFocusTeleport.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusVines.java" md5: 582b166c897de0b22e5ea3fb4307de74
+endProcessing "thewizardmod/wandHandling/wandFocusVines.java"
+
+startProcessing "thewizardmod/wandHandling/wandFocusWeb.java" md5: 7a798f296c3abbd366a683627f31d5e0
+endProcessing "thewizardmod/wandHandling/wandFocusWeb.java"
+

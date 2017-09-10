@@ -1,0 +1,36 @@
+package thewizardmod.jars;
+
+import thewizardmod.TheWizardMod;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+  public static BlockJar jar;
+  public static ItemBlock itemJar;
+
+
+
+  public static void preInitCommon()
+  {
+    jar = (BlockJar)(new BlockJar().setUnlocalizedName("twm_jar_unlocalised_name"));
+    jar.setRegistryName(TheWizardMod.MODID + "jar");
+    GameRegistry.register(jar);
+
+    itemJar = new ItemBlock(jar);
+    itemJar.setRegistryName(jar.getRegistryName());
+    GameRegistry.register(itemJar);
+
+    GameRegistry.registerTileEntity(TileEntityJar.class, TheWizardMod.MODID + "TileEntityJar");
+  
+}
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+    "textures": {
+        "bottom": "thewizadmod:blocks/portalFrame",
+        "top": "thewizadmod:blocks/portalFrame",
+        "side": "thewizadmod:blocks/portalFrame"
+    }
+}

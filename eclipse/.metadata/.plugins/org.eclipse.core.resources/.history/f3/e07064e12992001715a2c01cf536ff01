@@ -1,0 +1,26 @@
+package thewizardmod.books;
+
+import thewizardmod.books.WizardsGuide;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class StartupCommon
+{
+	  public static WizardsGuide book;
+
+  public static void preInitCommon()
+  {
+	    book = (WizardsGuide)(new WizardsGuide().setUnlocalizedName("twm_book"));
+	    book.setRegistryName("book_registry_name");
+	    GameRegistry.register(book);
+  
+  }
+
+  public static void initCommon()
+  {
+  }
+
+  public static void postInitCommon()
+  {
+  }
+}

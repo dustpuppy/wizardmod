@@ -1,0 +1,115 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 09.09.17 16:17
+Description: Unexpected error
+
+java.lang.ArrayIndexOutOfBoundsException: 5
+	at thewizardmod.books.GuiAltar.<init>(GuiAltar.java:31)
+	at thewizardmod.books.BookAltar.onItemRightClick(BookAltar.java:25)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:180)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:527)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1629)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2281)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2058)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1846)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1118)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:406)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at thewizardmod.books.GuiAltar.<init>(GuiAltar.java:31)
+	at thewizardmod.books.BookAltar.onItemRightClick(BookAltar.java:25)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:180)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:527)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1629)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2281)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2058)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player153'/89, l='MpServer', x=-1273,50, y=4,00, z=-680,65]]
+	Chunk stats: MultiplayerChunkCache: 596, 596
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-1244,4,-718), Chunk: (at 4,0,2 in -78,-45; contains blocks -1248,0,-720 to -1233,255,-705), Region: (-3,-2; contains chunks -96,-64 to -65,-33, blocks -1536,0,-1024 to -1025,255,-513)
+	Level time: 112669 game time, 3413 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 31 total; [EntitySheep['Sheep'/64, l='MpServer', x=-1232,30, y=4,00, z=-606,78], EntitySheep['Sheep'/65, l='MpServer', x=-1229,18, y=4,00, z=-620,58], EntityCow['Cow'/66, l='MpServer', x=-1198,22, y=4,00, z=-665,30], EntityPig['Pig'/67, l='MpServer', x=-1200,75, y=4,00, z=-645,39], EntityCow['Cow'/68, l='MpServer', x=-1204,53, y=4,00, z=-635,56], EntitySheep['Sheep'/69, l='MpServer', x=-1202,81, y=4,00, z=-625,31], EntitySheep['Sheep'/27, l='MpServer', x=-1344,86, y=4,00, z=-739,56], EntitySheep['Sheep'/28, l='MpServer', x=-1344,76, y=4,00, z=-691,64], EntitySheep['Sheep'/29, l='MpServer', x=-1351,39, y=4,00, z=-658,23], EntityHorse['Horse'/30, l='MpServer', x=-1350,82, y=4,00, z=-644,94], EntitySheep['Sheep'/32, l='MpServer', x=-1345,14, y=4,00, z=-636,22], EntitySheep['Sheep'/33, l='MpServer', x=-1345,23, y=4,00, z=-615,84], EntitySheep['Sheep'/35, l='MpServer', x=-1338,29, y=4,00, z=-747,49], EntityCow['Cow'/36, l='MpServer', x=-1335,31, y=4,00, z=-744,81], EntitySheep['Sheep'/37, l='MpServer', x=-1328,18, y=4,00, z=-724,25], EntitySheep['Sheep'/38, l='MpServer', x=-1332,29, y=4,00, z=-718,49], EntitySheep['Sheep'/39, l='MpServer', x=-1339,24, y=4,00, z=-702,42], EntityPig['Pig'/40, l='MpServer', x=-1338,73, y=4,00, z=-643,23], EntitySheep['Sheep'/41, l='MpServer', x=-1340,24, y=4,00, z=-637,47], EntitySheep['Sheep'/42, l='MpServer', x=-1333,62, y=4,00, z=-633,79], EntitySheep['Sheep'/43, l='MpServer', x=-1333,77, y=4,00, z=-615,61], EntityPig['Pig'/44, l='MpServer', x=-1316,79, y=4,00, z=-757,33], EntityCow['Cow'/46, l='MpServer', x=-1313,60, y=4,00, z=-759,17], EntityPlayerSP['Player153'/89, l='MpServer', x=-1273,50, y=4,00, z=-680,65], EntityCow['Cow'/47, l='MpServer', x=-1313,28, y=4,00, z=-668,83], EntityCow['Cow'/50, l='MpServer', x=-1309,17, y=4,00, z=-758,40], EntitySheep['Sheep'/51, l='MpServer', x=-1305,26, y=4,00, z=-601,84], EntitySheep['Sheep'/55, l='MpServer', x=-1282,55, y=4,00, z=-740,25], EntityPig['Pig'/56, l='MpServer', x=-1286,66, y=4,00, z=-733,79], EntityChicken['Chicken'/60, l='MpServer', x=-1271,12, y=4,00, z=-758,71], EntityChicken['Chicken'/62, l='MpServer', x=-1259,17, y=4,00, z=-629,65]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2779)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:435)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.10.2
+	Operating System: Linux (amd64) version 3.16.0-4-amd64
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 628676048 bytes (599 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.32 Powered by Forge 12.18.3.2422 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	Forge{12.18.3.2422} [Minecraft Forge] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	thewizardmod{1.0a} [The Wizard Mod] (bin) 
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.4.0 NVIDIA 340.102' Renderer: 'GeForce GT 610/PCIe/SSE2'
+	Launched Version: 1.10.2
+	LWJGL: 2.9.4
+	OpenGL: GeForce GT 610/PCIe/SSE2 GL version 4.4.0 NVIDIA 340.102, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i7 CPU 950 @ 3.07GHz

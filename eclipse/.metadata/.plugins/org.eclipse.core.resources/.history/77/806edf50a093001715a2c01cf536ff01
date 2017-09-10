@@ -1,0 +1,61 @@
+package thewizardmod.World;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public class StructureDungeon {
+
+	
+	
+	public static void generateBigRoom(World world, int x, int y, int z)
+	{
+		int height = 4;
+		int width = 16;
+		int lenght = 16;
+		
+		IBlockState floor = Blocks.COBBLESTONE.getDefaultState();
+		IBlockState wall = Blocks.COBBLESTONE.getDefaultState();
+		
+		clearSpace(world, x, y, z, height + 1, width, lenght);
+		
+		for(int i = x; i < width; i++)
+		{
+			for(int j = z; j < lenght; j++)
+			{
+				BlockPos blockpos = new BlockPos(i, y, j);
+				world.setBlockState(blockpos, floor, 2);
+			}
+		}
+		/*
+		for(int i = y + 1; i < height; i++)
+		{
+			for(int j = x; j < width; j++)
+			{
+				BlockPos blockpos = new BlockPos(j, i, z);
+				world.setBlockState(blockpos, wall, 2);
+				blockpos = new BlockPos(j, i, z + lenght);
+				world.setBlockState(blockpos, wall, 2);
+			}
+		}
+		*/
+	}
+	
+	public static void clearSpace(World world, int x, int y, int z, int height, int width, int lenght)
+	{
+		for(int i = y; i < height; i++)
+		{
+			for(int j = x; j < width; j++)
+			{
+				for(int k = z; k < lenght; k++)
+				{
+					BlockPos blockpos = new BlockPos(j, i, k);
+					world.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 2);
+				}
+			}
+		}
+	}
+}

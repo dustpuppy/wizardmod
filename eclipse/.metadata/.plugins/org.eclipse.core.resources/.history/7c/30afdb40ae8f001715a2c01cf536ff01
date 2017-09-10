@@ -1,0 +1,27 @@
+package thewizardmod.fluids;
+
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import thewizardmod.ores.StartupCommon;
+
+public class StartupClientOnly
+{
+  public static void preInitClientOnly()
+  {
+
+	  Item itemFluidPoison = Item.getItemFromBlock(BlockFluidPoison);
+	  ModelBakery.addVariantName(itemFluidPoison);
+
+
+  }
+
+  public static void initClientOnly()
+  {
+  }
+
+  public static void postInitClientOnly()
+  {
+  }
+}

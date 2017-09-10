@@ -1,0 +1,37 @@
+package thewizardmod.fluids;
+
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fluids.BlockFluidClassic;
+import net.minecraftforge.fluids.Fluid;
+
+public class BlockFluidPoison extends BlockFluidClassic{
+
+	public BlockFluidPoison(Fluid fluid) {
+		super(fluid, Material.WATER);
+	}
+
+	
+	@Override
+	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+//		super.onEntityCollidedWithBlock(worldIn, pos, state, entityIn);
+		if (entity instanceof EntityLiving) {
+			if (entity instanceof EntityPlayer) {
+				System.out.println("player in poison");
+				((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.POISON, 200, 1));
+			}
+			else
+			{
+				System.out.println("mob in poison");
+				((EntityLiving)entity).addPotionEffect(new PotionEffect(MobEffects.POISON, 200, 1));
+			}
+		}
+	}
+}

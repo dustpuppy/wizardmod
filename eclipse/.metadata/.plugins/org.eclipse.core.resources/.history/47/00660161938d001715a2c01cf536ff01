@@ -1,0 +1,22 @@
+package thewizardmod.Entities;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+
+public class StartupCommon
+{
+
+
+  public static void preInitCommon()
+  {
+    
+  
+}
+
+  
+
+  public static void postInitCommon()
+  {
+  }
+
+}

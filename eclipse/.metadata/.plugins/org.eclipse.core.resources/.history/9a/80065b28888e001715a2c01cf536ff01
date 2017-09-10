@@ -1,0 +1,113 @@
+package thewizardmod.machines;
+
+import java.util.List;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import thewizardmod.machines.EnumHandler.EnumType;
+
+public class BlockMachineFrame extends Block
+{
+  public static final PropertyEnum PROPERTYTYPE = PropertyEnum.create("type", EnumType.class);
+
+
+  public BlockMachineFrame()
+  {
+    super(Material.IRON);
+    this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);   // the block will appear on the Blocks tab in creative
+    this.setDefaultState(this.blockState.getBaseState().withProperty(PROPERTYTYPE, EnumType.BASIC));
+  }
+
+
+  @SideOnly(Side.CLIENT)
+  public BlockRenderLayer getBlockLayer()
+  {
+    return BlockRenderLayer.TRANSLUCENT;
+  }
+
+  @Override
+  public boolean isOpaqueCube(IBlockState iBlockState) {
+    return false;
+  }
+
+  @Override
+  public boolean isFullCube(IBlockState iBlockState) {
+    return true;
+  }
+
+  @Override
+  public EnumBlockRenderType getRenderType(IBlockState iBlockState) {
+    return EnumBlockRenderType.MODEL;
+  }
+
+  @Override
+  public int damageDropped(IBlockState state)
+  {
+    EnumType enumType = (EnumType)state.getValue(PROPERTYTYPE);
+    return enumType.getMetadata();
+  }
+
+  @Override
+  @SideOnly(Side.CLIENT)
+  public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
+  {
+    EnumType[] allTypes = EnumType.values();
+    for (EnumType type : allTypes) {
+      list.add(new ItemStack(itemIn, 1, type.getMetadata()));
+    }
+  }
+
+  @Override
+  public IBlockState getStateFromMeta(int meta)
+  {
+	  
+    return this.getDefaultState().withProperty(PROPERTYTYPE, EnumType.values()[meta]);
+  }
+
+  @Override
+  public int getMetaFromState(IBlockState state)
+  {
+	  EnumType meta = (EnumType) state.getValue(PROPERTYTYPE);
+	  return meta.getMetadata();
+  }
+
+  @Override
+  public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+  {
+    return state;
+  }
+
+  @Override
+  protected BlockStateContainer createBlockState()
+  {
+    return new BlockStateContainer(this, new IProperty[] {PROPERTYTYPE});
+  }
+
+
+
+
+  
+  
+}

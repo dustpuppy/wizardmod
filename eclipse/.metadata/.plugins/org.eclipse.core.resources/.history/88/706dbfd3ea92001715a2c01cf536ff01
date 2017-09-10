@@ -1,0 +1,30 @@
+package thewizardmod.entity;
+
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+
+public class StartupClientOnly
+{
+	RenderManager rm = Minecraft.getMinecraft().getRenderManager();
+  public static void preInitClientOnly()
+  {
+		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, new RenderGhost(Minecraft.getMinecraft().getRenderManager(), new ModelGhost(), 0.4f)); //use depricated method
+
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityNPC.class, new RenderNPC(Minecraft.getMinecraft().getRenderManager()));
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityLightWisp.class, (RenderManager rm)->{return new LightWispRenderer(rm);});
+
+  }
+
+
+  public static void initClientOnly()
+  {
+  }
+
+  public static void postInitClientOnly()
+  {
+  }
+
+  
+}

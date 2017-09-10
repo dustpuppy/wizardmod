@@ -1,0 +1,15 @@
+{
+  "parent": "builtin/generated",
+  "textures": {
+    "layer0": "thewizardmod:items/golden_wand_0"
+  },
+  "overrides": [
+    { "predicate": { "chargefraction": 0.000 }, "model": "thewizardmod:item/golden_wand_0" },
+    { "predicate": { "chargefraction": 0.001 }, "model": "thewizardmod:item/golden_wand_1" },
+    { "predicate": { "chargefraction": 0.200 }, "model": "thewizardmod:item/golden_wand_2" },
+    { "predicate": { "chargefraction": 0.400 }, "model": "thewizardmod:item/golden_wand_3" },
+    { "predicate": { "chargefraction": 0.600 }, "model": "thewizardmod:item/golden_wand_4" },
+    { "predicate": { "chargefraction": 0.800 }, "model": "thewizardmod:item/golden_wand_5" }
+  ]
+}
+

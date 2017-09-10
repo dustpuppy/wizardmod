@@ -1,0 +1,5 @@
+package thewizardmod.dimensions;
+
+public class NormalTerrainGenerator {
+
+}

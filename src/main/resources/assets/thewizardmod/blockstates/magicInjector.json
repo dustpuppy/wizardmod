@@ -1,0 +1,20 @@
+{  
+"forge_marker": 1,
+
+    "variants": {
+         "activated=false,facing=north": { "model": "thewizardmod:magicInjector" },
+         "activated=false,facing=east": { "model": "thewizardmod:magicInjector", "y": 90 },
+         "activated=false,facing=south": { "model": "thewizardmod:magicInjector", "y": 180 },
+         "activated=false,facing=west": { "model": "thewizardmod:magicInjector", "y": 270 },
+         "activated=false,facing=up": { "model": "thewizardmod:magicInjector"},
+         "activated=false,facing=down": { "model": "thewizardmod:magicInjector"},
+         
+         "activated=true,facing=north": { "model": "thewizardmod:magicInjector_active" },
+         "activated=true,facing=east": { "model": "thewizardmod:magicInjector_active", "y": 90 },
+         "activated=true,facing=south": { "model": "thewizardmod:magicInjector_active", "y": 180 },
+         "activated=true,facing=west": { "model": "thewizardmod:magicInjector_active", "y": 270 },
+         "activated=true,facing=up": { "model": "thewizardmod:magicInjector_active"},
+         "activated=true,facing=down": { "model": "thewizardmod:magicInjector_active"}
+         
+    }
+}

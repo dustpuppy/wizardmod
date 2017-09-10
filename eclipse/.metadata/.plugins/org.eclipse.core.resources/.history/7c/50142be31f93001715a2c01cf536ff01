@@ -1,0 +1,37 @@
+package thewizardmod.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
+import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import thewizardmod.TheWizardMod;
+
+
+public class StartupCommon
+{
+	private static int entityID = 0;
+
+	public static void preInitCommon()
+	{
+        int id = 1;
+        EntityRegistry.registerModEntity(EntityWeirdZombie.class, "WeirdZombie", id++, TheWizardMod.instance, 64, 3, true, 0x996600, 0x00ff00);
+
+        // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically
+        // but you can of course still make it spawn manually
+//        EntityRegistry.addSpawn(EntityWeirdZombie.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.ICE_PLAINS);
+
+        // This is the loot table for our mob
+        LootTableList.register(EntityWeirdZombie.deathLootTable);
+	}
+
+	public static void initCommon()
+	{
+}
+
+	public static void postInitCommon()
+	{
+	}
+	
+
+}

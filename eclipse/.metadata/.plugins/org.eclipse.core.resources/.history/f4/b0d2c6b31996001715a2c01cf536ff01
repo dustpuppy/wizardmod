@@ -1,0 +1,87 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.IFluidTank;
+
+public class TileEntityTank extends TileEntity implements IFluidTank{
+
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		super.writeToNBT(compound);
+//		compound.setInteger("counter", counter);
+		return compound;
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound compound) {
+		super.readFromNBT(compound);
+//		this.counter = compound.getInteger("counter");
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		NBTTagCompound tag = pkt.getNbtCompound();
+//		this.counter = tag.getInteger("counter");
+	}
+	
+	@Override
+	@Nullable
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		NBTTagCompound tag = new NBTTagCompound();
+//		tag.setInteger("counter", counter);
+		return new SPacketUpdateTileEntity(pos, getBlockMetadata(), tag);
+	}
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		NBTTagCompound tag = super.getUpdateTag();
+//		tag.setInteger("counter", counter);
+		return tag;
+	}
+
+	@Override
+	@Nullable
+	public FluidStack getFluid() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getFluidAmount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getCapacity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public FluidTankInfo getInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int fill(FluidStack resource, boolean doFill) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	@Nullable
+	public FluidStack drain(int maxDrain, boolean doDrain) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

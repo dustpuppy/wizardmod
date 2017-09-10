@@ -1,0 +1,13 @@
+package thewizardmod.wandHandling;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+
+public class wandFocusVines {
+	
+	public wandFocusVines(World worldIn, EntityLivingBase playerIn){
+	}
+}

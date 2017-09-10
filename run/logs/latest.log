@@ -1,0 +1,77 @@
+[22:05:38] [Client thread/INFO]: Setting user: Player410
+[22:05:42] [Client thread/INFO]: LWJGL Version: 2.9.4
+[22:05:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Wizard Mod
+[22:05:48] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[22:05:49] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[22:05:49] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[22:05:49] [Thread-7/INFO]: OpenAL initialized.
+[22:05:49] [Sound Library Loader/INFO]: Sound engine started
+[22:05:51] [Client thread/INFO]: Created: 16x16 textures-atlas
+[22:05:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Wizard Mod
+[22:05:52] [Client thread/INFO]: SoundSystem shutting down...
+[22:05:53] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[22:05:53] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[22:05:53] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[22:05:53] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[22:05:53] [Thread-9/INFO]: OpenAL initialized.
+[22:05:53] [Sound Library Loader/INFO]: Sound engine started
+[22:05:54] [Client thread/INFO]: Created: 512x512 textures-atlas
+[22:05:58] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[22:06:02] [Server thread/INFO]: Starting integrated minecraft server version 1.10.2
+[22:06:02] [Server thread/INFO]: Generating keypair
+[22:06:02] [Server thread/INFO]: Preparing start region for level 0
+[22:06:03] [Server thread/INFO]: Changing view distance to 12, from 10
+[22:06:04] [Server thread/INFO]: Player410[local:E:b829e310] logged in with entity id 138 at (428.17827779440273, 4.0, 163.70207255696945)
+[22:06:04] [Server thread/INFO]: Player410 joined the game
+[22:06:05] [Server thread/INFO]: Saving and pausing game...
+[22:06:05] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:06:06] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:06:06] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:06:06] [Server thread/INFO]: Saving chunks for level 'New World'/Magic World
+[22:06:06] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@76f89331[id=63acdfe4-8ecf-374a-878d-bbc28b3cc2c5,name=Player410,properties={},legacy=false]
+com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:65) ~[YggdrasilAuthenticationService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:175) [YggdrasilMinecraftSessionService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:59) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:56) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3524) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2317) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2280) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2195) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3934) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3938) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4821) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4827) [guava-17.0.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:165) [YggdrasilMinecraftSessionService.class:?]
+	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3060) [Minecraft.class:?]
+	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:131) [SkinManager$3.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_144]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_144]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+[22:06:15] [Client thread/ERROR]: Received invalid update packet for null tile entity at BlockPos{x=428, y=4, z=165} with data: {FluidName:"fluid_magic",Amount:2000,x:428,y:4,z:165,id:"thewizardmodTileEntityTank"}
+[22:06:20] [Server thread/INFO]: Player410 has just earned the achievement [Taking Inventory]
+[22:06:20] [Client thread/INFO]: [CHAT] Player410 has just earned the achievement [Taking Inventory]
+[22:11:04] [Client thread/ERROR]: Received invalid update packet for null tile entity at BlockPos{x=428, y=4, z=165} with data: {FluidName:"fluid_magic",Amount:2000,x:428,y:4,z:165,id:"thewizardmodTileEntityTank"}
+[22:11:27] [Client thread/ERROR]: Received invalid update packet for null tile entity at BlockPos{x=428, y=4, z=165} with data: {FluidName:"fluid_magic",Amount:3000,x:428,y:4,z:165,id:"thewizardmodTileEntityTank"}
+[22:11:38] [Server thread/INFO]: [Player410: Set own game mode to Creative Mode]
+[22:11:38] [Client thread/INFO]: [CHAT] Your game mode has been updated to Creative Mode
+[22:12:04] [Server thread/INFO]: [Player410: Set own game mode to Survival Mode]
+[22:12:04] [Client thread/INFO]: [CHAT] Your game mode has been updated to Survival Mode
+[22:12:14] [Client thread/ERROR]: Received invalid update packet for null tile entity at BlockPos{x=422, y=4, z=164} with data: {FluidName:"fluid_magic",Amount:6000,x:422,y:4,z:164,id:"thewizardmodTileEntityTank"}
+[22:12:16] [Server thread/INFO]: Saving and pausing game...
+[22:12:16] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:12:16] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:12:16] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:12:16] [Server thread/INFO]: Saving chunks for level 'New World'/Magic World
+[22:12:17] [Server thread/INFO]: Stopping server
+[22:12:17] [Server thread/INFO]: Saving players
+[22:12:17] [Server thread/INFO]: Saving worlds
+[22:12:17] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:12:17] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:12:17] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:12:17] [Server thread/INFO]: Saving chunks for level 'New World'/Magic World
+[22:12:18] [Client thread/INFO]: Stopping!
+[22:12:18] [Client thread/INFO]: SoundSystem shutting down...
+[22:12:18] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

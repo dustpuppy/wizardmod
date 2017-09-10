@@ -1,0 +1,15 @@
+package thewizardmod.fluids;
+
+import net.minecraft.block.Block;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemBucket;
+
+public class BucketFluidPoison extends ItemBucket{
+
+	public BucketFluidPoison(Block containedBlockIn) {
+		super(containedBlockIn);
+		setMaxStackSize(1);
+		setContainerItem(Items.BUCKET);
+	}
+
+}

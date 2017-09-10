@@ -1,0 +1,195 @@
+package thewizardmod.altar;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import thewizardmod.items.StartupClientOnly;
+import thewizardmod.pedestral.TileEntityPedestral;
+import thewizardmod.runeSlab.StartupCommon;
+import thewizardmod.runeSlab.TileEntityRuneSlab;
+
+public class Altar {
+	
+	public static Item altarRecipeResult[] = {thewizardmod.Wands.StartupCommon.blazeWand};
+	public static Item altarRecipeInputs[][] = {
+		{thewizardmod.items.StartupCommon.magicGem, thewizardmod.items.StartupCommon.shadowDust, Items.BLAZE_ROD, Items.BLAZE_ROD}
+	};
+	
+	public static Item pedestralItems[] = {null, null, null, null};
+	
+	public static Item returnAltarResult()
+	{
+		int itemCount = 0;
+		int result = -1;
+		for(int i = 0; i < altarRecipeInputs.length; i++)
+		{
+			for(int j = 0; j < altarRecipeInputs[i].length; j++)
+			{
+				for(int k = 0; k < pedestralItems.length; k++)
+				{
+					if(altarRecipeInputs[i][j] == pedestralItems[k])
+					{
+						itemCount += 1;
+						// FIXME: here we have to take the item from the pedestral
+						break;
+					}
+				}
+				if(itemCount == 4)
+				{
+					return altarRecipeResult[i];
+				}
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	public static int runeTypes[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	
+	public static int checkForRunes(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		int runeCount = 0;
+		double x = pos.getX();
+		double y = pos.getY();
+		double z = pos.getZ();
+		
+		// Runes can be 4 blocks around the altar
+		double startX = x - 4;
+		double endX   = x + 4;
+		double startZ = z - 4;
+		double endZ   = z + 4;
+		
+		for (int r = 0; r < 25; r++)
+		{
+			runeTypes[r] = 0;
+		}
+		
+		for(double i = startX; i <= endX; i++)
+		{
+			for(double j = startZ; j <= endZ;j++)
+			{
+				if(world.getBlockState(new BlockPos(i, y, j)).getBlock() == StartupCommon.runeSlab)
+				{
+					runeCount += 1;
+					 TileEntity tileEntity = world.getTileEntity(new BlockPos(i, y, j));
+					  if(tileEntity instanceof TileEntityRuneSlab)
+					  {
+						  for(int r = 0; r < 25; r++)
+						  {
+							  TileEntityRuneSlab runeSlab = (TileEntityRuneSlab) tileEntity;
+							  if(runeSlab.getRuneType() == r)
+							  {
+								  runeTypes[r] += 1;
+							  }
+						  }
+					  }
+				}
+			}
+		}
+		for (int r = 0; r < 25; r++)
+			System.out.println(r + " -> " + runeTypes[r]);
+		return runeCount;
+	}
+	
+	public static int checkForTorches(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		int torchCount = 0;
+		
+		// During night time, when the torches are burning, power is bigger ;-) 
+  		long time = Minecraft.getMinecraft().theWorld.getWorldTime();
+  		if(time < 23500 && time >12800)
+  		{
+			
+			double x = pos.getX();
+			double y = pos.getY();
+			double z = pos.getZ();
+		
+			// Torches can be 6 blocks around the altar
+			double startX = x - 6;
+			double endX   = x + 6;
+			double startZ = z - 6;
+			double endZ   = z + 6;
+		
+		
+			for(double i = startX; i <= endX; i++)
+			{
+				for(double j = startZ; j <= endZ;j++)
+				{
+					if(world.getBlockState(new BlockPos(i, y, j)).getBlock() == thewizardmod.torch.StartupCommon.torch)
+					{
+						torchCount += 1;
+					}
+				}
+			}
+  		}				
+		return torchCount;
+	}
+	
+	public static boolean checkForPedestrals(World world, BlockPos pos, IBlockState state, EntityPlayer player)
+	{
+		int pedestralCount = 0;
+		double x = pos.getX();
+		double y = pos.getY();
+		double z = pos.getZ();
+		
+		if(world.getBlockState(new BlockPos(x - 3, y, z)).getBlock() == thewizardmod.pedestral.StartupCommon.pedestral)
+		{
+			pedestralItems[0] = null;
+			TileEntity tileEntity = world.getTileEntity(new BlockPos(x - 3, y, z));
+			if(tileEntity instanceof TileEntityPedestral)
+			{
+			  TileEntityPedestral runeSlab = (TileEntityPedestral) tileEntity;
+			  pedestralItems[0] = runeSlab.getItem();
+			}
+			pedestralCount += 1;
+		}
+		
+		if(world.getBlockState(new BlockPos(x + 3, y, z)).getBlock() == thewizardmod.pedestral.StartupCommon.pedestral)
+		{
+			pedestralItems[1] = null;
+			TileEntity tileEntity = world.getTileEntity(new BlockPos(x + 3, y, z));
+			if(tileEntity instanceof TileEntityPedestral)
+			{
+			  TileEntityPedestral runeSlab = (TileEntityPedestral) tileEntity;
+			  pedestralItems[1] = runeSlab.getItem();
+			}
+			pedestralCount += 1;
+		}
+		
+		if(world.getBlockState(new BlockPos(x, y, z - 3)).getBlock() == thewizardmod.pedestral.StartupCommon.pedestral)
+		{
+			pedestralItems[2] = null;
+			TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z - 3));
+			if(tileEntity instanceof TileEntityPedestral)
+			{
+			  TileEntityPedestral runeSlab = (TileEntityPedestral) tileEntity;
+			  pedestralItems[2] = runeSlab.getItem();
+			}
+			pedestralCount += 1;
+		}
+		
+		if(world.getBlockState(new BlockPos(x, y, z + 3)).getBlock() == thewizardmod.pedestral.StartupCommon.pedestral)
+		{
+			pedestralItems[3] = null;
+			TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z + 3));
+			if(tileEntity instanceof TileEntityPedestral)
+			{
+			  TileEntityPedestral runeSlab = (TileEntityPedestral) tileEntity;
+			  pedestralItems[3] = runeSlab.getItem();
+			}
+			pedestralCount += 1;
+		}
+		if(pedestralCount == 4)
+		{
+			return true;
+		}
+		return false;
+		
+	}
+}

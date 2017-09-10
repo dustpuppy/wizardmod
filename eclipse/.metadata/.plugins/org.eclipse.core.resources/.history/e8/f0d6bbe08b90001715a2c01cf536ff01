@@ -1,0 +1,51 @@
+package thewizardmod.Jars;
+
+import thewizardmod.items.StartupCommon;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class RendererJar extends TileEntitySpecialRenderer<TileEntityJar>{
+
+	public EntityItem ITEM = new EntityItem(Minecraft.getMinecraft().theWorld, 0, 0, 0, new ItemStack(StartupCommon.heart));
+	
+	public static float start_size = 0.7F;
+	public static float end_size = 0.8F;
+	public static float act_size = 0.1F; 
+	
+	@Override
+	public void renderTileEntityAt(TileEntityJar te, double x, double y, double z, float partialTicks, int destroyStage) {
+		super.renderTileEntityAt(te, x, y, z, partialTicks, destroyStage);
+
+		TileEntityJar tileEntity = (TileEntityJar)te;
+		if(tileEntity.item != null)
+			if(ITEM == null || ITEM.getEntityItem().getItem() != tileEntity.item)
+				ITEM = new EntityItem(tileEntity.getWorld(), x, y, z, new ItemStack(tileEntity.item));
+		
+		if(ITEM != null)
+		{
+		
+			// For items that hover around
+			ITEM.hoverStart = 0F;
+//			float pt = 0F;
+			float pt = partialTicks/100f;
+		
+			GlStateManager.pushMatrix();
+			{
+				GlStateManager.translate(x, y, z);
+				GlStateManager.translate(0.5F, 0F, 0.5F);
+				GlStateManager.scale(act_size++, act_size++, act_size++);
+				if(act_size > end_size)
+				{
+					act_size = start_size;
+				}
+				Minecraft.getMinecraft().getRenderManager().doRenderEntity(ITEM, 0, 0, 0, 0F, pt, false);
+			}
+			GlStateManager.popMatrix();
+		}
+	}
+	
+}
