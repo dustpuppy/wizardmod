@@ -1,0 +1,125 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 11.09.17 13:10
+Description: Updating screen events
+
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at net.minecraft.inventory.InventoryBasic.setInventorySlotContents(InventoryBasic.java:149)
+	at net.minecraft.inventory.Slot.putStack(Slot.java:99)
+	at net.minecraft.inventory.Container.mergeItemStack(Container.java:716)
+	at thewizardmod.fluids.ContainerTank.transferStackInSlot(ContainerTank.java:50)
+	at net.minecraft.inventory.Container.slotClick(Container.java:282)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.windowClick(PlayerControllerMP.java:594)
+	at net.minecraft.client.gui.inventory.GuiContainer.handleMouseClick(GuiContainer.java:685)
+	at net.minecraft.client.gui.inventory.GuiContainer.mouseClicked(GuiContainer.java:427)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:619)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:585)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1797)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1118)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:406)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.inventory.InventoryBasic.setInventorySlotContents(InventoryBasic.java:149)
+	at net.minecraft.inventory.Slot.putStack(Slot.java:99)
+	at net.minecraft.inventory.Container.mergeItemStack(Container.java:716)
+	at thewizardmod.fluids.ContainerTank.transferStackInSlot(ContainerTank.java:50)
+	at net.minecraft.inventory.Container.slotClick(Container.java:282)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.windowClick(PlayerControllerMP.java:594)
+	at net.minecraft.client.gui.inventory.GuiContainer.handleMouseClick(GuiContainer.java:685)
+	at net.minecraft.client.gui.inventory.GuiContainer.mouseClicked(GuiContainer.java:427)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:619)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:585)
+
+-- Affected screen --
+Details:
+	Screen name: thewizardmod.fluids.GuiTank
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player680'/144, l='MpServer', x=427,55, y=3,00, z=162,30]]
+	Chunk stats: MultiplayerChunkCache: 598, 598
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (438,4,160), Chunk: (at 6,0,0 in 27,10; contains blocks 432,0,160 to 447,255,175), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 36623 game time, 9416 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 52 total; [EntitySheep['Sheep'/39, l='MpServer', x=354,18, y=4,00, z=87,81], EntityChicken['Chicken'/40, l='MpServer', x=353,54, y=4,00, z=88,79], EntityCow['Cow'/41, l='MpServer', x=351,85, y=4,00, z=89,47], EntityChicken['Chicken'/43, l='MpServer', x=353,73, y=4,00, z=128,15], EntityPig['Pig'/44, l='MpServer', x=382,52, y=4,00, z=109,31], EntityChicken['Chicken'/45, l='MpServer', x=372,45, y=4,00, z=120,16], EntityChicken['Chicken'/46, l='MpServer', x=366,89, y=4,00, z=132,53], EntityItem['item.item.egg'/47, l='MpServer', x=374,92, y=4,00, z=140,76], EntityChicken['Chicken'/48, l='MpServer', x=375,62, y=4,00, z=166,20], EntityChicken['Chicken'/49, l='MpServer', x=370,65, y=4,00, z=148,20], EntityPig['Pig'/53, l='MpServer', x=389,77, y=4,00, z=83,59], EntitySheep['Sheep'/55, l='MpServer', x=396,35, y=4,00, z=92,77], EntitySheep['Sheep'/56, l='MpServer', x=395,69, y=4,00, z=99,24], EntitySheep['Sheep'/60, l='MpServer', x=415,77, y=4,00, z=84,69], EntitySheep['Sheep'/61, l='MpServer', x=400,61, y=4,00, z=125,82], EntityPig['Pig'/62, l='MpServer', x=415,79, y=4,00, z=216,21], EntityPlayerSP['Player680'/144, l='MpServer', x=427,55, y=3,00, z=162,30], EntitySheep['Sheep'/67, l='MpServer', x=428,81, y=4,00, z=96,28], EntityCow['Cow'/68, l='MpServer', x=431,39, y=4,00, z=111,83], EntityItem['item.item.egg'/69, l='MpServer', x=421,69, y=4,00, z=113,97], EntityHorse['Horse'/74, l='MpServer', x=436,83, y=4,00, z=94,71], EntitySheep['Sheep'/75, l='MpServer', x=438,01, y=4,00, z=96,06], EntityChicken['Chicken'/76, l='MpServer', x=438,14, y=4,00, z=115,65], EntityCow['Cow'/77, l='MpServer', x=440,45, y=4,00, z=212,27], EntityCow['Cow'/78, l='MpServer', x=438,49, y=4,00, z=201,04], EntityChicken['Chicken'/83, l='MpServer', x=462,71, y=4,00, z=86,83], EntitySheep['Sheep'/85, l='MpServer', x=460,29, y=4,00, z=154,53], EntityCow['Cow'/86, l='MpServer', x=461,45, y=4,00, z=221,19], EntitySheep['Sheep'/87, l='MpServer', x=441,10, y=4,00, z=204,15], EntitySheep['Sheep'/91, l='MpServer', x=478,21, y=4,00, z=95,39], EntitySheep['Sheep'/92, l='MpServer', x=471,70, y=4,00, z=83,19], EntityCow['Cow'/93, l='MpServer', x=464,16, y=4,00, z=134,17], EntitySheep['Sheep'/94, l='MpServer', x=471,10, y=4,00, z=160,30], EntitySheep['Sheep'/95, l='MpServer', x=472,16, y=4,00, z=160,87], EntityHorse['Horse'/96, l='MpServer', x=464,10, y=4,00, z=215,04], EntityVillager['Villager'/99, l='MpServer', x=491,54, y=4,00, z=117,42], EntityVillager['Villager'/100, l='MpServer', x=485,54, y=4,00, z=121,60], EntityVillager['Villager'/101, l='MpServer', x=484,54, y=4,00, z=128,42], EntityVillager['Villager'/102, l='MpServer', x=492,51, y=3,94, z=136,30], EntityVillager['Villager'/103, l='MpServer', x=491,75, y=3,94, z=136,30], EntityChicken['Chicken'/104, l='MpServer', x=494,83, y=4,00, z=145,50], EntitySheep['Sheep'/105, l='MpServer', x=475,83, y=4,00, z=173,21], EntitySheep['Sheep'/106, l='MpServer', x=490,59, y=4,00, z=207,36], EntityHorse['Horse'/107, l='MpServer', x=483,09, y=4,00, z=198,03], EntityHorse['Horse'/108, l='MpServer', x=495,03, y=4,00, z=208,10], EntityCow['Cow'/109, l='MpServer', x=481,41, y=4,00, z=239,82], EntityVillager['Villager'/112, l='MpServer', x=503,55, y=4,00, z=107,31], EntityVillager['Villager'/113, l='MpServer', x=506,63, y=4,00, z=97,55], EntityVillager['Villager'/115, l='MpServer', x=505,33, y=5,00, z=139,51], EntityVillager['Villager'/116, l='MpServer', x=496,34, y=5,00, z=141,49], EntitySheep['Sheep'/118, l='MpServer', x=505,19, y=4,00, z=196,42], EntityHorse['Horse'/119, l='MpServer', x=497,92, y=4,00, z=220,09]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2779)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:427)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.10.2
+	Operating System: Linux (amd64) version 3.16.0-4-amd64
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 671243144 bytes (640 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.32 Powered by Forge 12.18.3.2422 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	Forge{12.18.3.2422} [Minecraft Forge] (forgeSrc-1.10.2-12.18.3.2422.jar) 
+	UCHIJAAAA	thewizardmod{1.0a} [The Wizard Mod] (bin) 
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.4.0 NVIDIA 340.102' Renderer: 'GeForce GT 610/PCIe/SSE2'
+	Launched Version: 1.10.2
+	LWJGL: 2.9.4
+	OpenGL: GeForce GT 610/PCIe/SSE2 GL version 4.4.0 NVIDIA 340.102, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i7 CPU 950 @ 3.07GHz

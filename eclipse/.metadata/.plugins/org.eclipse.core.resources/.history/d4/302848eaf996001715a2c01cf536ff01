@@ -1,0 +1,38 @@
+package thewizardmod.fluids;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
+import net.minecraft.util.ResourceLocation;
+
+public class GuiTank extends GuiContainer{
+
+	public static final ResourceLocation texture = new ResourceLocation("thewizardmod:textures/gui/tank_bg.png");
+	private TileEntityTank tileEntityTank;
+
+	public GuiTank(Container container) {
+		super(container);
+	}
+
+	public GuiTank(InventoryPlayer invPlayer, TileEntityTank tileEntity) {
+		super(new ContainerTank(invPlayer, tileEntity));
+		TileEntityTank tileEntityTank = tileEntity;
+		// Set the width and height of the gui.  Should match the size of the texture!
+//		xSize = 176;
+//		ySize = 133;
+	}
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+		int k = (width - this.xSize) / 2;
+		int l = (height - this.ySize) / 2;
+		// Bind the image texture of our custom container
+		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
+		// Draw the image
+		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
+	}
+
+}

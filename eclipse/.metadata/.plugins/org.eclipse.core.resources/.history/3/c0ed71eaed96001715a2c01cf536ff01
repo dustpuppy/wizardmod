@@ -1,0 +1,205 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryBasic;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.util.ITickable;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.TileFluidHandler;
+
+public class TileEntityTank extends TileFluidHandler  implements IInventory, ITickable{
+	
+	public static final int CAPACITY = 11 * Fluid.BUCKET_VOLUME;
+
+	public InventoryBasic inventory;
+	private int slotCount = 2;
+	
+	public TileEntityTank() {
+		tank = new FluidTankWithTile(this, CAPACITY);
+		tank.setFluid(new FluidStack(StartupCommon.fluidMagic, 1));
+		
+		inventory = new InventoryBasic("tankInventory", false, slotCount);
+	}
+
+	
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		
+		NBTTagList list = new NBTTagList();
+		for(int i = 0; i < inventory.getSizeInventory(); i++)
+		{
+			if(inventory.getStackInSlot(i) != null)
+			{
+				NBTTagCompound tag = new NBTTagCompound();
+				tag.setByte("slot", (byte)i);
+				inventory.getStackInSlot(i).writeToNBT(tag);
+				list.appendTag(tag);
+			}
+		}
+		compound.setTag("itemStacks", list);
+		
+		return super.writeToNBT(compound);
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound compound) {
+		super.readFromNBT(compound);
+		
+		NBTTagList list = compound.getTagList("itemStacks", 10);
+		this.inventory = new InventoryBasic("tankInventory", false, slotCount);
+		for(int i = 0; i < list.tagCount(); i++)
+		{
+			NBTTagCompound tag = list.getCompoundTagAt(i);
+			byte b = tag.getByte("slot");
+			if(b >=0 && b < inventory.getSizeInventory())
+			{
+				inventory.setInventorySlotContents(b, ItemStack.loadItemStackFromNBT(tag));
+			}
+		}
+	}
+	
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return writeToNBT(new NBTTagCompound());
+	}
+
+	@Nullable
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
+	}
+
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean hasCustomName() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getSizeInventory() {
+		return slotCount;
+	}
+
+
+	@Override
+	@Nullable
+	public ItemStack getStackInSlot(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	@Nullable
+	public ItemStack decrStackSize(int index, int count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	@Nullable
+	public ItemStack removeStackFromSlot(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setInventorySlotContents(int index, @Nullable ItemStack stack) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getInventoryStackLimit() {
+		return 1;
+	}
+
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer player) {
+		return true;
+	}
+
+
+	@Override
+	public void openInventory(EntityPlayer player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void closeInventory(EntityPlayer player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public boolean isItemValidForSlot(int index, ItemStack stack) {
+		System.out.println(index + " " + stack);
+		return false;
+	}
+
+
+	@Override
+	public int getField(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setField(int id, int value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getFieldCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -116,7 +116,7 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	  	tileEntity.writeToNBT(tileEntityTag);
 	  	compound.setTag("BlockEntityTag", tileEntityTag);
 	  	ret.setTagCompound(compound);
-	  	System.out.println(compound);
+//	  	System.out.println(compound);
 	  	return Lists.newArrayList(ret);
 	}
 

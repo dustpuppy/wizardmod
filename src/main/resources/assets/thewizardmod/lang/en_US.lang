@@ -115,6 +115,8 @@ tile.twm_fluid_poison.name=Poison Fluid
 fluid.twm_fluid_poison=Posion Fluid
 tile.twm_fluid_magic.name=Liquid Magic
 fluid.twm_fluid_magic=Liquid Magic
+tile.twm_tank.name=Magic Tank
+
 
 # Runes
 item.tw_rune_fehu.name=Rune of Luck

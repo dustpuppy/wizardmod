@@ -1,0 +1,55 @@
+package thewizardmod.fluids;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import thewizardmod.Util.CapabilityUtils;
+
+public class GuiTank extends GuiContainer{
+
+	public static final ResourceLocation texture = new ResourceLocation("thewizardmod:textures/gui/tank_bg.png");
+	public static TileEntityTank tileEntityTank;
+	public BlockPos pos;
+
+	public GuiTank(Container container) {
+		super(container);
+	}
+
+	public GuiTank(InventoryPlayer invPlayer, TileEntityTank tileEntity) {
+		super(new ContainerTank(invPlayer, tileEntity));
+		TileEntityTank tileEntityTank = tileEntity;
+		pos = new BlockPos(tileEntity.getPos());
+	}
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+		World world = Minecraft.getMinecraft().theWorld;
+		final IFluidHandler fluidHandler = CapabilityUtils.getCapability(world.getTileEntity(pos), CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null);
+		
+		int k = (width - this.xSize) / 2;
+		int l = (height - this.ySize) / 2;
+		// Bind the image texture of our custom container
+		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
+		// Draw the image
+		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+		drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
+        int capacity = fluidHandler.getTankProperties()[0].getCapacity();
+        FluidStack fluid = fluidHandler.getTankProperties()[0].getContents();
+        if (fluid != null && fluid.amount > 1)
+        {
+        	double size = (62.0F * (float) fluid.amount / (float) capacity);
+        	System.out.println(size);
+        	drawTexturedModalRect(k + 9, l + 9 + (int)size, 176, 14, 10, 62 - (int)size);
+        }
+	}
+
+
+}
