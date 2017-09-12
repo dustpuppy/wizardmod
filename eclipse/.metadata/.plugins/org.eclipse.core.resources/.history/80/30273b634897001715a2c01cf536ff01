@@ -1,0 +1,78 @@
+package thewizardmod.fluids;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTank;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+
+public class TileEntityTank2 extends TileEntity implements IFluidHandler, ITickable{
+	
+	public FluidTank tank = new FluidTank(10000);
+
+	public TileEntityTank2()
+	{
+	}
+
+	public int fill(FluidStack resource, boolean doFill)
+	  {
+	    return this.tank.fill(resource, doFill);
+	  }
+	  
+	public FluidStack drain(FluidStack resource, boolean doDrain)
+	{
+	        return this.tank.drain(resource.amount, doDrain);
+	}
+
+	public FluidStack drain(int maxDrain, boolean doDrain)
+	{
+	        return this.tank.drain(maxDrain, doDrain);
+	}
+	  
+	public boolean canFill(Fluid fluid)
+	{
+		return true;
+	}
+	  
+	public boolean canDrain(Fluid fluid)
+	{
+		return true;
+	}
+
+	public FluidTankInfo[] getTankInfo()
+	  {
+	    return new FluidTankInfo[] {this.tank.getInfo()};
+	  }
+
+	public float getAdjustedVolume()
+	{
+		float amount = tank.getFluidAmount();
+		float capacity = tank.getCapacity();
+		float volume = (amount/capacity)*0.8F;		
+		return volume;
+	}
+
+	public void updateEntity() 
+	{
+	}
+
+	@Override
+	    public void readFromNBT(NBTTagCompound tag)
+	    {
+	        super.readFromNBT(tag);
+	        tank.readFromNBT(tag);
+	    }
+
+	    @Override
+	    public NBTTagCompound writeToNBT(NBTTagCompound tag)
+	    {
+	        super.writeToNBT(tag);
+	        return tank.writeToNBT(tag);
+	    }
+	    
+}

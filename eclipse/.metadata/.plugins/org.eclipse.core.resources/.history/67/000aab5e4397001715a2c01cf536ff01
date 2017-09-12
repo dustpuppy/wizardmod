@@ -1,0 +1,90 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidTank;
+import net.minecraftforge.fluids.FluidTankInfo;
+import net.minecraftforge.fluids.IFluidTank;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidTankProperties;
+import net.minecraftforge.fluids.capability.TileFluidHandler;
+
+public class TileEntityTank2 extends TileEntity implements IFluidTank{
+	
+	public static final int CAPACITY = 11 * Fluid.BUCKET_VOLUME;
+	FluidTank tank;
+
+	public TileEntityTank2() {
+		tank = new FluidTankWithTile(this, CAPACITY);
+		tank.setFluid(new FluidStack(StartupCommon.fluidMagic, 1));
+	}
+
+	
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return writeToNBT(new NBTTagCompound());
+	}
+
+	@Nullable
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
+	}
+
+
+
+	@Override
+	@Nullable
+	public FluidStack getFluid() {
+		return tank.getFluid();
+	}
+
+
+
+	@Override
+	public int getFluidAmount() {
+		return tank.getFluidAmount();
+	}
+
+
+
+	@Override
+	public int getCapacity() {
+		return tank.getCapacity();
+	}
+
+
+
+	@Override
+	public FluidTankInfo getInfo() {
+		return tank.getInfo();
+	}
+
+
+
+	@Override
+	public int fill(FluidStack resource, boolean doFill) {
+		return tank.fill(resource, doFill);
+	}
+
+
+
+	@Override
+	@Nullable
+	public FluidStack drain(int maxDrain, boolean doDrain) {
+		return tank.drain(maxDrain, doDrain);
+	}
+
+}

@@ -67,7 +67,8 @@ public class StartupCommon
 
 	    GameRegistry.registerTileEntity(TileEntityTank.class, TheWizardMod.MODID + "TileEntityTank");
 
-	}
+
+}
 
 	public static void initCommon()
 	{

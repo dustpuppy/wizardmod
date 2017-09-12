@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,11 +28,12 @@ import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thewizardmod.TheWizardMod;
 import thewizardmod.Util.CapabilityUtils;
 
 import com.google.common.collect.Lists;
 
-public class BlockTank extends Block{ //  implements ITileEntityProvider{
+public class BlockTank extends BlockContainer{
 	public BlockTank() {
 		super(Material.GLASS);
 		this.setCreativeTab(CreativeTabs.MISC);
@@ -71,7 +73,6 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		final IFluidHandler fluidHandler = getFluidHandler(worldIn, pos);
-
 		if (fluidHandler != null) {
 			if(heldItem != null)
 			{
@@ -79,6 +80,10 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 				boolean success = FluidUtil.interactWithFluidHandler(heldItem, fluidHandler, playerIn);
 				//If the held item is a fluid container, stop processing here so it doesn't try to place its contents
 				return FluidUtil.getFluidHandler(heldItem) != null;
+			}
+			else
+			{
+				playerIn.openGui(TheWizardMod.instance, thewizardmod.TheWizardMod.GUI_ID_TANK, worldIn, pos.getX(), pos.getY(), pos.getZ());
 			}
 		}
 		return false;
@@ -88,19 +93,13 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	public boolean hasTileEntity(IBlockState state) {
 		return true;
 	}
-	
-	@Override
-	public TileEntity createTileEntity(World world, IBlockState state) {
-		return new TileEntityTank();
-	}
-	
+
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
 			ItemStack stack) {
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 		if (stack.hasTagCompound() && stack.getTagCompound().hasKey("BlockEntityTag")) {
 			NBTTagCompound tag = stack.getTagCompound().getCompoundTag("BlockEntityTag");
-//			worldIn.getTileEntity(pos).readFromNBT(tag);
 			worldIn.getTileEntity(pos).markDirty();
 		}
 	}
@@ -116,7 +115,6 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	  	tileEntity.writeToNBT(tileEntityTag);
 	  	compound.setTag("BlockEntityTag", tileEntityTag);
 	  	ret.setTagCompound(compound);
-//	  	System.out.println(compound);
 	  	return Lists.newArrayList(ret);
 	}
 
@@ -130,6 +128,11 @@ public class BlockTank extends Block{ //  implements ITileEntityProvider{
 	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity tileEntity, ItemStack tool) {
 	  	super.harvestBlock(world, player, pos, state, tileEntity, tool);
 	  	world.setBlockToAir(pos);
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) {
+		return new TileEntityTank();
 	}
 
 

@@ -588,3 +588,15 @@ org.eclipse.jface.text.BadLocationException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-12 20:45:50.060
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-12 20:45:57.480
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-12 20:55:50.329
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-12 20:55:54.471
+!MESSAGE Variable references empty selection: ${project_loc}

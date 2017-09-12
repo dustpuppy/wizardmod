@@ -11,6 +11,9 @@ import thewizardmod.Backpacks.NormalBackpack;
 import thewizardmod.Backpacks.SmallBackpack;
 import thewizardmod.chest.ContainerChest;
 import thewizardmod.chest.TileEntityInventoryChest;
+import thewizardmod.fluids.ContainerTank;
+import thewizardmod.fluids.GuiTank;
+import thewizardmod.fluids.TileEntityTank;
 import thewizardmod.magicInjector.ContainerMagicInjector;
 import thewizardmod.magicInjector.GuiMagicInjector;
 import thewizardmod.magicInjector.TileEntityMagicInjector;
@@ -30,6 +33,8 @@ public class GuiHandler implements IGuiHandler{
 			return new ContainerChest(player.inventory, (TileEntityInventoryChest) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_MAGICINJECTOR:
 			return new ContainerMagicInjector(player.inventory, (TileEntityMagicInjector) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_TANK:
+			return new ContainerTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -47,6 +52,8 @@ public class GuiHandler implements IGuiHandler{
 			return new GuiInventoryChest(player.inventory, (TileEntityInventoryChest) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_MAGICINJECTOR:
 			return new GuiMagicInjector(player.inventory, (TileEntityMagicInjector) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_TANK:
+			return new GuiTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

@@ -25,6 +25,7 @@ public class StartupClientOnly
 	  
 	  ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTank.class, new RendererTank());
 
+
   }
 
 

@@ -1,0 +1,270 @@
+package thewizardmod.fluids;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.SlotFurnaceFuel;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.TileFluidHandler;
+
+public class TileEntityTank2 extends TileFluidHandler implements ISidedInventory{
+	
+	public static final int CAPACITY = 10 * Fluid.BUCKET_VOLUME + 1;
+	
+	
+	public ItemStack itemStacks[] = new ItemStack[3];
+
+	public IInventory inventory;
+
+
+    private static final int[] SLOTS_TOP = new int[] {0};
+    private static final int[] SLOTS_BOTTOM = new int[] {1, 0};
+    private static final int[] SLOTS_SIDES = new int[] {1};
+
+	public TileEntityTank2() {
+		tank = new FluidTankWithTile(this, CAPACITY);
+		tank.setFluid(new FluidStack(StartupCommon.fluidMagic, 1));
+	}
+
+	
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return writeToNBT(new NBTTagCompound());
+	}
+
+	@Nullable
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(getPos(), 0, getUpdateTag());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
+	}
+
+    public void readFromNBT(NBTTagCompound compound)
+    {
+        super.readFromNBT(compound);
+        NBTTagList nbttaglist = compound.getTagList("Items", 10);
+        this.itemStacks = new ItemStack[this.getSizeInventory()];
+
+        for (int i = 0; i < nbttaglist.tagCount(); ++i)
+        {
+            NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
+            int j = nbttagcompound.getByte("Slot");
+
+            if (j >= 0 && j < this.itemStacks.length)
+            {
+                this.itemStacks[j] = ItemStack.loadItemStackFromNBT(nbttagcompound);
+            }
+        }
+
+    }
+
+    public NBTTagCompound writeToNBT(NBTTagCompound compound)
+    {
+        super.writeToNBT(compound);
+        NBTTagList nbttaglist = new NBTTagList();
+
+        for (int i = 0; i < this.itemStacks.length; ++i)
+        {
+            if (this.itemStacks[i] != null)
+            {
+                NBTTagCompound nbttagcompound = new NBTTagCompound();
+                nbttagcompound.setByte("Slot", (byte)i);
+                this.itemStacks[i].writeToNBT(nbttagcompound);
+                nbttaglist.appendTag(nbttagcompound);
+            }
+        }
+
+        compound.setTag("Items", nbttaglist);
+
+
+        return compound;
+    }
+
+
+	@Override
+	public int getSizeInventory() {
+		return this.itemStacks.length;
+	}
+
+
+
+	@Override
+	@Nullable
+	public ItemStack getStackInSlot(int index) {
+		return this.itemStacks[index];
+	}
+
+
+
+	@Override
+	@Nullable
+	public ItemStack decrStackSize(int index, int count) {
+		return ItemStackHelper.getAndSplit(this.itemStacks, index, count);
+	}
+
+
+
+	@Override
+	@Nullable
+	public ItemStack removeStackFromSlot(int index) {
+		return ItemStackHelper.getAndRemove(this.itemStacks, index);
+	}
+
+
+
+	@Override
+	public void setInventorySlotContents(int index, @Nullable ItemStack stack) {
+        boolean flag = stack != null && stack.isItemEqual(this.itemStacks[index]) && ItemStack.areItemStackTagsEqual(stack, this.itemStacks[index]);
+        this.itemStacks[index] = stack;
+
+        if (stack != null && stack.stackSize > this.getInventoryStackLimit())
+        {
+            stack.stackSize = this.getInventoryStackLimit();
+        }
+
+        if (index == 0 && !flag)
+        {
+            this.markDirty();
+        }
+	}
+
+
+
+	@Override
+	public int getInventoryStackLimit() {
+		return 64;
+	}
+
+
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer player) {
+        return this.worldObj.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
+	}
+
+
+
+	@Override
+	public void openInventory(EntityPlayer player) {
+	}
+
+
+
+	@Override
+	public void closeInventory(EntityPlayer player) {
+	}
+
+
+
+	@Override
+	public boolean isItemValidForSlot(int index, ItemStack stack) {
+        if (index == 2)
+        {
+            return false;
+        }
+        else if (index != 1)
+        {
+            return true;
+        }
+        else
+        {
+            ItemStack itemstack = this.itemStacks[1];
+            return (itemstack == null || itemstack.getItem() != Items.BUCKET);
+        }
+	}
+
+
+
+	@Override
+	public int getField(int id) {
+		return 0;
+	}
+
+
+
+	@Override
+	public void setField(int id, int value) {
+	}
+
+
+
+	@Override
+	public int getFieldCount() {
+		return 0;
+	}
+
+
+
+	@Override
+	public void clear() {
+        for (int i = 0; i < this.itemStacks.length; ++i)
+        {
+            this.itemStacks[i] = null;
+        }
+	}
+
+
+
+	@Override
+	public String getName() {
+        return "container.twm_tank.name";
+	}
+
+
+
+	@Override
+	public boolean hasCustomName() {
+		return false;
+	}
+
+
+
+	@Override
+	public int[] getSlotsForFace(EnumFacing side) {
+        return side == EnumFacing.DOWN ? SLOTS_BOTTOM : (side == EnumFacing.UP ? SLOTS_TOP : SLOTS_SIDES);
+	}
+
+
+
+	@Override
+	public boolean canInsertItem(int index, ItemStack itemStackIn,
+			EnumFacing direction) {
+		return this.isItemValidForSlot(index, itemStackIn);
+		}
+
+
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack,
+			EnumFacing direction) {
+        if (direction == EnumFacing.DOWN && index == 1)
+        {
+            Item item = stack.getItem();
+
+            if (item != Items.BUCKET)
+            {
+                return false;
+            }
+        }
+
+        return true;
+	}
+
+}
