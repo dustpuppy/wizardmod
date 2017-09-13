@@ -15,7 +15,7 @@ public class GuiAltar extends GuiScreen {
 	private final int bookImageHeight = 192;
 	private final int bookImageWidth = 192;
 	private int currPage = 0;
-	private static final int bookTotalPages = 13;
+	private static final int bookTotalPages = 14;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
 	private static String[] stringPageText = new String[bookTotalPages];
 	private NextPageButton buttonNextPage;
@@ -36,6 +36,7 @@ public class GuiAltar extends GuiScreen {
 		bookPageTextures[10] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 		bookPageTextures[11] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 		bookPageTextures[12] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[13] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 
 		stringPageText[0] = "    The Magic Altar";
 
@@ -53,6 +54,7 @@ public class GuiAltar extends GuiScreen {
 		stringPageText[10] = "     Magic Chest\n\nIncrements:\n 1 Shadow Dust\n 1 Magic Gem\n 1 Minecraft Clock\n 1 Minecraft Chest";
 		stringPageText[11] = "     Blank Rune\n\nIncrements:\n 1 Stone\n 1 Redstone\n 1 Shadow Dust\n 1 Magic Gem";
 		stringPageText[12] = "     Magic Mirror\n\nIncrements\n 1 Mirror Glass\n 1 Gold Ingot\n 1 Ender Pearl\n 1 Shadow Dust";
+		stringPageText[13] = "     Magic Tank\n\nIncrements\n 1 Glass Block\n 1 Iron Ingot\n 1 Bucket\n 1 Shadow Dust";
 	}
 
 	/**

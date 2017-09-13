@@ -34,6 +34,7 @@ public class TheWizardMod
 	public static final int GUI_ID_MAGIC_CHEST = 3;
 	public static final int GUI_ID_MAGICINJECTOR = 4;
 	public static final int GUI_ID_TANK = 5;
+	public static final int GUI_ID_EXTRACTOR = 6;
 
 
 	static {

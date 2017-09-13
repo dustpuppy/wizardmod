@@ -11,6 +11,9 @@ import thewizardmod.Backpacks.NormalBackpack;
 import thewizardmod.Backpacks.SmallBackpack;
 import thewizardmod.chest.ContainerChest;
 import thewizardmod.chest.TileEntityInventoryChest;
+import thewizardmod.extractor.ContainerExtractor;
+import thewizardmod.extractor.GuiExtractor;
+import thewizardmod.extractor.TileEntityExtractor;
 import thewizardmod.fluids.ContainerTank;
 import thewizardmod.fluids.GuiTank;
 import thewizardmod.fluids.TileEntityTank;
@@ -35,6 +38,8 @@ public class GuiHandler implements IGuiHandler{
 			return new ContainerMagicInjector(player.inventory, (TileEntityMagicInjector) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_TANK:
 			return new ContainerTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_EXTRACTOR:
+			return new ContainerExtractor(player.inventory, (TileEntityExtractor) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -54,6 +59,8 @@ public class GuiHandler implements IGuiHandler{
 			return new GuiMagicInjector(player.inventory, (TileEntityMagicInjector) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_TANK:
 			return new GuiTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_EXTRACTOR:
+			return new GuiExtractor(player.inventory, (TileEntityExtractor) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

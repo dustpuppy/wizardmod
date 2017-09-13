@@ -164,3 +164,7 @@ tile.twm_fire_chalice.name=Magic Chalice
 tile.twm_magic_mirror.name=Magic Mirror
 item.twm_mirror.name=Magic Mirror
 item.twm_mirror_glass.name=Mirror Glass
+
+
+# Extractor
+tile.twm_magic_extractor.name=Liquid Magic Extractor

@@ -600,3 +600,9 @@ org.eclipse.jface.text.BadLocationException
 
 !ENTRY org.eclipse.debug.core 4 120 2017-09-12 20:55:54.471
 !MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-13 12:53:25.536
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2017-09-13 15:00:15.174
+!MESSAGE Variable references empty selection: ${project_loc}

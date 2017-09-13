@@ -1,0 +1,36 @@
+package thewizardmod.extractor;
+
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import thewizardmod.TheWizardMod;
+
+public class StartupCommon
+{
+
+	  public static BlockTank blockTank;
+	  public static ItemBlock itemBlockTank;
+	
+	public static void preInitCommon()
+	{
+	    blockTank = (BlockTank)(new BlockTank().setUnlocalizedName("twm_tank"));
+	    blockTank.setRegistryName("tank");
+	    GameRegistry.register(blockTank);
+
+	    itemBlockTank = new ItemBlock(blockTank);
+	    itemBlockTank.setRegistryName(blockTank.getRegistryName());
+	    GameRegistry.register(itemBlockTank);
+
+	    GameRegistry.registerTileEntity(TileEntityTank.class, TheWizardMod.MODID + "TileEntityTank");
+
+
+}
+
+	public static void initCommon()
+	{
+	}
+
+	public static void postInitCommon()
+	{
+	}
+}

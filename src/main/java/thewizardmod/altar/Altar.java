@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thewizardmod.fireChalice.TileEntityChalice;
 import thewizardmod.items.MagicString;
+import thewizardmod.items.StartupClientOnly;
 import thewizardmod.pedestral.TileEntityPedestral;
 import thewizardmod.runeSlab.StartupCommon;
 import thewizardmod.runeSlab.TileEntityRuneSlab;
@@ -49,7 +50,8 @@ public class Altar {
 		thewizardmod.runes.StartupCommon.othalan,
 		thewizardmod.runes.StartupCommon.dagaz,
 		thewizardmod.runes.StartupCommon.blank,
-		thewizardmod.mirror.StartupCommon.itemMirror
+		thewizardmod.mirror.StartupCommon.itemMirror,
+		Item.getItemFromBlock(thewizardmod.fluids.StartupCommon.blockTank)
 		};
 	
 	public static Item altarRecipeInputs[][] = {
@@ -80,7 +82,8 @@ public class Altar {
 		{thewizardmod.runes.StartupCommon.blank, thewizardmod.items.StartupCommon.shadowDust,thewizardmod.items.StartupCommon.magicGem, Items.BED},
 		{thewizardmod.runes.StartupCommon.blank, thewizardmod.items.StartupCommon.shadowDust,thewizardmod.items.StartupCommon.magicGem, Items.FLINT_AND_STEEL},
 		{Item.getItemFromBlock(Blocks.STONE), thewizardmod.items.StartupCommon.shadowDust,thewizardmod.items.StartupCommon.magicGem, Items.REDSTONE},
-		{thewizardmod.items.StartupCommon.shadowDust, thewizardmod.mirror.StartupCommon.mirrorGlass, Items.ENDER_PEARL, Items.GOLD_INGOT}
+		{thewizardmod.items.StartupCommon.shadowDust, thewizardmod.mirror.StartupCommon.mirrorGlass, Items.ENDER_PEARL, Items.GOLD_INGOT},
+		{Items.BUCKET, thewizardmod.items.StartupCommon.shadowDust, Item.getItemFromBlock(Blocks.GLASS), Items.IRON_INGOT}
 	};
 	
 	public static BlockPos pedestralPos[] = {null, null, null, null};

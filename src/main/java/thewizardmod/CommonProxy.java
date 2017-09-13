@@ -36,6 +36,7 @@ public abstract class CommonProxy {
     thewizardmod.camouflageBlock.StartupCommon.preInitCommon();
 
     thewizardmod.magicInjector.StartupCommon.preInitCommon();
+    thewizardmod.extractor.StartupCommon.preInitCommon();
 
     thewizardmod.Backpacks.StartupCommon.preInitCommon();
     thewizardmod.Food.StartupCommon.preInitCommon();
@@ -91,6 +92,7 @@ public abstract class CommonProxy {
     thewizardmod.camouflageBlock.StartupCommon.initCommon();
 
     thewizardmod.magicInjector.StartupCommon.initCommon();
+    thewizardmod.extractor.StartupCommon.initCommon();
 
     thewizardmod.Backpacks.StartupCommon.initCommon();
     thewizardmod.Food.StartupCommon.initCommon();
@@ -144,6 +146,7 @@ public abstract class CommonProxy {
 	thewizardmod.camouflageBlock.StartupCommon.postInitCommon();
 
 	thewizardmod.magicInjector.StartupCommon.postInitCommon();
+	thewizardmod.extractor.StartupCommon.postInitCommon();
 
 	thewizardmod.Backpacks.StartupCommon.postInitCommon();
 	thewizardmod.Food.StartupCommon.postInitCommon();

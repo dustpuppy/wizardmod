@@ -15,3 +15,13 @@
 1505246254222	Rename type 'GuiTank2'
 1505246262884	Rename type 'RendererTank2'
 1505246280870	Rename type 'TileEntityTank2'
+1505251051876	Copy package
+1505251065834	Delete elements
+1505251216892	Rename type 'BlockTank'
+1505251230851	Rename type 'ContainerTank'
+1505251254319	Rename type 'GuiTank'
+1505251267502	Rename type 'RendererTank'
+1505251280080	Rename type 'TileEntityTank'
+1505251423212	Rename resource 'tank2.json'
+1505251469389	Rename resource 'tank2.json'
+1505251501850	Rename resource 'tank2.json'

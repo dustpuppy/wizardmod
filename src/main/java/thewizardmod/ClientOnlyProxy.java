@@ -41,6 +41,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.camouflageBlock.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.magicInjector.StartupClientOnly.preInitClientOnly();
+    thewizardmod.extractor.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.preInitClientOnly();
     thewizardmod.Food.StartupClientOnly.preInitClientOnly();
@@ -96,6 +97,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.camouflageBlock.StartupClientOnly.initClientOnly();
 
     thewizardmod.magicInjector.StartupClientOnly.initClientOnly();
+    thewizardmod.extractor.StartupClientOnly.initClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.initClientOnly();
     thewizardmod.Food.StartupClientOnly.initClientOnly();
@@ -150,6 +152,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.camouflageBlock.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.magicInjector.StartupClientOnly.postInitClientOnly();
+    thewizardmod.extractor.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.postInitClientOnly();
     thewizardmod.Food.StartupClientOnly.postInitClientOnly();

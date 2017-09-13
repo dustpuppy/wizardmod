@@ -149,6 +149,17 @@ public class StartupCommon
         'I', Items.IRON_INGOT
     });
   
+	// The extractor
+    GameRegistry.addRecipe(new ItemStack(thewizardmod.extractor.StartupCommon.blockTank), new Object[]{
+        "III",
+        "SBS",
+        "IHI",
+        'S', thewizardmod.items.StartupCommon.shadowDust,
+        'B', Items.BUCKET,
+        'H', Blocks.HOPPER,
+        'I', thewizardmod.items.StartupCommon.magicIron
+    });
+  
     // Pedestral
     GameRegistry.addRecipe(new ItemStack(thewizardmod.pedestral.StartupCommon.pedestral, 4), new Object[]{
         "BBB",
@@ -373,12 +384,42 @@ public class StartupCommon
     });
 
     
-    // The book
+    // The wizards guide
     GameRegistry.addShapelessRecipe(new ItemStack(thewizardmod.books.StartupCommon.wizardGuide),
             new Object[] {
                     new ItemStack(Items.BOOK),
                     new ItemStack(thewizardmod.items.StartupCommon.shadowDust)
     });
+
+    // The rune magic guide
+    GameRegistry.addShapelessRecipe(new ItemStack(thewizardmod.books.StartupCommon.runeMagic),
+            new Object[] {
+                    new ItemStack(Items.BOOK),
+                    new ItemStack(Blocks.STONE)
+    });
+
+    // The magic altar book
+    GameRegistry.addShapelessRecipe(new ItemStack(thewizardmod.books.StartupCommon.altar),
+            new Object[] {
+                    new ItemStack(Items.BOOK),
+                    new ItemStack(thewizardmod.items.StartupCommon.magicIron)
+    });
+    
+    // The maic wands book
+    GameRegistry.addShapelessRecipe(new ItemStack(thewizardmod.books.StartupCommon.bookWands),
+            new Object[] {
+                    new ItemStack(Items.BOOK),
+                    new ItemStack(Items.STICK)
+    });
+
+    // The machine book
+    GameRegistry.addShapelessRecipe(new ItemStack(thewizardmod.books.StartupCommon.injector),
+            new Object[] {
+                    new ItemStack(Items.BOOK),
+                    new ItemStack(Items.STONE_PICKAXE)
+    });
+
+    
 
     /* Deactivated, becuase we changed to use the two high level wands for activating the portal
     // Flint and steel
