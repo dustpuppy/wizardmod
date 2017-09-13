@@ -107,8 +107,8 @@ public class BlockExtractor extends BlockContainer{
 	
 	@Override
 	public final ArrayList<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		int meta = state.getBlock().getMetaFromState(state);
-	  	ItemStack ret = new ItemStack(this, 1, meta);
+//		int meta = state.getBlock().getMetaFromState(state);
+	  	ItemStack ret = new ItemStack(this, 1, 0);
 	  	NBTTagCompound compound = new NBTTagCompound();
 	  	TileEntityExtractor tileEntity = (TileEntityExtractor) world.getTileEntity(pos);
 	  	NBTTagCompound tileEntityTag = new NBTTagCompound();

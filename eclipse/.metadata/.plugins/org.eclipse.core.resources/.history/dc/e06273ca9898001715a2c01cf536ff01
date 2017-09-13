@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "thewizardmod:items/golden_wand_1"
+    }
+}
