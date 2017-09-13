@@ -1,6 +1,0 @@
-{
-    "variants": {
-         "type=basic": { "model": "thewizardmod:machine_frame_basic" },
-         "type=advanced": { "model": "thewizardmod:machine_frame_advanced" }
-    }
-}

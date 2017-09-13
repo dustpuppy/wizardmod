@@ -1,5 +1,0 @@
-package thewizardmod.Wands;
-
-public abstract class RayTrace {
-
-}
