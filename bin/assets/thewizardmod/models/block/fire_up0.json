@@ -1,7 +1,0 @@
-{
-    "parent": "thewizardmod:block/fire_up",
-    "textures": {
-        "particle": "thewizardmod:blocks/fire_layer_0",
-        "fire": "thewizardmod:blocks/fire_layer_0"
-    }
-}

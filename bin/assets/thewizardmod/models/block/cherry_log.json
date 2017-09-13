@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "thewizardmod:blocks/log_cherry_top",
-        "side": "thewizardmod:blocks/log_cherry"
-    }
-}
