@@ -42,6 +42,9 @@ public class ClientOnlyProxy extends CommonProxy
 
     thewizardmod.magicInjector.StartupClientOnly.preInitClientOnly();
     thewizardmod.extractor.StartupClientOnly.preInitClientOnly();
+    thewizardmod.FarmCrops.StartupClientOnly.preInitClientOnly();
+    thewizardmod.FarmFeeder.StartupClientOnly.preInitClientOnly();
+//    thewizardmod.pipe.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.preInitClientOnly();
     thewizardmod.Food.StartupClientOnly.preInitClientOnly();
@@ -98,6 +101,9 @@ public class ClientOnlyProxy extends CommonProxy
 
     thewizardmod.magicInjector.StartupClientOnly.initClientOnly();
     thewizardmod.extractor.StartupClientOnly.initClientOnly();
+    thewizardmod.FarmCrops.StartupClientOnly.initClientOnly();
+    thewizardmod.FarmFeeder.StartupClientOnly.initClientOnly();
+//    thewizardmod.pipe.StartupClientOnly.initClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.initClientOnly();
     thewizardmod.Food.StartupClientOnly.initClientOnly();
@@ -153,6 +159,9 @@ public class ClientOnlyProxy extends CommonProxy
 
     thewizardmod.magicInjector.StartupClientOnly.postInitClientOnly();
     thewizardmod.extractor.StartupClientOnly.postInitClientOnly();
+    thewizardmod.FarmCrops.StartupClientOnly.postInitClientOnly();
+    thewizardmod.FarmFeeder.StartupClientOnly.postInitClientOnly();
+//    thewizardmod.pipe.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.Backpacks.StartupClientOnly.postInitClientOnly();
     thewizardmod.Food.StartupClientOnly.postInitClientOnly();

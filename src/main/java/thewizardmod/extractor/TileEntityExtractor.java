@@ -35,7 +35,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TileEntityExtractor extends TileFluidHandler implements ISidedInventory, ITickable{
 	
-	public static final int CAPACITY = 10 * Fluid.BUCKET_VOLUME + 1;
+	public static final int CAPACITY = 6 * Fluid.BUCKET_VOLUME + 1;
 	
 	
 	public ItemStack itemStacks[] = new ItemStack[5];

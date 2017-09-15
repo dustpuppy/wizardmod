@@ -1,4 +1,4 @@
-package thewizardmod.extractor;
+package thewizardmod.FarmCrops;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -20,11 +20,11 @@ import org.lwjgl.opengl.GL11;
 
 import thewizardmod.Util.CapabilityUtils;
 
-public class RendererExtractor extends TileEntitySpecialRenderer<TileEntityExtractor>{
+public class RendererFarmCrops extends TileEntitySpecialRenderer<TileEntityFarmCrops>{
 
 	
 	@Override
-	public void renderTileEntityAt(TileEntityExtractor te, double x, double y, double z, float partialTicks, int destroyStage) {
+	public void renderTileEntityAt(TileEntityFarmCrops te, double x, double y, double z, float partialTicks, int destroyStage) {
 		World world = Minecraft.getMinecraft().theWorld;
 		
 		BlockPos blockpos = te.getPos(); //new BlockPos(te.getPos().getX(), te.getPos().getY(), te.getPos().getZ());

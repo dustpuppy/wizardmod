@@ -1,0 +1,12 @@
+{  
+"forge_marker": 1,
+
+    "variants": {
+         "facing=north": { "model": "thewizardmod:crop_farm" },
+         "facing=east": { "model": "thewizardmod:crop_farm", "y": 90 },
+         "facing=south": { "model": "thewizardmod:crop_farm", "y": 180 },
+         "facing=west": { "model": "thewizardmod:crop_farm", "y": 270 },
+         "facing=up": { "model": "thewizardmod:crop_farm"},
+         "facing=down": { "model": "thewizardmod:crop_farm"}
+    }
+}

@@ -9,6 +9,12 @@ import thewizardmod.Backpacks.ContainerBackpack;
 import thewizardmod.Backpacks.InventoryBackpack;
 import thewizardmod.Backpacks.NormalBackpack;
 import thewizardmod.Backpacks.SmallBackpack;
+import thewizardmod.FarmCrops.ContainerFarmCrops;
+import thewizardmod.FarmCrops.GuiFarmCrops;
+import thewizardmod.FarmCrops.TileEntityFarmCrops;
+import thewizardmod.FarmFeeder.ContainerFarmFeeder;
+import thewizardmod.FarmFeeder.GuiFarmFeeder;
+import thewizardmod.FarmFeeder.TileEntityFarmFeeder;
 import thewizardmod.chest.ContainerChest;
 import thewizardmod.chest.TileEntityInventoryChest;
 import thewizardmod.extractor.ContainerExtractor;
@@ -40,6 +46,10 @@ public class GuiHandler implements IGuiHandler{
 			return new ContainerTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_EXTRACTOR:
 			return new ContainerExtractor(player.inventory, (TileEntityExtractor) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_CROPFARM:
+			return new ContainerFarmCrops(player.inventory, (TileEntityFarmCrops) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_FEEDER:
+			return new ContainerFarmFeeder(player.inventory, (TileEntityFarmFeeder) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -61,6 +71,10 @@ public class GuiHandler implements IGuiHandler{
 			return new GuiTank(player.inventory, (TileEntityTank) world.getTileEntity(new BlockPos(x, y, z)));
 		case thewizardmod.TheWizardMod.GUI_ID_EXTRACTOR:
 			return new GuiExtractor(player.inventory, (TileEntityExtractor) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_CROPFARM:
+			return new GuiFarmCrops(player.inventory, (TileEntityFarmCrops) world.getTileEntity(new BlockPos(x, y, z)));
+		case thewizardmod.TheWizardMod.GUI_ID_FEEDER:
+			return new GuiFarmFeeder(player.inventory, (TileEntityFarmFeeder) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
