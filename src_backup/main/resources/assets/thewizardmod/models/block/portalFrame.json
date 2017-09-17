@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    
+    "textures": {
+        "down": "thewizardmod:blocks/portalFrame",
+        "up": "thewizardmod:blocks/portalFrame",
+        "north": "thewizardmod:blocks/portalFrame",
+        "east": "thewizardmod:blocks/portalFrame",
+        "south": "thewizardmod:blocks/portalFrame",
+        "west": "thewizardmod:blocks/portalFrame",
+        "particle": "thewizardmod:blocks/portalFrame"
+    }
+}

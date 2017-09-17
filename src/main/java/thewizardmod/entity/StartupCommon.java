@@ -23,7 +23,11 @@ public class StartupCommon
 
         // This is the loot table for our mob
         LootTableList.register(EntityWeirdZombie.deathLootTable);
-	}
+
+	
+        id = 2;
+        EntityRegistry.registerModEntity(EntityMiniZombie.class, "MiniZombie", id++, TheWizardMod.instance, 64, 3, true, 0x996600, 0xffffff);
+}
 
 	public static void initCommon()
 	{

@@ -73,6 +73,12 @@ public class StartupClientOnly
 	    ModelResourceLocation robeBootsResourceLocation = new ModelResourceLocation("thewizardmod:robe_boots", "inventory");
 	    ModelLoader.setCustomModelResourceLocation(StartupCommon.robeBoots, DEFAULT_ITEM_SUBTYPE, robeBootsResourceLocation);
   
+	    ModelResourceLocation boneResourceLocation = new ModelResourceLocation("thewizardmod:bone", "inventory");
+	    ModelLoader.setCustomModelResourceLocation(StartupCommon.bone, DEFAULT_ITEM_SUBTYPE, boneResourceLocation);
+
+	    ModelResourceLocation zombieResourceLocation = new ModelResourceLocation("thewizardmod:zombie", "inventory");
+	    ModelLoader.setCustomModelResourceLocation(StartupCommon.zombie, DEFAULT_ITEM_SUBTYPE, zombieResourceLocation);
+
   }
 
   public static void initClientOnly()

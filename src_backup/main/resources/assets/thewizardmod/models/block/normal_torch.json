@@ -1,0 +1,6 @@
+{
+    "parent": "thewizardmod:block/torch",
+    "textures": {
+        "torch": "thewizardmod:blocks/torch_on"
+    }
+}

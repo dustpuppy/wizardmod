@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "thewizardmod:chest", "y": 270 },
+        "facing=south": { "model": "thewizardmod:chest"},
+        "facing=west": { "model": "thewizardmod:chest", "y": 90 },
+        "facing=north": { "model": "thewizardmod:chest", "y": 180 }
+    }
+}

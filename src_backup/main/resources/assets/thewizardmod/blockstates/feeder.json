@@ -1,0 +1,12 @@
+{  
+"forge_marker": 1,
+
+    "variants": {
+         "facing=north": { "model": "thewizardmod:feeder" },
+         "facing=east": { "model": "thewizardmod:feeder", "y": 90 },
+         "facing=south": { "model": "thewizardmod:feeder", "y": 180 },
+         "facing=west": { "model": "thewizardmod:feeder", "y": 270 },
+         "facing=up": { "model": "thewizardmod:feeder"},
+         "facing=down": { "model": "thewizardmod:feeder"}
+    }
+}
