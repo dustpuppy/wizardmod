@@ -2,6 +2,7 @@ package thewizardmod.entity;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -16,8 +17,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemEgg;
-import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -29,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.structure.StructureStrongholdPieces.ChestCorridor;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
@@ -38,21 +38,22 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import thewizardmod.FarmCrops.TileEntityFarmCrops;
 import thewizardmod.FarmFeeder.TileEntityFarmFeeder;
 import thewizardmod.Util.CapabilityUtils;
+import thewizardmod.books.GuiAltar;
 import thewizardmod.fluids.TileEntityTank;
 import thewizardmod.items.StartupCommon;
 
 public class EntityMiniZombie extends EntityCreature{
 
-    private final ItemStack[] handInventory = new ItemStack[2];
-    private final ItemStack[] armorArray = new ItemStack[4];
-    
+	public String name = "unknown";
     private double maxDistance = 10;
     private int idleTime = 0;
     
     private BlockPos destinationPos;
-    private BlockPos inventoryPos;
+    public BlockPos inventoryPos;
+    public BlockPos sourcePos; 
     private boolean isMoving = false;
-    private boolean isPicker = false;		// picks up items from ground
+    public boolean isPicker = false;		// picks up items from ground
+    public boolean isTransporter = false;	// transports items from one chest to another
 
     public EntityMiniZombie(World worldIn) {
         super(worldIn);
@@ -94,6 +95,7 @@ public class EntityMiniZombie extends EntityCreature{
     	super.writeEntityToNBT(nbt);
     	
     	nbt.setBoolean("isPicker", isPicker);
+    	nbt.setBoolean("isTransporter", isTransporter);
     	if(inventoryPos != null)
     	{
     		int x = inventoryPos.getX();
@@ -102,6 +104,16 @@ public class EntityMiniZombie extends EntityCreature{
        		nbt.setInteger("inventoryX", x);
        		nbt.setInteger("inventoryY", y);
        		nbt.setInteger("inventoryZ", z);
+    	}
+    	
+    	if(sourcePos != null)
+    	{
+    		int x = sourcePos.getX();
+    		int y = sourcePos.getY();
+    		int z = sourcePos.getZ();
+       		nbt.setInteger("sourceX", x);
+       		nbt.setInteger("sourceY", y);
+       		nbt.setInteger("sourceZ", z);
     	}
     	
     }
@@ -115,6 +127,11 @@ public class EntityMiniZombie extends EntityCreature{
     	{
     		this.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(StartupCommon.itemPickerChestplate));
     	}
+    	this.isTransporter = nbt.getBoolean("isTransporter");
+    	if(isTransporter)
+    	{
+    		this.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(StartupCommon.itemTransporterChestplate));
+    	}
     	if(nbt.hasKey("inventoryX") && nbt.hasKey("inventoryY") && nbt.hasKey("inventoryZ"))
     	{
     		int x = nbt.getInteger("inventoryX");
@@ -122,13 +139,21 @@ public class EntityMiniZombie extends EntityCreature{
     		int z = nbt.getInteger("inventoryZ");
     		inventoryPos = new BlockPos(x, y, z);
     	}
+    	if(nbt.hasKey("sourceX") && nbt.hasKey("sourceY") && nbt.hasKey("sourceZ"))
+    	{
+    		int x = nbt.getInteger("sourceX");
+    		int y = nbt.getInteger("sourceY");
+    		int z = nbt.getInteger("sourceZ");
+    		sourcePos = new BlockPos(x, y, z);
+    	}
     }   
  
     
     @SideOnly(Side.CLIENT)
     @Override
     public EnumActionResult applyPlayerInteraction(EntityPlayer player,	Vec3d vec, @Nullable ItemStack stack, EnumHand hand) {
-    	// FIXME: Here we need to show the gui for setup
+    	GuiMiniZombie.setup(this);
+    	Minecraft.getMinecraft().displayGuiScreen(new GuiMiniZombie());
     	return super.applyPlayerInteraction(player, vec, stack, hand);
     }
 
@@ -158,7 +183,12 @@ public class EntityMiniZombie extends EntityCreature{
 			{
 				checkGround();
 			}
-
+			// If he is a transporter, he picks up items from source chest
+			if(this.isTransporter && this.sourcePos != null && this.getHeldItemMainhand() == null)
+			{
+				checkSourceChest();
+			}
+			
 			// Not more then 15 seconds standing around
 			if(idleTime > 300)
 			{
@@ -179,6 +209,54 @@ public class EntityMiniZombie extends EntityCreature{
 		return CapabilityUtils.getCapability(world.getTileEntity(pos), CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null);
 	}
 	
+	public void checkSourceChest()
+	{
+		TileEntity tileEntity = worldObj.getTileEntity(sourcePos);
+		int slot = -1;
+		
+		if(tileEntity != null)
+		{
+			if(tileEntity instanceof TileEntityChest)
+			{
+				TileEntityChest chest = (TileEntityChest) tileEntity;
+				for(int i = 0; i < chest.getSizeInventory(); i++)
+				{
+					if(chest.getStackInSlot(i) != null)
+					{
+						slot = i;
+						break;
+					}
+				}
+			}
+		}
+
+		BlockPos pos = new BlockPos(this.posX, this.posY, this.posZ);
+		if(!this.sourcePos.equals(pos))
+		{
+			if(slot != -1)
+			{
+				moveZombieTo(this.sourcePos);
+			}
+		}
+		else
+		{
+			if(slot != - 1)
+			{
+				if(this.getHeldItemMainhand() == null)
+				{
+					TileEntityChest chest = (TileEntityChest) tileEntity;
+					this.setHeldItem(EnumHand.MAIN_HAND, chest.getStackInSlot(slot));
+					chest.setInventorySlotContents(slot, null);
+					slot = -1;
+					moveZombieTo(inventoryPos);
+				}
+				else
+				{
+					moveZombieTo(inventoryPos);
+				}
+			}
+		}
+	}
 
 	public void checkMachines()
 	{
@@ -436,6 +514,7 @@ public class EntityMiniZombie extends EntityCreature{
 	public void clearProfession()
 	{
 		this.isPicker = false;
+		this.isTransporter = false;
 	}
 	
 	public void setPicker()
@@ -444,10 +523,32 @@ public class EntityMiniZombie extends EntityCreature{
 		this.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(StartupCommon.itemPickerChestplate));
 	}
 	
+	public void setTransporter()
+	{
+		this.isTransporter = true;
+		this.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(StartupCommon.itemTransporterChestplate));
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
 	
 	public void setInventoryPos(BlockPos pos)
 	{
 		this.inventoryPos = pos;
+		idleTime = 0;
+		moveZombieTo(inventoryPos);
+	}
+
+	public void setSourcePos(BlockPos pos)
+	{
+		this.sourcePos = pos;
 		idleTime = 0;
 		moveZombieTo(inventoryPos);
 	}

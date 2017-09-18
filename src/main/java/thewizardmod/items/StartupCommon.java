@@ -32,6 +32,7 @@ public class StartupCommon
 	  
 	  public static Bone bone;
 	  public static ItemPickerArmor itemPickerChestplate;
+	  public static ItemTransporterArmor itemTransporterChestplate;
 	  public static Zombie zombie;
 
   public static void preInitCommon()
@@ -120,6 +121,7 @@ public class StartupCommon
 	    GameRegistry.register(bone);
   
 	    itemPickerChestplate = (ItemPickerArmor)(new ItemPickerArmor(thewizardmod.Materials.magicIronArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("twm_item_picker_chestplate"));
+	    itemTransporterChestplate = (ItemTransporterArmor)(new ItemTransporterArmor(thewizardmod.Materials.magicIronArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("twm_item_transporter_chestplate"));
 
 	    zombie = (Zombie)(new Zombie().setUnlocalizedName("twm_zombie"));
 	    zombie.setRegistryName("zombie_registry_name");

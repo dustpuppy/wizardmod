@@ -160,6 +160,28 @@ public class StartupCommon
         'I', thewizardmod.items.StartupCommon.magicIron
     });
   
+	// Crop farm
+    GameRegistry.addRecipe(new ItemStack(thewizardmod.FarmCrops.StartupCommon.blockMachine), new Object[]{
+        "III",
+        "SBS",
+        "IHI",
+        'S', thewizardmod.items.StartupCommon.shadowDust,
+        'B', Items.BUCKET,
+        'H', thewizardmod.items.StartupCommon.ironHoe,
+        'I', thewizardmod.items.StartupCommon.magicIron
+    });
+  
+	// Auto feeder
+    GameRegistry.addRecipe(new ItemStack(thewizardmod.FarmFeeder.StartupCommon.blockMachine), new Object[]{
+        "III",
+        "SBS",
+        "ICI",
+        'S', thewizardmod.items.StartupCommon.shadowDust,
+        'B', Items.BUCKET,
+        'C', Items.GOLDEN_CARROT,
+        'I', thewizardmod.items.StartupCommon.magicIron
+    });
+  
     // Pedestral
     GameRegistry.addRecipe(new ItemStack(thewizardmod.pedestral.StartupCommon.pedestral, 4), new Object[]{
         "BBB",

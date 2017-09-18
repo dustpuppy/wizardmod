@@ -34,9 +34,18 @@ public class Bone extends Item {
 		{
 			if(setInventoryPos)
 			{
-				littleZombie.setInventoryPos(pos);
-				littleZombie.setPicker();
-				setInventoryPos = false;
+				if(littleZombie.inventoryPos != null)
+				{
+					System.out.println("setting source position");
+					littleZombie.setSourcePos(pos);
+					setInventoryPos = false;
+				}
+				else if(littleZombie.inventoryPos == null)
+				{
+					System.out.println("setting inventory position");
+					littleZombie.setInventoryPos(pos);
+					setInventoryPos = false;
+				}
 			}
 			else
 			{
@@ -53,7 +62,7 @@ public class Bone extends Item {
 
 		setInventoryPos = false;
 		
-		if(player.isSneaking())
+		if(!player.isSneaking())
 		{
 			setInventoryPos = true;
 		}
