@@ -27,7 +27,6 @@ public abstract class CommonProxy {
 	thewizardmod.torch.StartupCommon.preInitCommon();
 
 	thewizardmod.Tree.StartupCommon.preInitCommon();
-	thewizardmod.Trees.StartupCommon.preInitCommon();
 	thewizardmod.plants.StartupCommon.preInitCommon();
 
 	thewizardmod.ores.StartupCommon.preInitCommon();
@@ -87,7 +86,6 @@ public abstract class CommonProxy {
 	thewizardmod.torch.StartupCommon.initCommon();
 
 	thewizardmod.Tree.StartupCommon.initCommon();
-	thewizardmod.Trees.StartupCommon.initCommon();
 	thewizardmod.plants.StartupCommon.initCommon();
 
 	thewizardmod.ores.StartupCommon.initCommon();
@@ -145,7 +143,6 @@ public abstract class CommonProxy {
 	thewizardmod.torch.StartupCommon.postInitCommon();
 
 	thewizardmod.Tree.StartupCommon.postInitCommon();
-	thewizardmod.Trees.StartupCommon.postInitCommon();
 	thewizardmod.plants.StartupCommon.postInitCommon();
 
 	thewizardmod.ores.StartupCommon.postInitCommon();
