@@ -13,11 +13,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockLog extends BlockRotatedPillar
+public class Log extends BlockRotatedPillar
 {
-    public static final PropertyEnum<BlockLog.EnumAxis> LOG_AXIS = PropertyEnum.<BlockLog.EnumAxis>create("axis", BlockLog.EnumAxis.class);
+    public static final PropertyEnum<Log.EnumAxis> LOG_AXIS = PropertyEnum.<Log.EnumAxis>create("axis", Log.EnumAxis.class);
 
-    public BlockLog()
+    public Log()
     {
         super(Material.WOOD);
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -51,13 +51,13 @@ public class BlockLog extends BlockRotatedPillar
         {
             case COUNTERCLOCKWISE_90:
             case CLOCKWISE_90:
-                switch ((BlockLog.EnumAxis)state.getValue(LOG_AXIS))
+                switch ((Log.EnumAxis)state.getValue(LOG_AXIS))
                 {
                     case X:
-                        return state.withProperty(LOG_AXIS, BlockLog.EnumAxis.Z);
+                        return state.withProperty(LOG_AXIS, Log.EnumAxis.Z);
 
                     case Z:
-                        return state.withProperty(LOG_AXIS, BlockLog.EnumAxis.X);
+                        return state.withProperty(LOG_AXIS, Log.EnumAxis.X);
 
                     default:
                         return state;
@@ -87,7 +87,7 @@ public class BlockLog extends BlockRotatedPillar
             return this.name;
         }
 
-        public static BlockLog.EnumAxis fromFacingAxis(EnumFacing.Axis axis)
+        public static Log.EnumAxis fromFacingAxis(EnumFacing.Axis axis)
         {
             switch (axis)
             {
@@ -121,5 +121,8 @@ public class BlockLog extends BlockRotatedPillar
 		return 30;
 	}
 
-
+	@Override
+	public boolean canSustainLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
+		return true;
+	}
 }

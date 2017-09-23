@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class StartupCommon
 {
 
-	public static BlockLog blockCherryLog;
+	public static Log blockCherryLog;
 	  public static ItemBlock itemCherryLog;
 
 	  public static CherryLeaves blockCherryLeaves;
@@ -25,7 +25,7 @@ public class StartupCommon
 
 	  public static void preInitCommon()
 	  {
-		  blockCherryLog = (BlockLog)(new BlockLog().setUnlocalizedName("twm_log_cherry"));
+		  blockCherryLog = (Log)(new Log().setUnlocalizedName("twm_log_cherry"));
 		  blockCherryLog.setRegistryName("cherry_log");
 		  GameRegistry.register(blockCherryLog);
 
