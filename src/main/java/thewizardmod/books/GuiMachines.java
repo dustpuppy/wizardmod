@@ -11,17 +11,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-public class GuiInjector extends GuiScreen {
+public class GuiMachines extends GuiScreen {
 	private final int bookImageHeight = 192;
 	private final int bookImageWidth = 192;
 	private int currPage = 0;
-	private static final int bookTotalPages = 20;
+	private static final int bookTotalPages = 25;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
 	private static String[] stringPageText = new String[bookTotalPages];
 	private NextPageButton buttonNextPage;
 	private NextPageButton buttonPreviousPage;
 
-	public GuiInjector() {
+	public GuiMachines() {
 
 		bookPageTextures[0] = new ResourceLocation("thewizardmod:textures/gui/books/injector_cover.png");
 		bookPageTextures[1] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
@@ -43,8 +43,13 @@ public class GuiInjector extends GuiScreen {
 		bookPageTextures[17] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 		bookPageTextures[18] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 		bookPageTextures[19] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[20] = new ResourceLocation("thewizardmod:textures/gui/books/extractor.png");
+		bookPageTextures[21] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[22] = new ResourceLocation("thewizardmod:textures/gui/books/feeder.png");
+		bookPageTextures[23] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[24] = new ResourceLocation("thewizardmod:textures/gui/books/cropfarm.png");
 
-		stringPageText[0] = " The Magic Injector";
+		stringPageText[0] = " The Magic Machines";
 
 		stringPageText[1] = "The magic Injector is needed to inject all kind of magic into all kind of artifacts. It has 2 Input slots. One is for the artifact you want to get the magic and one for the needed increment.";
 				
@@ -67,6 +72,11 @@ public class GuiInjector extends GuiScreen {
 		stringPageText[17] = "Input Slot:\nA Glass\nFuel Slot:\nShadow Dust\n\nGives out a Magic Wall";
 		stringPageText[18] = "Input Slot:\nA String\nFuel Slot:\nShadow Dust\n\nGives out a Magic String";
 		stringPageText[19] = "Input Slot:\nA Magic Wall\nFuel Slot:\nShadow Dust\n\nGives out a Magic Block";
+		stringPageText[20] = "Liquid Magic Extractor";
+		stringPageText[21] = "";
+		stringPageText[22] = "Auto Feeder";
+		stringPageText[23] = "";
+		stringPageText[24] = "Crop Farm";
 	}
 
 	/**

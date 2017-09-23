@@ -442,6 +442,7 @@ public class StartupCommon
     });
 
     
+    GameRegistry.addSmelting(thewizardmod.ores.StartupCommon.shadowdustOre, new ItemStack(thewizardmod.items.StartupCommon.shadowDust, 1, 0), 0.5F);
 
     /* Deactivated, becuase we changed to use the two high level wands for activating the portal
     // Flint and steel
@@ -450,6 +451,7 @@ public class StartupCommon
                     new ItemStack(Items.FLINT),
                     new ItemStack(thewizardmod.items.StartupCommon.magicIron)
     });
+    
      */
     /*
     final int NUMBER_OF_ITEMS = 1;

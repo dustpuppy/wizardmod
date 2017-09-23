@@ -56,7 +56,7 @@ item.wizard_guide_twm.name=Wizards Guide
 item.rune_magic_twm.name=Rune Magic
 item.altar_magic_twm.name=The Magic Altar
 item.wand_magic_twm.name=The Magic Wands
-item.injector_magic_twm.name=The Magic Injector
+item.injector_magic_twm.name=The Magic Machines
 
 # Trees 
 tile.twm_log_cherry.name=Cherry Wood
@@ -70,6 +70,10 @@ tile.twm_block_camouflage.name=Magic Wall
 # Machines
 tile.twm_magicInjector.name=Magic Injector
 container.twm_magicInjector.name=Magic Injector
+tile.twm_magic_extractor.name=Liquid Magic Extractor
+tile.twm_crop_farm.name=Crop Farm
+tile.twm_feeder.name=Auto Feeder
+
 
 # Heart of an undead
 item.twm_heart_of_undead.name=Heart of an Undead
@@ -154,6 +158,7 @@ tile.twm_altar.name=Altar
 
 # Entities
 entity.thewizardmod.WeirdZombie.name=Weird Zombie
+entity.thewizardmod.MiniZombie.name=Mini Zombie
 
 # Chalice
 tile.twm_fire.name=Magic Fire
@@ -166,5 +171,6 @@ item.twm_mirror.name=Magic Mirror
 item.twm_mirror_glass.name=Mirror Glass
 
 
-# Extractor
-tile.twm_magic_extractor.name=Liquid Magic Extractor
+# Necromancer Bone
+item.twm_bone.name=Necromancer Bone
+item.twm_zombie.name=Spawn Mini Zombie

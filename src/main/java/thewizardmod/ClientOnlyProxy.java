@@ -31,6 +31,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.torch.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.Tree.StartupClientOnly.preInitClientOnly();
+    thewizardmod.Trees.StartupClientOnly.preInitClientOnly();
     thewizardmod.plants.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.ores.StartupClientOnly.preInitClientOnly();
@@ -91,6 +92,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.torch.StartupClientOnly.initClientOnly();
 
     thewizardmod.Tree.StartupClientOnly.initClientOnly();
+    thewizardmod.Trees.StartupClientOnly.initClientOnly();
     thewizardmod.plants.StartupClientOnly.initClientOnly();
 
     thewizardmod.ores.StartupClientOnly.initClientOnly();
@@ -149,6 +151,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.torch.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.Tree.StartupClientOnly.postInitClientOnly();
+    thewizardmod.Trees.StartupClientOnly.postInitClientOnly();
     thewizardmod.plants.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.ores.StartupClientOnly.postInitClientOnly();

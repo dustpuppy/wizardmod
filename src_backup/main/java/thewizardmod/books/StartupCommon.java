@@ -1,5 +1,6 @@
 package thewizardmod.books;
 
+import thewizardmod.TheWizardMod;
 import thewizardmod.books.BookWizardsGuide;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -10,10 +11,13 @@ public class StartupCommon
 	  public static BookRuneMagic runeMagic;
 	  public static BookAltar altar;
 	  public static BookWand bookWands;
-	  public static BookInjector injector;
+	  public static BookMachines injector;
 
   public static void preInitCommon()
   {
+	  TheWizardMod.logger.info("Inserting books");
+
+	  
 	  wizardGuide = (BookWizardsGuide)(new BookWizardsGuide().setUnlocalizedName("wizard_guide_twm"));
 	  wizardGuide.setRegistryName("wizard_guide_registry_name_twm");
 	  GameRegistry.register(wizardGuide);
@@ -30,7 +34,7 @@ public class StartupCommon
 	  bookWands.setRegistryName("wand_magic_registry_name_twm");
 	  GameRegistry.register(bookWands);
   
-	  injector = (BookInjector)(new BookInjector().setUnlocalizedName("injector_magic_twm"));
+	  injector = (BookMachines)(new BookMachines().setUnlocalizedName("injector_magic_twm"));
 	  injector.setRegistryName("injector_magic_registry_name_twm");
 	  GameRegistry.register(injector);
   

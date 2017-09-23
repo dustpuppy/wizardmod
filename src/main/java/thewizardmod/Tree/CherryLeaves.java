@@ -1,12 +1,20 @@
 package thewizardmod.Tree;
 
+import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -20,6 +28,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import akka.actor.Props;
 
 public class CherryLeaves extends Block
 {
@@ -36,17 +45,17 @@ public class CherryLeaves extends Block
         this.setSoundType(SoundType.PLANT);
     }
 
- 
+
 	@SideOnly(Side.CLIENT)
 	public int getRenderColor(IBlockState state) {
-			return 0x0FF00;
+			return 0x00FF00;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass) {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
 
-		return 0x0FF00;
+		return 0x00FF00;
 	}
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
@@ -71,11 +80,14 @@ public class CherryLeaves extends Block
             }
         }
     }
-
+/*
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!worldIn.isRemote)
         {
+//            if (((Boolean)state.getValue(CHECK_DECAY)).booleanValue() && ((Boolean)state.getValue(DECAYABLE)).booleanValue())
+            {
+
                 int i = 4;
                 int j = 5;
                 int k = pos.getX();
@@ -168,11 +180,15 @@ public class CherryLeaves extends Block
                     }
                 }
 
-                int l2 = this.surroundings[16912];
-
-                if (l2 == 0){
+                if (l >= 0)
+                {
+//                    worldIn.setBlockState(pos, state.withProperty(CHECK_DECAY, Boolean.valueOf(false)), 4);
+                }
+                else
+                {
                     this.destroy(worldIn, pos);
                 }
+            }
         }
     }
 
@@ -186,7 +202,7 @@ public class CherryLeaves extends Block
             worldIn.spawnParticle(EnumParticleTypes.DRIP_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
         }
     }
-
+*/
     private void destroy(World worldIn, BlockPos pos)
     {
         this.dropBlockAsItem(worldIn, pos, worldIn.getBlockState(pos), 0);
@@ -275,7 +291,7 @@ public class CherryLeaves extends Block
      */
     public boolean isOpaqueCube(IBlockState state)
     {
-        return !this.leavesFancy;
+    	return Blocks.LEAVES.isOpaqueCube(state);
     }
 
     /**
@@ -288,7 +304,7 @@ public class CherryLeaves extends Block
 
     public BlockRenderLayer getBlockLayer()
     {
-        return this.leavesFancy ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
+    	return Blocks.LEAVES.getBlockLayer();
     }
 
     public boolean isVisuallyOpaque()
@@ -299,8 +315,28 @@ public class CherryLeaves extends Block
 
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
-        return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		setGraphicsLevel(!isOpaqueCube(blockState));
+		return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
     }
+
+	@Override
+	public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+		return 60;
+	}
+
+	@Override
+	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+		return 30;
+	}
+
+	@Override
+	public MapColor getMapColor(IBlockState state) {
+		return damageDropped(state) == 1 ? MapColor.LIGHT_BLUE : super.getMapColor(state);
+	}
+
+    @Override public boolean isLeaves(IBlockState state, IBlockAccess world, BlockPos pos){ return true; }
+
+
 
 
 }

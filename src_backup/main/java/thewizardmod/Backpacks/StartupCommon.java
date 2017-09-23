@@ -15,6 +15,8 @@ public class StartupCommon
   
   public static void preInitCommon()
   {
+	  TheWizardMod.logger.info("Initializing Backpacks");
+
 	  smallBackpack = (SmallBackpack)(new SmallBackpack().setUnlocalizedName("twm_small_backpack"));
 	  smallBackpack.setRegistryName("small_backpack_registry_name");
 	  GameRegistry.register(smallBackpack);

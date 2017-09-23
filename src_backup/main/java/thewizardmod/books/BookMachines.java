@@ -12,9 +12,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BookInjector extends ItemBook
+public class BookMachines extends ItemBook
 {
-  public BookInjector()
+  public BookMachines()
   {
     this.setCreativeTab(CreativeTabs.MISC); 
   }
@@ -22,7 +22,7 @@ public class BookInjector extends ItemBook
   @SideOnly(Side.CLIENT)
   @Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
-	  	Minecraft.getMinecraft().displayGuiScreen(new GuiInjector());
+	  	Minecraft.getMinecraft().displayGuiScreen(new GuiMachines());
 		return super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
 	}
 }

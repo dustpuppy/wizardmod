@@ -13,7 +13,10 @@ public class StartupCommon
 
   public static void preInitCommon()
   {
-    altar = (BlockAltar)(new BlockAltar().setUnlocalizedName("twm_altar"));
+
+  	TheWizardMod.logger.info("Setting up Altar");
+
+  	altar = (BlockAltar)(new BlockAltar().setUnlocalizedName("twm_altar"));
     altar.setRegistryName("altar");
     GameRegistry.register(altar);
 

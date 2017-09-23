@@ -3,7 +3,6 @@ package thewizardmod.altar;
 import java.util.Random;
 
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -11,17 +10,12 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import thewizardmod.fireChalice.TileEntityChalice;
-import thewizardmod.items.MagicString;
-import thewizardmod.items.StartupClientOnly;
 import thewizardmod.pedestral.TileEntityPedestral;
 import thewizardmod.runeSlab.StartupCommon;
 import thewizardmod.runeSlab.TileEntityRuneSlab;
 
 public class Altar {
-	
+
 	public static Item altarRecipeResult[] = {
 		thewizardmod.Wands.StartupCommon.blazeWand,
 		Item.getItemFromBlock(thewizardmod.chest.StartupCommon.blockInventoryBasic),
@@ -51,7 +45,9 @@ public class Altar {
 		thewizardmod.runes.StartupCommon.dagaz,
 		thewizardmod.runes.StartupCommon.blank,
 		thewizardmod.mirror.StartupCommon.itemMirror,
-		Item.getItemFromBlock(thewizardmod.fluids.StartupCommon.blockTank)
+		Item.getItemFromBlock(thewizardmod.fluids.StartupCommon.blockTank),
+		thewizardmod.items.StartupCommon.bone,
+		thewizardmod.items.StartupCommon.zombie,
 		};
 	
 	public static Item altarRecipeInputs[][] = {
@@ -83,7 +79,9 @@ public class Altar {
 		{thewizardmod.runes.StartupCommon.blank, thewizardmod.items.StartupCommon.shadowDust,thewizardmod.items.StartupCommon.magicGem, Items.FLINT_AND_STEEL},
 		{Item.getItemFromBlock(Blocks.STONE), thewizardmod.items.StartupCommon.shadowDust,thewizardmod.items.StartupCommon.magicGem, Items.REDSTONE},
 		{thewizardmod.items.StartupCommon.shadowDust, thewizardmod.mirror.StartupCommon.mirrorGlass, Items.ENDER_PEARL, Items.GOLD_INGOT},
-		{Items.BUCKET, thewizardmod.items.StartupCommon.shadowDust, Item.getItemFromBlock(Blocks.GLASS), Items.IRON_INGOT}
+		{Items.BUCKET, thewizardmod.items.StartupCommon.shadowDust, Item.getItemFromBlock(Blocks.GLASS), Items.IRON_INGOT},
+		{Items.BONE, Items.GOLD_INGOT, thewizardmod.items.StartupCommon.shadowDust, thewizardmod.items.StartupCommon.heart},
+		{Items.BONE, thewizardmod.items.StartupCommon.magicGem, thewizardmod.items.StartupCommon.heart, Items.ROTTEN_FLESH}
 	};
 	
 	public static BlockPos pedestralPos[] = {null, null, null, null};

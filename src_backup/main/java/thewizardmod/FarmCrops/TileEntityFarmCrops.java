@@ -276,40 +276,30 @@ public class TileEntityFarmCrops extends TileFluidHandler implements
 		if (inputStack != null) {
 			// Empty buckets are allowed
 			if (inputStack.getItem() == Items.BUCKET) {
-				if (tank.getFluidAmount() - 1000 > 0
-						&& getStackInSlot(bucketInputSlot) == null) {
+				if (tank.getFluidAmount() - 1000 > 0 && getStackInSlot(bucketInputSlot) == null) {
 					tank.drain(1000, true);
 					decrStackSize(bucketInputSlot, 1);
-					ItemStack bucket = UniversalBucket.getFilledBucket(
-							ForgeModContainer.getInstance().universalBucket,
-							StartupCommon.fluidMagic);
+					ItemStack bucket = UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket,	StartupCommon.fluidMagic);
 					setInventorySlotContents(bucketOutputSlot, bucket);
 				}
 			}
 			// It's a forge universal bucket
-			if (inputStack.getUnlocalizedName().compareTo(
-					"item.forge.bucketFilled") == 0) {
+			if (inputStack.getUnlocalizedName().compareTo("item.forge.bucketFilled") == 0) {
 				// The fluid in bucket is liquid magic
-				if (FluidUtil.getFluidContained(inputStack).containsFluid(
-						new FluidStack(StartupCommon.fluidMagic, 1000))
-						&& (getStackInSlot(bucketOutputSlot) == null || getStackInSlot(
-								bucketOutputSlot).getItem() == Items.BUCKET)) {
+				if (FluidUtil.getFluidContained(inputStack).containsFluid(new FluidStack(StartupCommon.fluidMagic, 1000))&& (getStackInSlot(bucketOutputSlot) == null || getStackInSlot(bucketOutputSlot).getItem() == Items.BUCKET)) {
 					if (tank.getFluidAmount() + 1000 <= tank.getCapacity()) {
-						tank.fill(
-								new FluidStack(StartupCommon.fluidMagic, 1000),
-								true);
+						tank.fill(new FluidStack(StartupCommon.fluidMagic, 1000),true);
 						decrStackSize(bucketInputSlot, 1);
 						if (itemStacks[bucketOutputSlot] != null) {
 							itemStacks[bucketOutputSlot].stackSize++;
 						} else {
-							itemStacks[bucketOutputSlot] = new ItemStack(
-									Items.BUCKET);
+							itemStacks[bucketOutputSlot] = new ItemStack(Items.BUCKET);
 						}
-						setInventorySlotContents(bucketOutputSlot,
-								itemStacks[bucketOutputSlot]);
+						setInventorySlotContents(bucketOutputSlot,itemStacks[bucketOutputSlot]);
 					}
 				}
 			}
+			markDirty();
 		}
 	}
 

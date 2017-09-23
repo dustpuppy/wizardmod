@@ -2,26 +2,25 @@ package thewizardmod.creative_tab;
 
 import java.util.List;
 
+import thewizardmod.items.StartupCommon;
+
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.datafix.fixes.SpawnEggNames;
 import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import thewizardmod.Wands.StartupCommon;
 
-public class AllMbeItemsTab extends CreativeTabs {
-  public AllMbeItemsTab(String label) {
+public class MyTab extends CreativeTabs {
+  public MyTab(String label) {
     super(label);
   }
 
   @Override
   @SideOnly(Side.CLIENT)
   public Item getTabIconItem() {
-    return StartupCommon.blazeWand;
+    return StartupCommon.zombie;
   }
 
   @Override
@@ -36,12 +35,7 @@ public class AllMbeItemsTab extends CreativeTabs {
       }
     }
     
-    // Put all our fluids into the tab
-    itemsToShowOnTab.add(UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, thewizardmod.fluids.StartupCommon.fluidPoison));
-    itemsToShowOnTab.add(UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket, thewizardmod.fluids.StartupCommon.fluidMagic));
-    
 
-//    itemsToShowOnTab.add();
   }
 
 }

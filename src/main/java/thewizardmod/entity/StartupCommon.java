@@ -15,6 +15,9 @@ public class StartupCommon
 
 	public static void preInitCommon()
 	{
+    	TheWizardMod.logger.info("Registering Entities");
+
+		
         int id = 1;
         EntityRegistry.registerModEntity(EntityWeirdZombie.class, "WeirdZombie", id++, TheWizardMod.instance, 64, 3, true, 0x996600, 0xff00ff);
         // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically

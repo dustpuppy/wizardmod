@@ -1,5 +1,6 @@
 package thewizardmod;
 
+
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,6 +9,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 @Mod(modid = TheWizardMod.MODID, version = TheWizardMod.VERSION, guiFactory = TheWizardMod.GUIFACTORY)
 public class TheWizardMod
@@ -38,6 +43,7 @@ public class TheWizardMod
 	public static final int GUI_ID_CROPFARM = 7;
 	public static final int GUI_ID_FEEDER = 8;
 
+	public static final Logger logger = LogManager.getLogger("TheWizardMod");
 
 	static {
 	    FluidRegistry.enableUniversalBucket();
@@ -47,20 +53,22 @@ public class TheWizardMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
-      proxy.preInit();
+    	TheWizardMod.logger.info("Pre Init started");
+    	proxy.preInit();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-      proxy.init();
+    	TheWizardMod.logger.info("Init started");
+    	proxy.init();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-      proxy.postInit();
+    	TheWizardMod.logger.info("Post Init started");
+    	proxy.postInit();
     }
 
     public static String prependModID(String name) {return MODID + ":" + name;}

@@ -1,3 +1,19 @@
 {
-    "parent": "thewizardmod:block/cherry_leaves"
+    "variants": {
+        "normal": {
+            "model": "thewizardmod:cherry_leaves"
+        },
+        "check_decay=false, decayable=false": {
+            "model": "thewizardmod:cherry_leaves"
+        },
+        "check_decay=true, decayable=false": {
+            "model": "thewizardmod:cherry_leaves"
+        },
+        "check_decay=false, decayable=true": {
+            "model": "thewizardmod:cherry_leaves"
+        },
+        "check_decay=true, decayable=true": {
+            "model": "thewizardmod:cherry_leaves"
+        }
+    }
 }

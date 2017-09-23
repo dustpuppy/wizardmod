@@ -7,18 +7,23 @@ import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveIndoors;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAIOpenDoor;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITasks.EntityAITaskEntry;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.EnumActionResult;
@@ -44,7 +49,9 @@ import thewizardmod.items.StartupCommon;
 
 public class EntityMiniZombie extends EntityCreature{
 
-	public String name = "unknown";
+    private static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.createKey(EntityMiniZombie.class, DataSerializers.BOOLEAN);
+
+    public String name = "unknown";
     private double maxDistance = 10;
     private int idleTime = 0;
     
@@ -59,11 +66,21 @@ public class EntityMiniZombie extends EntityCreature{
         super(worldIn);
     	this.setDropItemsWhenDead(false);
     	this.setDropChance(EntityEquipmentSlot.CHEST, 0);	// prevent of dropping the chestplate
+    	this.getDataManager().register(ARMS_RAISED, Boolean.valueOf(false));
     }
 
     @Override
     protected void entityInit() {
         super.entityInit();
+    }
+
+    @SideOnly(Side.CLIENT)
+    public boolean isArmsRaised() {
+        return this.getDataManager().get(ARMS_RAISED).booleanValue();
+    }
+
+    public void setArmsRaised(boolean armsRaised) {
+        this.getDataManager().set(ARMS_RAISED, Boolean.valueOf(armsRaised));
     }
 
     @Override
@@ -72,7 +89,8 @@ public class EntityMiniZombie extends EntityCreature{
         // Here we set various attributes for our mob. Like maximum health, armor, speed, ...
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10F);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23D);
-    }
+        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
+        }
 
 
     @Override
@@ -80,9 +98,10 @@ public class EntityMiniZombie extends EntityCreature{
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.tasks.addTask(5, new EntityAIWander(this, 0.3F));
+//        this.tasks.addTask(5, new EntityAIWander(this, 0.3F));
         this.tasks.addTask(2, new EntityAIMoveIndoors(this));        
         this.tasks.addTask(3, new EntityAIOpenDoor(this, true));
+        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
 
         this.applyEntityAI();
     }
@@ -200,7 +219,14 @@ public class EntityMiniZombie extends EntityCreature{
 			}
 		}
 		
-		
+		if(this.getHeldItemMainhand() != null)
+		{
+			this.setArmsRaised(true);
+		}
+		else
+		{
+			this.setArmsRaised(false);
+		}
 		
     	super.onUpdate();
     }

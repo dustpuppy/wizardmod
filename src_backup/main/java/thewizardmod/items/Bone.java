@@ -15,26 +15,59 @@ import net.minecraft.world.World;
 import thewizardmod.entity.EntityAIMiniZombieMoveTo;
 import thewizardmod.entity.EntityMiniZombie;
 
-public class Cherry extends Item {
+public class Bone extends Item {
 	
 	private boolean setInventoryPos;
 	
-	public Cherry() 
+	public Bone() 
 	{
-//		final int MAXIMUM_NUMBER_IN_STACK = 1;
-//		this.setMaxStackSize(MAXIMUM_NUMBER_IN_STACK);
+		final int MAXIMUM_NUMBER_IN_STACK = 1;
+		this.setMaxStackSize(MAXIMUM_NUMBER_IN_STACK);
 		this.setCreativeTab(CreativeTabs.FOOD);
 	}
 
+	public EntityMiniZombie littleZombie;
+
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if(littleZombie != null)
+		{
+			if(setInventoryPos)
+			{
+				if(littleZombie.inventoryPos != null)
+				{
+					System.out.println("setting source position");
+					littleZombie.setSourcePos(pos);
+					setInventoryPos = false;
+				}
+				else if(littleZombie.inventoryPos == null)
+				{
+					System.out.println("setting inventory position");
+					littleZombie.setInventoryPos(pos);
+					setInventoryPos = false;
+				}
+			}
+			else
+			{
+				littleZombie.moveZombieTo(pos);
+			}
+		}
 		return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing,	hitX, hitY, hitZ);
 
 	}
 
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-		return false;
+		littleZombie = (EntityMiniZombie) entity;
+
+		setInventoryPos = false;
+		
+		if(!player.isSneaking())
+		{
+			setInventoryPos = true;
+		}
+		
+		return true;
 	}
 
 }

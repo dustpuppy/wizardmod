@@ -56,7 +56,7 @@ item.wizard_guide_twm.name=Wizards Guide
 item.rune_magic_twm.name=Rune Magic
 item.altar_magic_twm.name=The Magic Altar
 item.wand_magic_twm.name=The Magic Wands
-item.injector_magic_twm.name=The Magic Injector
+item.injector_magic_twm.name=The Magic Machines
 
 # Trees 
 tile.twm_log_cherry.name=Cherry Wood

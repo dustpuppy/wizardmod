@@ -20,6 +20,9 @@ public class StartupCommon
 	  
   public static void preInitCommon()
   {
+	  TheWizardMod.logger.info("Setting up Magic Dimension");
+
+	  
 	  portalBlock = (PortalBlock)(new PortalBlock().setUnlocalizedName("twm_portal"));
 	  portalBlock.setRegistryName("portal");
 	  GameRegistry.register(portalBlock);

@@ -15,7 +15,7 @@ public class GuiWizardsGuide extends GuiScreen {
 	private final int bookImageHeight = 192;
 	private final int bookImageWidth = 192;
 	private int currPage = 0;
-	private static final int bookTotalPages = 27;
+	private static final int bookTotalPages = 32;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
 	private static String[] stringPageText = new String[bookTotalPages];
 	private NextPageButton buttonNextPage;
@@ -50,6 +50,11 @@ public class GuiWizardsGuide extends GuiScreen {
 		bookPageTextures[24] = new ResourceLocation("thewizardmod:textures/gui/books/robeleggings.png");
 		bookPageTextures[25] = new ResourceLocation("thewizardmod:textures/gui/books/robeboots.png");
 		bookPageTextures[26] = new ResourceLocation("thewizardmod:textures/gui/books/mirrorglas.png");
+		bookPageTextures[27] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[28] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[29] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[30] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
+		bookPageTextures[31] = new ResourceLocation("thewizardmod:textures/gui/books/book.png");
 
 		stringPageText[0] = "   The Wizards Guide";
 
@@ -80,6 +85,11 @@ public class GuiWizardsGuide extends GuiScreen {
 		stringPageText[24] = "";
 		stringPageText[25] = "";
 		stringPageText[26] = "";
+		stringPageText[27] = "Wizards Guide\n 1 Book\n 1 Shadow Dust";
+		stringPageText[28] = "Book of Machines\n 1 Book\n 1 Stone Pickaxe";
+		stringPageText[29] = "Altar Guide\n 1 Book\n 1 Magic Iron";
+		stringPageText[30] = "Book of Runes\n 1 Book\n 1 Stone";
+		stringPageText[31] = "Book of Wands\n 1 Book\n 1 Stick";
 	}
 
 	/**

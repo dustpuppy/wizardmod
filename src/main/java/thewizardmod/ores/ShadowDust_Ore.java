@@ -81,11 +81,4 @@ public class ShadowDust_Ore extends Block
     return EnumBlockRenderType.MODEL;
   }
   
-  @Override
-  public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-	  ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
-	  Random rand = new Random();
-	  drops.add(new ItemStack(StartupCommon.shadowDust, rand.nextInt(2) + 1 + fortune));
-	  return drops;
-  }
 }
