@@ -46,7 +46,7 @@ public abstract class CommonProxy {
     thewizardmod.Jar_undead_heart.StartupCommon.preInitCommon();
     thewizardmod.fireChalice.StartupCommon.preInitCommon();
     thewizardmod.books.StartupCommon.preInitCommon();
-    thewizardmod.mirror.StartupCommon.preInitCommon();
+//    thewizardmod.mirror.StartupCommon.preInitCommon();
     
     thewizardmod.altar.StartupCommon.preInitCommon();
     thewizardmod.pedestral.StartupCommon.preInitCommon();
@@ -105,7 +105,7 @@ public abstract class CommonProxy {
     thewizardmod.Jar_undead_heart.StartupCommon.initCommon();
     thewizardmod.fireChalice.StartupCommon.initCommon();
     thewizardmod.books.StartupCommon.initCommon();
-    thewizardmod.mirror.StartupCommon.initCommon();
+//    thewizardmod.mirror.StartupCommon.initCommon();
 
     thewizardmod.altar.StartupCommon.initCommon();
     thewizardmod.pedestral.StartupCommon.initCommon();
@@ -162,7 +162,7 @@ public abstract class CommonProxy {
 	thewizardmod.Jar_undead_heart.StartupCommon.postInitCommon();
 	thewizardmod.fireChalice.StartupCommon.postInitCommon();
 	thewizardmod.books.StartupCommon.postInitCommon();
-	thewizardmod.mirror.StartupCommon.postInitCommon();
+//	thewizardmod.mirror.StartupCommon.postInitCommon();
 
 	thewizardmod.altar.StartupCommon.postInitCommon();
 	thewizardmod.pedestral.StartupCommon.postInitCommon();

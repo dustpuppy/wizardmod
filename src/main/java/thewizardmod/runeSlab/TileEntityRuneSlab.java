@@ -1,13 +1,29 @@
 package thewizardmod.runeSlab;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Block;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemDye;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
-public class TileEntityRuneSlab extends TileEntity{
+public class TileEntityRuneSlab extends TileEntity implements ITickable{
 
 	public int runeType;
 	public int magicChance;
@@ -78,5 +94,73 @@ public class TileEntityRuneSlab extends TileEntity{
 		tag.setInteger("magicChance", magicChance);
 		return tag;
 	}
+	
+	
+	public void handleFertalizing() {
+		BlockPos centerOfField = this.getPos();
+
+		Random random = new Random();
+		
+		int x = centerOfField.getX() - 2;
+		int y = centerOfField.getY();
+		int z = centerOfField.getZ() - 2;
+
+		for (int i = 0; i < 5; i++) 
+		{
+			for (int j = 0; j < 5; j++) 
+			{
+				BlockPos newpos = new BlockPos(x + i, y, z + j);
+				Block block = worldObj.getBlockState(newpos).getBlock();
+				if (block != null) 
+				{
+					int state = worldObj.getBlockState(newpos).getBlock().getMetaFromState(worldObj.getBlockState(newpos));
+					int chance = random.nextInt(1500);
+					if(chance == 0)
+					{
+//						System.out.println("Appling bonemeal to " + newpos.getX() + " " + newpos.getY() + " " + newpos.getZ());
+						ItemDye.applyBonemeal(new ItemStack(Items.DYE, 15, 0), worldObj, newpos, null);
+					}
+				}
+			}
+		}
+	}
+
+	
+	public void handleDefence() {
+		BlockPos centerOfField = this.getPos();
+
+		double posX = centerOfField.getX();
+		double posY = centerOfField.getY();
+		double posZ = centerOfField.getZ();
+		if (!worldObj.isRemote) {
+			for (Object obj : worldObj.getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(posX - 5, posY - 1, posZ - 5, posX + 5, posY + 1, posZ + 5))) {
+				if (obj instanceof EntityMob) 
+				{
+					EntityMob mob = (EntityMob) obj;
+					mob.setPosition(mob.posX, mob.posY + 20, mob.posZ);
+				}
+				if (obj instanceof EntitySlime) 
+				{
+					EntitySlime mob = (EntitySlime) obj;
+					mob.setPosition(mob.posX, mob.posY + 20, mob.posZ);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void update() {
+//		System.out.println(runeType);
+		if(runeType == 5)		// rune of growth
+		{
+			handleFertalizing();
+		}
+		if(runeType == 15)		// rune of defence
+		{
+			handleDefence();
+		}
+	}
+
+	
 	
 }

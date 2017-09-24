@@ -21,22 +21,6 @@ public class StartupClientOnly
 {
   public static void preInitClientOnly()
   {
-//    need to add the variants to the bakery so it knows what models are available for rendering the different subtypes
-//    In previous versions, this was required, however as of 1.8.9 ModelLoader.setCustomModelResourceLocation does this
-//      for you - see later on - so it's not necessary.
-//    ModelBakery.addVariantName(StartupCommon.itemVariants,  "minecraftbyexample:mbe11_item_variants_0pc",
-//            "minecraftbyexample:mbe11_item_variants_25pc",
-//            "minecraftbyexample:mbe11_item_variants_50pc",
-//            "minecraftbyexample:mbe11_item_variants_75pc",
-//            "minecraftbyexample:mbe11_item_variants_100pc"
-//    );
-
-    // required in order for the renderer to know how to render your item.
-    // in this case we have five different model files, but we still need to register all 4 * 5 = 20 different metadata values
-    // Alternative ways of doing this are:
-    // 1) store some of the information in itemstack NBT information instead; or
-    // 2) register your item to ignore all metadata, then alter your model render based on the metadata (see commented-out code below)
-    //
     for (PotionBottles.EnumBottleFullness fullness : PotionBottles.EnumBottleFullness.values()) {
       String itemModelName = "potion_" + fullness.getName();
       ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("thewizardmod:" + itemModelName, "inventory");

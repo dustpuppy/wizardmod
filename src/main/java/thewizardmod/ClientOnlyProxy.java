@@ -51,7 +51,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.Jar_undead_heart.StartupClientOnly.preInitClientOnly();
     thewizardmod.fireChalice.StartupClientOnly.preInitClientOnly();
     thewizardmod.books.StartupClientOnly.preInitClientOnly();
-    thewizardmod.mirror.StartupClientOnly.preInitClientOnly();
+//    thewizardmod.mirror.StartupClientOnly.preInitClientOnly();
 
     thewizardmod.altar.StartupClientOnly.preInitClientOnly();
     thewizardmod.pedestral.StartupClientOnly.preInitClientOnly();
@@ -110,7 +110,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.Jar_undead_heart.StartupClientOnly.initClientOnly();
     thewizardmod.fireChalice.StartupClientOnly.initClientOnly();
     thewizardmod.books.StartupClientOnly.initClientOnly();
-    thewizardmod.mirror.StartupClientOnly.initClientOnly();
+//    thewizardmod.mirror.StartupClientOnly.initClientOnly();
     
     thewizardmod.altar.StartupClientOnly.initClientOnly();
     thewizardmod.pedestral.StartupClientOnly.initClientOnly();
@@ -168,7 +168,7 @@ public class ClientOnlyProxy extends CommonProxy
     thewizardmod.Jar_undead_heart.StartupClientOnly.postInitClientOnly();
     thewizardmod.fireChalice.StartupClientOnly.postInitClientOnly();
     thewizardmod.books.StartupClientOnly.postInitClientOnly();
-    thewizardmod.mirror.StartupClientOnly.postInitClientOnly();
+//    thewizardmod.mirror.StartupClientOnly.postInitClientOnly();
 
     thewizardmod.altar.StartupClientOnly.postInitClientOnly();
     thewizardmod.pedestral.StartupClientOnly.postInitClientOnly();

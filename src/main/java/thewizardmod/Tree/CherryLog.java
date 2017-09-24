@@ -13,11 +13,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class Log extends BlockRotatedPillar
+public class CherryLog extends BlockRotatedPillar
 {
-    public static final PropertyEnum<Log.EnumAxis> LOG_AXIS = PropertyEnum.<Log.EnumAxis>create("axis", Log.EnumAxis.class);
+    public static final PropertyEnum<CherryLog.EnumAxis> LOG_AXIS = PropertyEnum.<CherryLog.EnumAxis>create("axis", CherryLog.EnumAxis.class);
 
-    public Log()
+    public CherryLog()
     {
         super(Material.WOOD);
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -51,13 +51,13 @@ public class Log extends BlockRotatedPillar
         {
             case COUNTERCLOCKWISE_90:
             case CLOCKWISE_90:
-                switch ((Log.EnumAxis)state.getValue(LOG_AXIS))
+                switch ((CherryLog.EnumAxis)state.getValue(LOG_AXIS))
                 {
                     case X:
-                        return state.withProperty(LOG_AXIS, Log.EnumAxis.Z);
+                        return state.withProperty(LOG_AXIS, CherryLog.EnumAxis.Z);
 
                     case Z:
-                        return state.withProperty(LOG_AXIS, Log.EnumAxis.X);
+                        return state.withProperty(LOG_AXIS, CherryLog.EnumAxis.X);
 
                     default:
                         return state;
@@ -87,7 +87,7 @@ public class Log extends BlockRotatedPillar
             return this.name;
         }
 
-        public static Log.EnumAxis fromFacingAxis(EnumFacing.Axis axis)
+        public static CherryLog.EnumAxis fromFacingAxis(EnumFacing.Axis axis)
         {
             switch (axis)
             {
