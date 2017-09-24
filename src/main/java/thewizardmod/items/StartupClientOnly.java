@@ -12,9 +12,6 @@ public class StartupClientOnly
 	    ModelResourceLocation shadowdustResourceLocation = new ModelResourceLocation("thewizardmod:shadowdust", "inventory");
 	    ModelLoader.setCustomModelResourceLocation(StartupCommon.shadowDust, DEFAULT_ITEM_SUBTYPE, shadowdustResourceLocation);
 
-	    ModelResourceLocation cherryResourceLocation = new ModelResourceLocation("thewizardmod:cherry", "inventory");
-	    ModelLoader.setCustomModelResourceLocation(StartupCommon.cherry, DEFAULT_ITEM_SUBTYPE, cherryResourceLocation);
-
 	    ModelResourceLocation heartResourceLocation = new ModelResourceLocation("thewizardmod:heart_of_undead", "inventory");
 	    ModelLoader.setCustomModelResourceLocation(StartupCommon.heart, DEFAULT_ITEM_SUBTYPE, heartResourceLocation);
 

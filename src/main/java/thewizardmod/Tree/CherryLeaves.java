@@ -6,7 +6,6 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
@@ -104,7 +103,7 @@ public class CherryLeaves extends BlockLeaves
     {
     	int i = new Random().nextInt(chance);
     	if (i == 0){
-    		spawnAsEntity(worldIn, pos, new ItemStack(thewizardmod.items.StartupCommon.cherry));
+    		spawnAsEntity(worldIn, pos, new ItemStack(thewizardmod.Food.StartupCommon.cherry));
     	}
     }
 

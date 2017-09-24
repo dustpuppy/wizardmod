@@ -15,6 +15,9 @@ public class StartupClientOnly
     ModelResourceLocation magicCookieModelResourceLocation = new ModelResourceLocation("thewizardmod:magic_cookie", "inventory");
     ModelLoader.setCustomModelResourceLocation(StartupCommon.magicCookie, DEFAULT_ITEM_SUBTYPE, magicCookieModelResourceLocation);
     
+    ModelResourceLocation cherryResourceLocation = new ModelResourceLocation("thewizardmod:cherry", "inventory");
+    ModelLoader.setCustomModelResourceLocation(StartupCommon.cherry, DEFAULT_ITEM_SUBTYPE, cherryResourceLocation);
+
   }
 
   public static void initClientOnly()

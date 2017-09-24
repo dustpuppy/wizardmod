@@ -1,5 +1,6 @@
 package thewizardmod.items;
 
+import thewizardmod.Food.Cherry;
 import thewizardmod.books.BookWizardsGuide;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -7,7 +8,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class StartupCommon
 {
 	  public static ShadowDust shadowDust;
-	  public static Cherry cherry;
 	  public static Heart_of_undead heart;
 	  public static MagicGem magicGem;
 	  public static MagicIronIngot magicIron;
@@ -40,10 +40,6 @@ public class StartupCommon
 		shadowDust = (ShadowDust)(new ShadowDust().setUnlocalizedName("twm_shadowdust"));
 		shadowDust.setRegistryName("shadowdust_registry_name");
 	    GameRegistry.register(shadowDust);
-
-	    cherry = (Cherry)(new Cherry().setUnlocalizedName("twm_cherry"));
-	    cherry.setRegistryName("cherry_registry_name");
-	    GameRegistry.register(cherry);
 
 	    heart = (Heart_of_undead)(new Heart_of_undead().setUnlocalizedName("twm_heart_of_undead"));
 	    heart.setRegistryName("heart_of_undead_registry_name");

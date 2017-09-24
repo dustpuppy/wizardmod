@@ -1,8 +1,8 @@
 package thewizardmod.mirror;
 
 import thewizardmod.TheWizardMod;
+import thewizardmod.Food.Cherry;
 import thewizardmod.Jar_undead_heart.TileEntityJar_undead_heart;
-import thewizardmod.items.Cherry;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
